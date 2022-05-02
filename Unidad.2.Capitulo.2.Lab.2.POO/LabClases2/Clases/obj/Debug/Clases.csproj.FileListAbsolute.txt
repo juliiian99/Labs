@@ -1,0 +1,5 @@
+C:\Net\LabClases2\Clases\bin\Debug\Clases.dll
+C:\Net\LabClases2\Clases\bin\Debug\Clases.pdb
+C:\Net\LabClases2\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Net\LabClases2\Clases\obj\Debug\Clases.dll
+C:\Net\LabClases2\Clases\obj\Debug\Clases.pdb

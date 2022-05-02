@@ -1,0 +1,6 @@
+C:\Net\LabClases1\Clases\bin\Debug\Clases.dll
+C:\Net\LabClases1\Clases\bin\Debug\Clases.pdb
+C:\Net\LabClases1\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Net\LabClases1\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Net\LabClases1\Clases\obj\Debug\Clases.dll
+C:\Net\LabClases1\Clases\obj\Debug\Clases.pdb
