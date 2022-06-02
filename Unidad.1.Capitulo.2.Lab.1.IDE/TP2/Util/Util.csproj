@@ -52,10 +52,6 @@
       <Project>{af1c349b-9100-4842-b9d9-c8059a7bc3ad}</Project>
       <Name>Business.Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UI.Desktop\UI.Desktop.csproj">
-      <Project>{e53ae4c0-f51d-4a0c-8acb-bbf686594ac2}</Project>
-      <Name>UI.Desktop</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UI.Web\UI.Web.csproj">
       <Project>{8b10f5db-f7ad-4d04-91b1-3825125d42f3}</Project>
       <Name>UI.Web</Name>
