@@ -26,17 +26,20 @@ namespace Clases
             this.M3();
             return this.NombreInstancia;
         }
-        public string M1()
+        public void M1()
         {
-            return "se invocó el método 1";
+            Console.WriteLine("se invocó el método 1");
         }
-        public string M2 ()
+        public void M2 ()
         {
-            return "se invocó el método 2";
+            Console.WriteLine("se invocó el método 2");
         }
-        public string M3()
+        public void M3()
         {
-            return "se invocó el método 3";
+            Console.WriteLine("se invocó el método 3");
         }
+        public void F() { Console.WriteLine("A.F"); }
+        public virtual void G() { Console.WriteLine("A.G"); }
+
     }
 }

@@ -14,8 +14,8 @@ namespace Clases
 
     public class B : A
     {
-        public void F() { Console.WriteLine("B.F"); }
-        public  void G() { Console.WriteLine("B.G"); }
+        public new void F() { Console.WriteLine("B.F"); } // new para 
+        public new void G() { Console.WriteLine("B.G"); }
     }
 }
 

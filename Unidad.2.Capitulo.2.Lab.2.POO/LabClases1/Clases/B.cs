@@ -8,11 +8,10 @@ namespace Clases
 {
     public class B : A
     {
-        public string M4()
+        public void M4()
         {
-            return "Metodo del Hijo Invocado";
+            Console.WriteLine("Metodo del Hijo Invocado");
         }
-        
         
         public B(string NuevaInstancia) : base(NuevaInstancia)
         {
@@ -22,7 +21,8 @@ namespace Clases
         {
 
         }
+        public void F() { Console.WriteLine("B.F"); }
+        public void G() { Console.WriteLine("B.G"); }
 
-     
     }
 }
