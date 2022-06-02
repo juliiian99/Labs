@@ -5,20 +5,22 @@ using System.Text;
 
 namespace Geometria
 {
-    public class Triangulo
+    public class Triangulo : Poligono
     {
-        private int lado1 { get; set; }
-        private int lado2 { get; set; }
-        private int lado3 { get; set; }
+        private double Lado1 { get; set; }
+        private double Lado2 { get; set; }
+        private double Lado3 { get; set; }
+        private double B { get; set; }
+        private double H { get; set; }
 
-        public void calcularPerimetro()
+        public override double CalcularPerimetro()
         {
-            throw new System.NotImplementedException();
+            return Lado1 + Lado2 + Lado3;
         }
 
-        public void calcularSuperficie()
+        public override double CalcularSuperficie()
         {
-            throw new System.NotImplementedException();
+            return B * H / 2;
         }
     }
 }

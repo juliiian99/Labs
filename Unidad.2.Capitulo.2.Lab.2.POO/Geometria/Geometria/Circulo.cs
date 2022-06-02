@@ -1,29 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Geometria
 {
-    public class Circulo
+    public class Circulo : Poligono
     {
-        private int m_radio;
+        private const double PI = 3.141592;
 
-        public int Radio {
-            get => default;
-            set {
-            }
+        private double Radio{ get; set; }
+
+        public override double CalcularPerimetro()
+        {
+            return 2 * Radio * PI;
         }
 
-        public void calcularPerimetro()
+        public override double CalcularSuperficie()
         {
-            throw new System.NotImplementedException();
-        }
+            return PI * Math.Pow(Radio, 2);
 
-        public void calcularSuperficio()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -5,16 +5,10 @@ using System.Text;
 
 namespace Geometria
 {
-    public class Poligono
+    public abstract class Poligono
     {
-        public void calcularPerimetro()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract double CalcularPerimetro();
 
-        public void calcularSuperficie()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract double CalcularSuperficie();
     }
 }
