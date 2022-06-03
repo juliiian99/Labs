@@ -17,7 +17,7 @@ namespace LabClases4
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.GetType().Name);
+                Console.WriteLine(e.Message);
                 Console.ReadKey();
             }
         }

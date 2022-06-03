@@ -1,4 +1,5 @@
 ﻿using Clases;
+using System;
 
 namespace LabClases2
 {
@@ -9,9 +10,10 @@ namespace LabClases2
             B b = new B();
             A a = b;
             a.F();
-            b.F();
             a.G();
+            b.F();
             b.G();
+            Console.ReadKey();
 
         }
     }
