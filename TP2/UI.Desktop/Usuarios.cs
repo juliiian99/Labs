@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using Business.Entities;
+using Business.Logic;
+
+
+namespace UI.Desktop
+{
+    public partial class Usuarios : Form
+    {
+        public Usuarios()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e) //Deberia ser Usuarios_Load
+        {
+            Listar();
+        }
+
+        public void Listar()
+        {
+            UsuarioLogic ul = new UsuarioLogic();
+            this.dgvUsuarios.DataSource = ul.GetAll();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            formUsuario.ShowDialog();
+            this.Listar();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
