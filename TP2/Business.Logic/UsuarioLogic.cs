@@ -12,7 +12,7 @@ namespace Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        private Data.Database.UsuarioAdapter _UsuarioData= new Data.Database.UsuarioAdapter();
+        private Data.Database.UsuarioAdapter _UsuarioData = new Data.Database.UsuarioAdapter();
 
         public Data.Database.UsuarioAdapter UsuarioData
         {
@@ -38,6 +38,11 @@ namespace Business.Logic
         public void Save(Business.Entities.Usuario USU)
         {
             UsuarioData.Save(USU);
+        }
+
+        public void Update(Business.Entities.Usuario USU)
+        {
+            UsuarioData.Update(USU);
         }
     }
 }

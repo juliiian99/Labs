@@ -31,10 +31,12 @@
             this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.tbsNuevo = new System.Windows.Forms.Button();
+            this.tsUsuarios = new System.Windows.Forms.ToolStrip();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -62,14 +64,18 @@
             // 
             // tlUsuarios
             // 
-            this.tlUsuarios.ColumnCount = 3;
+            this.tlUsuarios.ColumnCount = 5;
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tlUsuarios.Controls.Add(this.dgvUsuarios, 0, 0);
-            this.tlUsuarios.Controls.Add(this.btnSalir, 2, 1);
+            this.tlUsuarios.Controls.Add(this.btnSalir, 4, 1);
             this.tlUsuarios.Controls.Add(this.btnActualizar, 1, 1);
             this.tlUsuarios.Controls.Add(this.tbsNuevo, 0, 1);
+            this.tlUsuarios.Controls.Add(this.button1, 3, 1);
+            this.tlUsuarios.Controls.Add(this.button2, 2, 1);
             this.tlUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tlUsuarios.Name = "tlUsuarios";
@@ -84,23 +90,46 @@
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tlUsuarios.SetColumnSpan(this.dgvUsuarios, 3);
+            this.tlUsuarios.SetColumnSpan(this.dgvUsuarios, 5);
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
+            this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(895, 390);
             this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(817, 399);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(739, 399);
+            this.btnActualizar.Location = new System.Drawing.Point(551, 399);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(86, 23);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // tbsNuevo
+            // 
+            this.tbsNuevo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tbsNuevo.Location = new System.Drawing.Point(470, 399);
+            this.tbsNuevo.Name = "tbsNuevo";
+            this.tbsNuevo.Size = new System.Drawing.Size(75, 23);
+            this.tbsNuevo.TabIndex = 4;
+            this.tbsNuevo.Text = "Nuevo";
+            this.tbsNuevo.UseVisualStyleBackColor = true;
+            this.tbsNuevo.Click += new System.EventHandler(this.button1_Click);
             // 
             // tsUsuarios
             // 
@@ -110,26 +139,27 @@
             this.tsUsuarios.Size = new System.Drawing.Size(111, 25);
             this.tsUsuarios.TabIndex = 0;
             // 
-            // btnSalir
+            // button1
             // 
-            this.btnSalir.Location = new System.Drawing.Point(820, 399);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 3;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(730, 399);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // tbsNuevo
+            // button2
             // 
-            this.tbsNuevo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.tbsNuevo.Location = new System.Drawing.Point(658, 399);
-            this.tbsNuevo.Name = "tbsNuevo";
-            this.tbsNuevo.Size = new System.Drawing.Size(75, 23);
-            this.tbsNuevo.TabIndex = 4;
-            this.tbsNuevo.Text = "Nuevo";
-            this.tbsNuevo.UseVisualStyleBackColor = true;
-            this.tbsNuevo.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.Location = new System.Drawing.Point(643, 399);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(81, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Consultar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Usuarios
             // 
@@ -160,6 +190,8 @@
         private System.Windows.Forms.ToolStrip tsUsuarios;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button tbsNuevo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

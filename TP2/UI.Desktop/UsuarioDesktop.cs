@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Data.Database;
 
 namespace UI.Desktop
 {
@@ -27,14 +28,12 @@ namespace UI.Desktop
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
-            InitializeComponent();
         }
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
             UsuarioLogic ul = new UsuarioLogic();
             this.UsuarioActual = ul.GetOne(ID);
-            System.Console.WriteLine(this.UsuarioActual);
             this.MapearDeDatos();
         }
 
@@ -45,9 +44,8 @@ namespace UI.Desktop
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtEmail.Text = this.UsuarioActual.EMail;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            if (this.txtClave.Text == this.txtConfirmarClave.Text) { 
-                this.txtClave.Text = this.UsuarioActual.Clave;
-            }
+            this.txtClave.Text = this.UsuarioActual.Clave;
+            this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -67,8 +65,7 @@ namespace UI.Desktop
 
         public override void MapearADatos()
         {
-            Usuario u = new Usuario();
-            this.UsuarioActual = u;
+            this.UsuarioActual = new Usuario();
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -91,6 +88,13 @@ namespace UI.Desktop
                     this.UsuarioActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
+                    this.UsuarioActual.ID = int.Parse(this.txtID.Text);
+                    this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+                    this.UsuarioActual.Nombre = this.txtNombre.Text;
+                    this.UsuarioActual.Apellido = this.txtApellido.Text;
+                    this.UsuarioActual.EMail = this.txtEmail.Text;
+                    this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+                    this.UsuarioActual.Clave = this.txtClave.Text;
                     this.UsuarioActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
@@ -107,31 +111,30 @@ namespace UI.Desktop
 
             return new Regex(validEmailPattern, RegexOptions.IgnoreCase);
         }
-        public override bool Validar()
+        public new bool Validar()
         {
             Regex ValidEmailRegex = CreateValidEmailRegex();
-            if (this.txtApellido.Text != "" &&
-                this.txtClave.Text != "" &&
-                this.txtConfirmarClave.Text != "" &&
-                this.txtEmail.Text != "" &&
-                this.txtNombre.Text != "" &&
-                this.txtUsuario.Text != "" &&
-                this.txtClave.Text == this.txtConfirmarClave.Text &&
+            if (!this.txtApellido.Text.Equals("") &&
+                !this.txtClave.Text.Equals("") &&
+                !this.txtEmail.Text.Equals("") &&
+                !this.txtNombre.Text.Equals("") &&
+                !this.txtUsuario.Text.Equals("") &&
+                this.txtClave.Text.Equals(this.txtConfirmarClave.Text) &&
                 ValidEmailRegex.IsMatch(this.txtEmail.Text))
             {
                 return true;
             }
             else
             {
-                Notificar("Formulario Invalido", "Hay un error con algun campo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Notificar("Formulario Invalido", "Hay un error en algun campo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
 
         public override void GuardarCambios() {
             MapearADatos();
-            UsuarioLogic ul = new UsuarioLogic();
-            ul.Save(this.UsuarioActual);
+            UsuarioAdapter ua = new UsuarioAdapter();
+            ua.Save(this.UsuarioActual);
         }
 
         private void label1_Click(object sender, EventArgs e)
