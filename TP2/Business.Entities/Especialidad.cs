@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Especialidad : BusinessEntity
+    public class Especialidad : BusinessEntity
     {
         private string _Descripcion;
+
         public string Descripcion
         {
             get { return _Descripcion; }

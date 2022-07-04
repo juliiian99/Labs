@@ -8,7 +8,7 @@ namespace Data.Database
 {
     public class Adapter
     {
-        const string consKeyDefaultCnnString = "ConnStringLocal";
+        const string consKeyDefaultCnnString = "ConnStringExpress";
         protected SqlConnection sqlConn;
 
         protected void OpenConnection()

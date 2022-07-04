@@ -34,9 +34,9 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tbsNuevo = new System.Windows.Forms.Button();
-            this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -131,14 +131,6 @@
             this.tbsNuevo.UseVisualStyleBackColor = true;
             this.tbsNuevo.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tsUsuarios
-            // 
-            this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
-            this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(111, 25);
-            this.tsUsuarios.TabIndex = 0;
-            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -160,6 +152,14 @@
             this.button2.Text = "Consultar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // tsUsuarios
+            // 
+            this.tsUsuarios.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
+            this.tsUsuarios.Name = "tsUsuarios";
+            this.tsUsuarios.Size = new System.Drawing.Size(111, 25);
+            this.tsUsuarios.TabIndex = 0;
             // 
             // Usuarios
             // 
