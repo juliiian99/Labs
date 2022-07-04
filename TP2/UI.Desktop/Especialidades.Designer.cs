@@ -31,17 +31,16 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridView dgvEspecialidades;
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            dgvEspecialidades = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(dgvEspecialidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +51,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(dgvEspecialidades, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgvEspecialidades, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAlta, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnBaja, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnModificar, 2, 2);
@@ -69,13 +68,13 @@ namespace UI.Desktop
             // 
             // dgvEspecialidades
             // 
-            dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(dgvEspecialidades, 4);
-            dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
-            dgvEspecialidades.Location = new System.Drawing.Point(3, 23);
-            dgvEspecialidades.Name = "dgvEspecialidades";
-            dgvEspecialidades.Size = new System.Drawing.Size(794, 387);
-            dgvEspecialidades.TabIndex = 0;
+            this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvEspecialidades, 4);
+            this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEspecialidades.Location = new System.Drawing.Point(3, 23);
+            this.dgvEspecialidades.Name = "dgvEspecialidades";
+            this.dgvEspecialidades.Size = new System.Drawing.Size(794, 387);
+            this.dgvEspecialidades.TabIndex = 0;
             // 
             // btnAlta
             // 
@@ -150,7 +149,7 @@ namespace UI.Desktop
             this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.Especialidades_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(dgvEspecialidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -172,5 +171,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.DataGridView dgvEspecialidades;
     }
 }
