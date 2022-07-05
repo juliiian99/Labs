@@ -52,10 +52,10 @@ namespace UI.Desktop
                     this.btnAceptar.Text = "Eliminar";
                     break;
                 case ModoForm.Modificacion:
-                    this.btnAceptar.Text = "Modificacion";
+                    this.btnAceptar.Text = "Modificar";
                     break;
                 case ModoForm.Consulta:
-                    this.btnAceptar.Text = "Consulta";
+                    this.btnAceptar.Text = "Consultar";
                     break;
             }
         }
@@ -113,7 +113,7 @@ namespace UI.Desktop
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

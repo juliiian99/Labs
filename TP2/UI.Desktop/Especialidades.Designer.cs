@@ -72,7 +72,10 @@ namespace UI.Desktop
             this.tableLayoutPanel1.SetColumnSpan(this.dgvEspecialidades, 4);
             this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEspecialidades.Location = new System.Drawing.Point(3, 23);
+            this.dgvEspecialidades.MultiSelect = false;
             this.dgvEspecialidades.Name = "dgvEspecialidades";
+            this.dgvEspecialidades.ReadOnly = true;
+            this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEspecialidades.Size = new System.Drawing.Size(794, 387);
             this.dgvEspecialidades.TabIndex = 0;
             // 

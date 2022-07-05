@@ -31,10 +31,6 @@ namespace UI.Desktop
             this.Close();
         }
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void btnAlta_Click(object sender, EventArgs e)
         {

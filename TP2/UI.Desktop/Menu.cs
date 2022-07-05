@@ -17,7 +17,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
             Usuarios usuarioAbmc = new Usuarios();
             usuarioAbmc.ShowDialog();
@@ -35,9 +35,9 @@ namespace UI.Desktop
             materiasAbmc.ShowDialog();
         }
 
-        private void btnPlanes_Click(object sender, EventArgs e)
+        private void btnComisiones_Click(object sender, EventArgs e)
         {
-            Planes planesAbmc = new Planes();
+            Comisiones planesAbmc = new Comisiones();
             planesAbmc.ShowDialog();
         }
     }

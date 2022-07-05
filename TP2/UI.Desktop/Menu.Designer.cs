@@ -43,7 +43,7 @@ namespace UI.Desktop
             this.btnUsuarios.TabIndex = 0;
             this.btnUsuarios.Text = "ABMC Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.button1_Click);
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnEspecialidad
             // 
@@ -71,15 +71,15 @@ namespace UI.Desktop
             this.btnPlanes.Name = "btnPlanes";
             this.btnPlanes.Size = new System.Drawing.Size(75, 41);
             this.btnPlanes.TabIndex = 3;
-            this.btnPlanes.Text = "ABMC Planes";
+            this.btnPlanes.Text = "ABMC Comisiones";
             this.btnPlanes.UseVisualStyleBackColor = true;
-            this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
+            this.btnPlanes.Click += new System.EventHandler(this.btnComisiones_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(671, 208);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.btnMaterias);
             this.Controls.Add(this.btnEspecialidad);
