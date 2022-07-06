@@ -30,13 +30,13 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.tcComisiones = new System.Windows.Forms.ToolStripContainer();
-            this.tsComisiones = new System.Windows.Forms.ToolStrip();
             this.tlComisiones = new System.Windows.Forms.TableLayoutPanel();
             this.dgvComisiones = new System.Windows.Forms.DataGridView();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.tsComisiones = new System.Windows.Forms.ToolStrip();
             this.tcComisiones.ContentPanel.SuspendLayout();
             this.tcComisiones.TopToolStripPanel.SuspendLayout();
             this.tcComisiones.SuspendLayout();
@@ -50,25 +50,17 @@ namespace UI.Desktop
             // tcComisiones.ContentPanel
             // 
             this.tcComisiones.ContentPanel.Controls.Add(this.tlComisiones);
-            this.tcComisiones.ContentPanel.Size = new System.Drawing.Size(778, 425);
+            this.tcComisiones.ContentPanel.Size = new System.Drawing.Size(781, 428);
             this.tcComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcComisiones.Location = new System.Drawing.Point(0, 0);
             this.tcComisiones.Name = "tcComisiones";
-            this.tcComisiones.Size = new System.Drawing.Size(778, 450);
+            this.tcComisiones.Size = new System.Drawing.Size(781, 453);
             this.tcComisiones.TabIndex = 0;
             this.tcComisiones.Text = "toolStripContainer1";
             // 
             // tcComisiones.TopToolStripPanel
             // 
             this.tcComisiones.TopToolStripPanel.Controls.Add(this.tsComisiones);
-            // 
-            // tsComisiones
-            // 
-            this.tsComisiones.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsComisiones.Location = new System.Drawing.Point(3, 0);
-            this.tsComisiones.Name = "tsComisiones";
-            this.tsComisiones.Size = new System.Drawing.Size(111, 25);
-            this.tsComisiones.TabIndex = 0;
             // 
             // tlComisiones
             // 
@@ -88,7 +80,7 @@ namespace UI.Desktop
             this.tlComisiones.RowCount = 2;
             this.tlComisiones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlComisiones.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlComisiones.Size = new System.Drawing.Size(778, 425);
+            this.tlComisiones.Size = new System.Drawing.Size(781, 428);
             this.tlComisiones.TabIndex = 0;
             // 
             // dgvComisiones
@@ -103,7 +95,7 @@ namespace UI.Desktop
             this.dgvComisiones.Name = "dgvComisiones";
             this.dgvComisiones.ReadOnly = true;
             this.dgvComisiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComisiones.Size = new System.Drawing.Size(772, 390);
+            this.dgvComisiones.Size = new System.Drawing.Size(778, 390);
             this.dgvComisiones.TabIndex = 0;
             // 
             // btnAlta
@@ -154,11 +146,19 @@ namespace UI.Desktop
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // tsComisiones
+            // 
+            this.tsComisiones.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsComisiones.Location = new System.Drawing.Point(3, 0);
+            this.tsComisiones.Name = "tsComisiones";
+            this.tsComisiones.Size = new System.Drawing.Size(111, 25);
+            this.tsComisiones.TabIndex = 0;
+            // 
             // Comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 450);
+            this.ClientSize = new System.Drawing.Size(781, 453);
             this.Controls.Add(this.tcComisiones);
             this.Name = "Comisiones";
             this.Text = "Comisiones";

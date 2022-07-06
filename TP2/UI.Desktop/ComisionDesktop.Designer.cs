@@ -29,7 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlComisiones = new System.Windows.Forms.TableLayoutPanel();
             this.lblID = new System.Windows.Forms.Label();
             this.lbl_descomision = new System.Windows.Forms.Label();
             this.lbl_anioespecial = new System.Windows.Forms.Label();
@@ -40,41 +40,41 @@ namespace UI.Desktop
             this.cbxIDPlan = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlComisiones.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tlComisiones
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_descomision, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_anioespecial, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_idPlan, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtDescomision, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtAnioespecial, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbxIDPlan, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(594, 269);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tlComisiones.ColumnCount = 4;
+            this.tlComisiones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlComisiones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlComisiones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlComisiones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlComisiones.Controls.Add(this.lblID, 0, 0);
+            this.tlComisiones.Controls.Add(this.lbl_descomision, 0, 1);
+            this.tlComisiones.Controls.Add(this.lbl_anioespecial, 2, 0);
+            this.tlComisiones.Controls.Add(this.lbl_idPlan, 2, 1);
+            this.tlComisiones.Controls.Add(this.txtID, 1, 0);
+            this.tlComisiones.Controls.Add(this.txtDescomision, 1, 1);
+            this.tlComisiones.Controls.Add(this.txtAnioespecial, 3, 0);
+            this.tlComisiones.Controls.Add(this.cbxIDPlan, 3, 1);
+            this.tlComisiones.Controls.Add(this.btnAceptar, 1, 2);
+            this.tlComisiones.Controls.Add(this.btnCancelar, 3, 2);
+            this.tlComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlComisiones.Location = new System.Drawing.Point(0, 0);
+            this.tlComisiones.Name = "tlComisiones";
+            this.tlComisiones.RowCount = 3;
+            this.tlComisiones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlComisiones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlComisiones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlComisiones.Size = new System.Drawing.Size(566, 269);
+            this.tlComisiones.TabIndex = 0;
             // 
             // lblID
             // 
             this.lblID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(65, 52);
+            this.lblID.Location = new System.Drawing.Point(61, 52);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 0;
@@ -84,7 +84,7 @@ namespace UI.Desktop
             // 
             this.lbl_descomision.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_descomision.AutoSize = true;
-            this.lbl_descomision.Location = new System.Drawing.Point(20, 162);
+            this.lbl_descomision.Location = new System.Drawing.Point(17, 162);
             this.lbl_descomision.Name = "lbl_descomision";
             this.lbl_descomision.Size = new System.Drawing.Size(107, 26);
             this.lbl_descomision.TabIndex = 1;
@@ -94,7 +94,7 @@ namespace UI.Desktop
             // 
             this.lbl_anioespecial.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_anioespecial.AutoSize = true;
-            this.lbl_anioespecial.Location = new System.Drawing.Point(326, 52);
+            this.lbl_anioespecial.Location = new System.Drawing.Point(308, 52);
             this.lbl_anioespecial.Name = "lbl_anioespecial";
             this.lbl_anioespecial.Size = new System.Drawing.Size(88, 13);
             this.lbl_anioespecial.TabIndex = 2;
@@ -104,7 +104,7 @@ namespace UI.Desktop
             // 
             this.lbl_idPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_idPlan.AutoSize = true;
-            this.lbl_idPlan.Location = new System.Drawing.Point(349, 169);
+            this.lbl_idPlan.Location = new System.Drawing.Point(331, 169);
             this.lbl_idPlan.Name = "lbl_idPlan";
             this.lbl_idPlan.Size = new System.Drawing.Size(42, 13);
             this.lbl_idPlan.TabIndex = 3;
@@ -113,7 +113,7 @@ namespace UI.Desktop
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtID.Location = new System.Drawing.Point(172, 48);
+            this.txtID.Location = new System.Drawing.Point(161, 48);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 20);
@@ -122,7 +122,7 @@ namespace UI.Desktop
             // txtDescomision
             // 
             this.txtDescomision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDescomision.Location = new System.Drawing.Point(172, 165);
+            this.txtDescomision.Location = new System.Drawing.Point(161, 165);
             this.txtDescomision.Name = "txtDescomision";
             this.txtDescomision.Size = new System.Drawing.Size(100, 20);
             this.txtDescomision.TabIndex = 5;
@@ -130,7 +130,7 @@ namespace UI.Desktop
             // txtAnioespecial
             // 
             this.txtAnioespecial.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAnioespecial.Location = new System.Drawing.Point(469, 48);
+            this.txtAnioespecial.Location = new System.Drawing.Point(444, 48);
             this.txtAnioespecial.Name = "txtAnioespecial";
             this.txtAnioespecial.Size = new System.Drawing.Size(100, 20);
             this.txtAnioespecial.TabIndex = 6;
@@ -139,7 +139,7 @@ namespace UI.Desktop
             // 
             this.cbxIDPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxIDPlan.FormattingEnabled = true;
-            this.cbxIDPlan.Location = new System.Drawing.Point(458, 165);
+            this.cbxIDPlan.Location = new System.Drawing.Point(434, 165);
             this.cbxIDPlan.Name = "cbxIDPlan";
             this.cbxIDPlan.Size = new System.Drawing.Size(121, 21);
             this.cbxIDPlan.TabIndex = 7;
@@ -147,18 +147,18 @@ namespace UI.Desktop
             // btnAceptar
             // 
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptar.Location = new System.Drawing.Point(184, 240);
+            this.btnAceptar.Location = new System.Drawing.Point(174, 240);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.Location = new System.Drawing.Point(481, 240);
+            this.btnCancelar.Location = new System.Drawing.Point(457, 240);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
@@ -170,20 +170,20 @@ namespace UI.Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 269);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(566, 269);
+            this.Controls.Add(this.tlComisiones);
             this.Name = "ComisionDesktop";
             this.Text = "Comisiones";
             this.Load += new System.EventHandler(this.ComisionDesktop_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tlComisiones.ResumeLayout(false);
+            this.tlComisiones.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlComisiones;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lbl_descomision;
         private System.Windows.Forms.Label lbl_anioespecial;

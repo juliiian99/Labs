@@ -16,38 +16,38 @@ using System.Configuration;
 
 namespace UI.Desktop
 {
-    public partial class ComisionDesktop : ApplicationForm
+    public partial class MateriaDesktop : ApplicationForm
     {
-        private Comision _ComisionActual;
-        public Comision ComisionActual
+        private Materia _MateriaActual;
+        public Materia MateriaActual
         {
-            get { return _ComisionActual; }
-            set { _ComisionActual = value; }
+            get { return _MateriaActual; }
+            set { _MateriaActual = value; }
+        }
+        public MateriaDesktop(ModoForm modo) : this()
+        {
         }
 
-        public ComisionDesktop(ModoForm modo) : this()
-        {
-        }
-
-        public ComisionDesktop()
+        public MateriaDesktop()
         {
             InitializeComponent();
         }
 
-        public ComisionDesktop(int ID, ModoForm modo) : this()
+        public MateriaDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            ComisionLogic cl = new ComisionLogic();
-            this.ComisionActual = cl.GetOne(ID);
+            MateriaLogic ml = new MateriaLogic();
+            this.MateriaActual = ml.GetOne(ID);
             this.MapearDeDatos();
         }
 
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.ComisionActual.ID.ToString();
-            this.txtDescomision.Text = this.ComisionActual.Descripcion;
-            this.txtAnioespecial.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.cbxIDPlan.Text = this.ComisionActual.IDPlan.ToString();
+            this.txtID.Text = this.MateriaActual.ID.ToString();
+            this.txtDescMateria.Text = this.MateriaActual.Descripcion;
+            this.txtHsSemana.Text = this.MateriaActual.HSSemanales.ToString();
+            this.txtHorasAnual.Text = this.MateriaActual.HSTotales.ToString();
+            this.cbxIDPlan.Text = this.MateriaActual.IDPlan.ToString();
 
             switch (Modo)
             {
@@ -68,37 +68,42 @@ namespace UI.Desktop
 
         public override void MapearADatos()
         {
-            this.ComisionActual = new Comision();
+            this.MateriaActual = new Materia();
             switch (Modo)
             {
                 case ModoForm.Alta:
-                    this.ComisionActual.Descripcion = this.txtDescomision.Text;
-                    this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
-                    this.ComisionActual.State = BusinessEntity.States.New;
+                    this.MateriaActual.Descripcion = this.txtDescMateria.Text;
+                    this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
+                    this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
+                    this.MateriaActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.MateriaActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
-                    this.ComisionActual.ID = int.Parse(this.txtID.Text);
-                    this.ComisionActual.Descripcion = this.txtDescomision.Text;
-                    this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
-                    this.ComisionActual.State = BusinessEntity.States.Modified;
+                    this.MateriaActual.ID = int.Parse(this.txtID.Text);
+                    this.MateriaActual.Descripcion = this.txtDescMateria.Text;
+                    this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
+                    this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
+                    this.MateriaActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.MateriaActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
-                    this.ComisionActual.ID = int.Parse(this.txtID.Text);
-                    this.ComisionActual.Descripcion = this.txtDescomision.Text;
-                    this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
-                    this.ComisionActual.State = BusinessEntity.States.Deleted;
+                    this.MateriaActual.ID = int.Parse(this.txtID.Text);
+                    this.MateriaActual.Descripcion = this.txtDescMateria.Text;
+                    this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
+                    this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
+                    this.MateriaActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.MateriaActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
-                    this.ComisionActual.State = BusinessEntity.States.Unmodified;
+                    this.MateriaActual.State = BusinessEntity.States.Unmodified;
                     break;
             }
         }
+
         public new bool Validar()
         {
-            if (!this.txtDescomision.Text.Equals("") && !this.txtAnioespecial.Text.Equals(""))
+            if (!this.txtDescMateria.Text.Equals("") && !this.txtHsSemana.Text.Equals("") &&
+                !this.txtHorasAnual.Text.Equals("") && !this.cbxIDPlan.Text.Equals(""))
             {
                 return true;
             }
@@ -112,8 +117,8 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            ComisionAdapter ca = new ComisionAdapter();
-            ca.Save(this.ComisionActual);
+            MateriaAdapter ma = new MateriaAdapter();
+            ma.Save(this.MateriaActual);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -125,23 +130,22 @@ namespace UI.Desktop
             }
         }
 
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         const string consKeyDefaultCnnString = "ConnStringExpress";
-        protected SqlConnection sqlConn;
+        protected SqlConnection sqlConn; 
 
-        private void ComisionDesktop_Load(object sender, EventArgs e)
+        private void MateriaDesktop_Load(object sender, EventArgs e)
         {
             cbxIDPlan.DropDownStyle = ComboBoxStyle.DropDownList;
             this.sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString);
             sqlConn.Open();
             SqlCommand cargaIDplan = new SqlCommand("SELECT id_plan from planes", sqlConn);
             SqlDataReader cmdCargaIDplan = cargaIDplan.ExecuteReader();
-            while(cmdCargaIDplan.Read())
+            while (cmdCargaIDplan.Read())
             {
                 cbxIDPlan.Items.Add(cmdCargaIDplan["id_plan"].ToString());
             }
