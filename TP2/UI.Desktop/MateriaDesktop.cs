@@ -47,7 +47,7 @@ namespace UI.Desktop
             this.txtDescMateria.Text = this.MateriaActual.Descripcion;
             this.txtHsSemana.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHorasAnual.Text = this.MateriaActual.HSTotales.ToString();
-            this.cbxIDPlan.Text = this.MateriaActual.IDPlan.ToString();
+            this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
 
             switch (Modo)
             {
@@ -75,7 +75,7 @@ namespace UI.Desktop
                     this.MateriaActual.Descripcion = this.txtDescMateria.Text;
                     this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
                     this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
-                    this.MateriaActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.MateriaActual.IDPlan = int.Parse(this.txtIDPlan.Text);
                     this.MateriaActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
@@ -83,7 +83,7 @@ namespace UI.Desktop
                     this.MateriaActual.Descripcion = this.txtDescMateria.Text;
                     this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
                     this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
-                    this.MateriaActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.MateriaActual.IDPlan = int.Parse(this.txtIDPlan.Text);
                     this.MateriaActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
@@ -91,7 +91,7 @@ namespace UI.Desktop
                     this.MateriaActual.Descripcion = this.txtDescMateria.Text;
                     this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
                     this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
-                    this.MateriaActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.MateriaActual.IDPlan = int.Parse(this.txtIDPlan.Text);
                     this.MateriaActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
@@ -102,10 +102,13 @@ namespace UI.Desktop
 
         public new bool Validar()
         {
+            PlanLogic planActual = new PlanLogic();
+            var plan = planActual.GetOne(Convert.ToInt32(txtIDPlan.Text));
             if (!this.txtDescMateria.Text.Equals("") && !this.txtHsSemana.Text.Equals("") &&
-                !this.txtHorasAnual.Text.Equals("") && !this.cbxIDPlan.Text.Equals(""))
+                !this.txtHorasAnual.Text.Equals("") && !this.txtIDPlan.Text.Equals(""))
             {
-                return true;
+                if (!(plan is null)) return true;
+                else return false;
             }
             else
             {
@@ -128,6 +131,7 @@ namespace UI.Desktop
                 GuardarCambios();
                 this.Close();
             }
+            else this.Notificar("Error en algun campo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -135,21 +139,8 @@ namespace UI.Desktop
             this.Close();
         }
 
-        const string consKeyDefaultCnnString = "ConnStringExpress";
-        protected SqlConnection sqlConn; 
-
         private void MateriaDesktop_Load(object sender, EventArgs e)
         {
-            cbxIDPlan.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString);
-            sqlConn.Open();
-            SqlCommand cargaIDplan = new SqlCommand("SELECT id_plan from planes", sqlConn);
-            SqlDataReader cmdCargaIDplan = cargaIDplan.ExecuteReader();
-            while (cmdCargaIDplan.Read())
-            {
-                cbxIDPlan.Items.Add(cmdCargaIDplan["id_plan"].ToString());
-            }
-            sqlConn.Close();
         }
     }
 }

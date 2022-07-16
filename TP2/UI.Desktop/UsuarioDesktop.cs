@@ -142,25 +142,6 @@ namespace UI.Desktop
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -169,10 +150,6 @@ namespace UI.Desktop
                 GuardarCambios();
                 this.Close();
             }
-        }
-
-        private void tableLayoutPanel1_Click(object sender, EventArgs e)
-        {
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

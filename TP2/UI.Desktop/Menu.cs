@@ -37,8 +37,14 @@ namespace UI.Desktop
 
         private void btnComisiones_Click(object sender, EventArgs e)
         {
-            Comisiones planesAbmc = new Comisiones();
-            planesAbmc.ShowDialog();
+            Comisiones comisionesAbmc = new Comisiones();
+            comisionesAbmc.ShowDialog();
+        }
+
+        private void btnPlanes_Click(object sender, EventArgs e)
+        {
+            Planes planAbmc = new Planes();
+            planAbmc.ShowDialog();
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblUsuarioDskp = new System.Windows.Forms.TableLayoutPanel();
             this.lblID = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -48,46 +48,44 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tblUsuarioDskp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tblUsuarioDskp
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblClave, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblApellido, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.07692F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.92308F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(605, 251);
-            this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Click += new System.EventHandler(this.tableLayoutPanel1_Click);
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tblUsuarioDskp.ColumnCount = 4;
+            this.tblUsuarioDskp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblUsuarioDskp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tblUsuarioDskp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblUsuarioDskp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tblUsuarioDskp.Controls.Add(this.lblID, 0, 0);
+            this.tblUsuarioDskp.Controls.Add(this.lblNombre, 0, 1);
+            this.tblUsuarioDskp.Controls.Add(this.lblEmail, 0, 2);
+            this.tblUsuarioDskp.Controls.Add(this.lblClave, 0, 3);
+            this.tblUsuarioDskp.Controls.Add(this.lblApellido, 2, 1);
+            this.tblUsuarioDskp.Controls.Add(this.lblUsuario, 2, 2);
+            this.tblUsuarioDskp.Controls.Add(this.lblConfirmarClave, 2, 3);
+            this.tblUsuarioDskp.Controls.Add(this.txtID, 1, 0);
+            this.tblUsuarioDskp.Controls.Add(this.txtNombre, 1, 1);
+            this.tblUsuarioDskp.Controls.Add(this.txtEmail, 1, 2);
+            this.tblUsuarioDskp.Controls.Add(this.txtClave, 1, 3);
+            this.tblUsuarioDskp.Controls.Add(this.txtUsuario, 3, 2);
+            this.tblUsuarioDskp.Controls.Add(this.txtConfirmarClave, 3, 3);
+            this.tblUsuarioDskp.Controls.Add(this.chkHabilitado, 2, 0);
+            this.tblUsuarioDskp.Controls.Add(this.btnAceptar, 2, 4);
+            this.tblUsuarioDskp.Controls.Add(this.btnCancelar, 3, 4);
+            this.tblUsuarioDskp.Controls.Add(this.txtApellido, 3, 1);
+            this.tblUsuarioDskp.Location = new System.Drawing.Point(12, 12);
+            this.tblUsuarioDskp.Name = "tblUsuarioDskp";
+            this.tblUsuarioDskp.RowCount = 5;
+            this.tblUsuarioDskp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.07692F));
+            this.tblUsuarioDskp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.92308F));
+            this.tblUsuarioDskp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tblUsuarioDskp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tblUsuarioDskp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tblUsuarioDskp.Size = new System.Drawing.Size(605, 251);
+            this.tblUsuarioDskp.TabIndex = 0;
             // 
             // lblID
             // 
@@ -168,7 +166,6 @@
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(159, 20);
             this.txtID.TabIndex = 8;
-            this.txtID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtNombre
             // 
@@ -250,19 +247,18 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(164, 20);
             this.txtApellido.TabIndex = 13;
-            this.txtApellido.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 290);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tblUsuarioDskp);
             this.Name = "UsuarioDesktop";
             this.Text = "Usuario Desktop";
             this.Load += new System.EventHandler(this.UsuarioDesktop_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tblUsuarioDskp.ResumeLayout(false);
+            this.tblUsuarioDskp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -270,7 +266,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblUsuarioDskp;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblEmail;
