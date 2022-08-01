@@ -39,6 +39,7 @@ namespace UI.Desktop
             this.btnConsultar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -46,43 +47,45 @@ namespace UI.Desktop
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel1.Controls.Add(this.dgvEspecialidades, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAlta, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnBaja, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnModificar, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnConsultar, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.52941F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.470589F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.46512F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.534883F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvEspecialidades
             // 
             this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dgvEspecialidades, 4);
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvEspecialidades, 5);
             this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEspecialidades.Location = new System.Drawing.Point(3, 23);
             this.dgvEspecialidades.MultiSelect = false;
             this.dgvEspecialidades.Name = "dgvEspecialidades";
             this.dgvEspecialidades.ReadOnly = true;
             this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidades.Size = new System.Drawing.Size(794, 387);
+            this.dgvEspecialidades.Size = new System.Drawing.Size(794, 383);
             this.dgvEspecialidades.TabIndex = 0;
             // 
             // btnAlta
             // 
             this.btnAlta.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAlta.Location = new System.Drawing.Point(165, 420);
+            this.btnAlta.Location = new System.Drawing.Point(120, 418);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(152, 23);
             this.btnAlta.TabIndex = 1;
@@ -93,9 +96,9 @@ namespace UI.Desktop
             // btnBaja
             // 
             this.btnBaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnBaja.Location = new System.Drawing.Point(323, 420);
+            this.btnBaja.Location = new System.Drawing.Point(278, 418);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(154, 23);
+            this.btnBaja.Size = new System.Drawing.Size(131, 23);
             this.btnBaja.TabIndex = 2;
             this.btnBaja.Text = "Baja";
             this.btnBaja.UseVisualStyleBackColor = true;
@@ -104,9 +107,9 @@ namespace UI.Desktop
             // btnModificar
             // 
             this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnModificar.Location = new System.Drawing.Point(483, 420);
+            this.btnModificar.Location = new System.Drawing.Point(415, 418);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(154, 23);
+            this.btnModificar.Size = new System.Drawing.Size(131, 23);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -115,9 +118,9 @@ namespace UI.Desktop
             // btnConsultar
             // 
             this.btnConsultar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnConsultar.Location = new System.Drawing.Point(643, 420);
+            this.btnConsultar.Location = new System.Drawing.Point(552, 418);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(154, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(131, 23);
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -140,6 +143,17 @@ namespace UI.Desktop
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSalir.Location = new System.Drawing.Point(689, 418);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(108, 23);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // Especialidades
             // 
@@ -175,5 +189,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dgvEspecialidades;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
