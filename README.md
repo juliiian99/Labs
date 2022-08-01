@@ -1,3 +1,8 @@
+# Falta profesores, alumnos y materias
+
+# link doc ref
+https://docs.google.com/document/pub?id=1GICtsXwkwekmSGhYVTpCwn4DDk1v-wUqMSb1xrZBc88&pli=1
+
 # Labs-2021
 
 En este repositorio se encuentran todos los laboratorios utilizados en la asignatura Tecnologías de Desarrollo de Software IDE, materia electiva de la UTN FRRo.
