@@ -34,11 +34,12 @@ namespace UI.Desktop
             this.btnMaterias = new System.Windows.Forms.Button();
             this.btnComisiones = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(81, 84);
+            this.btnUsuarios.Location = new System.Drawing.Point(40, 44);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(75, 40);
             this.btnUsuarios.TabIndex = 0;
@@ -48,7 +49,7 @@ namespace UI.Desktop
             // 
             // btnEspecialidad
             // 
-            this.btnEspecialidad.Location = new System.Drawing.Point(219, 83);
+            this.btnEspecialidad.Location = new System.Drawing.Point(178, 43);
             this.btnEspecialidad.Name = "btnEspecialidad";
             this.btnEspecialidad.Size = new System.Drawing.Size(75, 41);
             this.btnEspecialidad.TabIndex = 1;
@@ -58,7 +59,7 @@ namespace UI.Desktop
             // 
             // btnMaterias
             // 
-            this.btnMaterias.Location = new System.Drawing.Point(356, 81);
+            this.btnMaterias.Location = new System.Drawing.Point(315, 41);
             this.btnMaterias.Name = "btnMaterias";
             this.btnMaterias.Size = new System.Drawing.Size(75, 42);
             this.btnMaterias.TabIndex = 2;
@@ -68,7 +69,7 @@ namespace UI.Desktop
             // 
             // btnComisiones
             // 
-            this.btnComisiones.Location = new System.Drawing.Point(148, 203);
+            this.btnComisiones.Location = new System.Drawing.Point(40, 151);
             this.btnComisiones.Name = "btnComisiones";
             this.btnComisiones.Size = new System.Drawing.Size(75, 41);
             this.btnComisiones.TabIndex = 3;
@@ -78,19 +79,30 @@ namespace UI.Desktop
             // 
             // btnPlanes
             // 
-            this.btnPlanes.Location = new System.Drawing.Point(298, 203);
+            this.btnPlanes.Location = new System.Drawing.Point(178, 151);
             this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(78, 40);
+            this.btnPlanes.Size = new System.Drawing.Size(75, 40);
             this.btnPlanes.TabIndex = 4;
             this.btnPlanes.Text = "ABMC\r\nPlanes\r\n";
             this.btnPlanes.UseVisualStyleBackColor = true;
             this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
             // 
+            // btnCursos
+            // 
+            this.btnCursos.Location = new System.Drawing.Point(315, 151);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(75, 36);
+            this.btnCursos.TabIndex = 5;
+            this.btnCursos.Text = "ABMC\r\nCursos\r\n";
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 327);
+            this.ClientSize = new System.Drawing.Size(442, 241);
+            this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.btnMaterias);
@@ -109,5 +121,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Button btnComisiones;
         private System.Windows.Forms.Button btnPlanes;
+        private System.Windows.Forms.Button btnCursos;
     }
 }

@@ -19,7 +19,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
             UsuarioAdapter ua = new UsuarioAdapter();
             Usuario u = ua.Login(this.txtUsuario.Text, this.txtContraseña.Text);
@@ -30,8 +30,10 @@ namespace UI.Desktop
             }
             else
             {
-                // Agregar mensaje
+                MessageBox.Show("Usuario y/o contraseña incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
     }
 }

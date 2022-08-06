@@ -44,7 +44,7 @@ namespace UI.Desktop
             this.btnIngresar.TabIndex = 0;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.button1_Click);
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtUsuario
             // 
@@ -59,6 +59,7 @@ namespace UI.Desktop
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(151, 20);
             this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // lblUsuario
             // 

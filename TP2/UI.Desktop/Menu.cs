@@ -46,5 +46,11 @@ namespace UI.Desktop
             Planes planAbmc = new Planes();
             planAbmc.ShowDialog();
         }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            Cursos cursoAbmc = new Cursos();
+            cursoAbmc.ShowDialog();
+        }
     }
 }

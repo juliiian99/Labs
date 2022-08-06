@@ -33,10 +33,10 @@ namespace UI.Desktop
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpEspecialidadD = new System.Windows.Forms.TableLayoutPanel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpEspecialidadD.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -76,28 +76,28 @@ namespace UI.Desktop
             this.lblID.TabIndex = 0;
             this.lblID.Text = "ID";
             // 
-            // tableLayoutPanel1
+            // tlpEspecialidadD
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
-            this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.07692F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.92308F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(422, 196);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tlpEspecialidadD.ColumnCount = 2;
+            this.tlpEspecialidadD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpEspecialidadD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.tlpEspecialidadD.Controls.Add(this.lblID, 0, 0);
+            this.tlpEspecialidadD.Controls.Add(this.txtID, 1, 0);
+            this.tlpEspecialidadD.Controls.Add(this.txtDescripcion, 1, 1);
+            this.tlpEspecialidadD.Controls.Add(this.lblEmail, 0, 1);
+            this.tlpEspecialidadD.Controls.Add(this.btnAceptar, 0, 2);
+            this.tlpEspecialidadD.Controls.Add(this.btnCancelar, 1, 2);
+            this.tlpEspecialidadD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpEspecialidadD.Location = new System.Drawing.Point(0, 0);
+            this.tlpEspecialidadD.Name = "tlpEspecialidadD";
+            this.tlpEspecialidadD.RowCount = 3;
+            this.tlpEspecialidadD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.07692F));
+            this.tlpEspecialidadD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.92308F));
+            this.tlpEspecialidadD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tlpEspecialidadD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpEspecialidadD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpEspecialidadD.Size = new System.Drawing.Size(422, 196);
+            this.tlpEspecialidadD.TabIndex = 1;
             // 
             // btnAceptar
             // 
@@ -126,11 +126,11 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 196);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlpEspecialidadD);
             this.Name = "EspecialidadDesktop";
             this.Text = "EspecialidadDesktop";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tlpEspecialidadD.ResumeLayout(false);
+            this.tlpEspecialidadD.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -141,7 +141,7 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpEspecialidadD;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

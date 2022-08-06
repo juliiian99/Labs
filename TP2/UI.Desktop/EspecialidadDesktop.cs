@@ -30,6 +30,7 @@ namespace UI.Desktop
 
         public EspecialidadDesktop(ModoForm modo) : this()
         {
+
         }
         public EspecialidadDesktop(int ID, ModoForm modo) : this()
         {

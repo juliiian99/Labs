@@ -73,9 +73,9 @@
             this.tblUsuarioDskp.Controls.Add(this.txtUsuario, 3, 2);
             this.tblUsuarioDskp.Controls.Add(this.txtConfirmarClave, 3, 3);
             this.tblUsuarioDskp.Controls.Add(this.chkHabilitado, 2, 0);
-            this.tblUsuarioDskp.Controls.Add(this.btnAceptar, 2, 4);
             this.tblUsuarioDskp.Controls.Add(this.btnCancelar, 3, 4);
             this.tblUsuarioDskp.Controls.Add(this.txtApellido, 3, 1);
+            this.tblUsuarioDskp.Controls.Add(this.btnAceptar, 1, 4);
             this.tblUsuarioDskp.Location = new System.Drawing.Point(12, 12);
             this.tblUsuarioDskp.Name = "tblUsuarioDskp";
             this.tblUsuarioDskp.RowCount = 5;
@@ -220,7 +220,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptar.Location = new System.Drawing.Point(330, 217);
+            this.btnAceptar.Location = new System.Drawing.Point(180, 217);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 17;
