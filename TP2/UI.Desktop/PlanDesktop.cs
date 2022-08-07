@@ -44,7 +44,7 @@ namespace UI.Desktop
         {
             this.txtIDPlan.Text = this.PlanActual.ID.ToString();
             this.txtDescPlan.Text = this.PlanActual.Descripcion;
-            this.txtIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+            this.cbIDEspecialidad.SelectedValue = this.PlanActual.IDEspecialidad.ToString();
 
             switch (Modo)
             {
@@ -70,19 +70,19 @@ namespace UI.Desktop
             {
                 case ModoForm.Alta:
                     this.PlanActual.Descripcion = this.txtDescPlan.Text;
-                    this.PlanActual.IDEspecialidad = int.Parse(this.txtIDEspecialidad.Text);
+                    this.PlanActual.IDEspecialidad = Convert.ToInt32(this.cbIDEspecialidad.SelectedValue);
                     this.PlanActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
                     this.PlanActual.ID = int.Parse(this.txtIDPlan.Text);
                     this.PlanActual.Descripcion = this.txtDescPlan.Text;
-                    this.PlanActual.IDEspecialidad = int.Parse(this.txtIDEspecialidad.Text);
+                    this.PlanActual.IDEspecialidad = Convert.ToInt32(this.cbIDEspecialidad.SelectedValue);
                     this.PlanActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
                     this.PlanActual.ID = int.Parse(this.txtIDPlan.Text);
                     this.PlanActual.Descripcion = this.txtDescPlan.Text;
-                    this.PlanActual.IDEspecialidad = int.Parse(this.txtIDEspecialidad.Text);
+                    this.PlanActual.IDEspecialidad = Convert.ToInt32(this.cbIDEspecialidad.SelectedValue);
                     this.PlanActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
@@ -93,12 +93,9 @@ namespace UI.Desktop
 
         public new bool Validar()
         {
-            EspecialidadLogic espActual = new EspecialidadLogic();
-            var esp = espActual.GetOne(Convert.ToInt32(txtIDEspecialidad.Text));
-            if (!this.txtDescPlan.Text.Equals("") && !this.txtIDEspecialidad.Text.Equals(""))
+            if (!this.txtDescPlan.Text.Equals("") )
             {
-                if (!(esp is null)) return true;
-                else return false;
+               return true;
             }
             else
             {
@@ -127,6 +124,14 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PlanDesktop_Load(object sender, EventArgs e)
+        {
+            PlanLogic plan = new PlanLogic();
+            cbIDEspecialidad.DataSource = plan.GetEspecialidades();
+            cbIDEspecialidad.ValueMember = "id_especialidad";
+            cbIDEspecialidad.DisplayMember = "desc_especialidad";
         }
     }
 }

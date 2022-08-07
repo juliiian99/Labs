@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,7 +46,7 @@ namespace UI.Desktop
             this.txtID.Text = this.ComisionActual.ID.ToString();
             this.txtDescomision.Text = this.ComisionActual.Descripcion;
             this.txtAnioespecial.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.cbxIDPlan.Text = this.ComisionActual.IDPlan.ToString();
+            this.cbIDPlan.Text = this.ComisionActual.IDPlan.ToString();
 
             switch (Modo)
             {
@@ -74,21 +73,21 @@ namespace UI.Desktop
                 case ModoForm.Alta:
                     this.ComisionActual.Descripcion = this.txtDescomision.Text;
                     this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.ComisionActual.IDPlan = int.Parse(this.cbIDPlan.Text);
                     this.ComisionActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
                     this.ComisionActual.ID = int.Parse(this.txtID.Text);
                     this.ComisionActual.Descripcion = this.txtDescomision.Text;
                     this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.ComisionActual.IDPlan = int.Parse(this.cbIDPlan.Text);
                     this.ComisionActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
                     this.ComisionActual.ID = int.Parse(this.txtID.Text);
                     this.ComisionActual.Descripcion = this.txtDescomision.Text;
                     this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbxIDPlan.Text);
+                    this.ComisionActual.IDPlan = int.Parse(this.cbIDPlan.Text);
                     this.ComisionActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
@@ -131,21 +130,13 @@ namespace UI.Desktop
             this.Close();
         }
 
-        const string consKeyDefaultCnnString = "ConnStringExpress";
-        protected SqlConnection sqlConn;
 
         private void ComisionDesktop_Load(object sender, EventArgs e)
         {
-            cbxIDPlan.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString);
-            sqlConn.Open();
-            SqlCommand cargaIDplan = new SqlCommand("SELECT id_plan from planes", sqlConn);
-            SqlDataReader cmdCargaIDplan = cargaIDplan.ExecuteReader();
-            while(cmdCargaIDplan.Read())
-            {
-                cbxIDPlan.Items.Add(cmdCargaIDplan["id_plan"].ToString());
-            }
-            sqlConn.Close();
+            ComisionLogic comision = new ComisionLogic();
+            cbIDPlan.DataSource = comision.GetPlanes();
+            cbIDPlan.ValueMember = "id_plan";
+            cbIDPlan.DisplayMember = "desc_plan";
         }
     }
 }

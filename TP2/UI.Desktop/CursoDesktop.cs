@@ -101,10 +101,6 @@ namespace UI.Desktop
 
         public new bool Validar()
         {
-            MateriaLogic materiaActual = new MateriaLogic();
-            var materia = materiaActual.GetOne(Convert.ToInt32(cbIDMateria.SelectedValue));
-            ComisionLogic comisionActual = new ComisionLogic();
-            var comision = comisionActual.GetOne(Convert.ToInt32(cbIDComision.SelectedValue));
             if (!this.txtAnioCalendario.Text.Equals("") && !this.txtCupo.Text.Equals(""))
             {
                 return true;

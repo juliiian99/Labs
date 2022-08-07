@@ -161,5 +161,28 @@ namespace Data.Database
             }
             plan.State = BusinessEntity.States.Unmodified;
         }
+
+        public DataTable GetEspecialidades()
+        {
+            DataTable especialidades = new DataTable();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdEspecialidad = new SqlCommand("select id_especialidad, desc_especialidad from especialidades", sqlConn);
+                SqlDataAdapter daMateria = new SqlDataAdapter(cmdEspecialidad);
+                daMateria.Fill(especialidades);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de especialidades", Ex);
+                throw Ex;
+            }
+            finally { this.CloseConnection(); }
+
+            return especialidades;
+        }
+
     }
 }

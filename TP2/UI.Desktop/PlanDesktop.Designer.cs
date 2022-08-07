@@ -35,9 +35,9 @@ namespace UI.Desktop
             this.lblIDEspecialidad = new System.Windows.Forms.Label();
             this.txtIDPlan = new System.Windows.Forms.TextBox();
             this.txtDescPlan = new System.Windows.Forms.TextBox();
-            this.txtIDEspecialidad = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cbIDEspecialidad = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,12 +50,12 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.lblIDPlan, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDescPlan, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblIDEspecialidad, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDescPlan, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDEspecialidad, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbIDEspecialidad, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblIDEspecialidad, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -90,11 +90,11 @@ namespace UI.Desktop
             // 
             this.lblIDEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblIDEspecialidad.AutoSize = true;
-            this.lblIDEspecialidad.Location = new System.Drawing.Point(307, 105);
+            this.lblIDEspecialidad.Location = new System.Drawing.Point(314, 105);
             this.lblIDEspecialidad.Name = "lblIDEspecialidad";
-            this.lblIDEspecialidad.Size = new System.Drawing.Size(81, 13);
+            this.lblIDEspecialidad.Size = new System.Drawing.Size(67, 13);
             this.lblIDEspecialidad.TabIndex = 2;
-            this.lblIDEspecialidad.Text = "ID Especialidad";
+            this.lblIDEspecialidad.Text = "Especialidad";
             // 
             // txtIDPlan
             // 
@@ -112,14 +112,6 @@ namespace UI.Desktop
             this.txtDescPlan.Name = "txtDescPlan";
             this.txtDescPlan.Size = new System.Drawing.Size(100, 20);
             this.txtDescPlan.TabIndex = 4;
-            // 
-            // txtIDEspecialidad
-            // 
-            this.txtIDEspecialidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtIDEspecialidad.Location = new System.Drawing.Point(420, 95);
-            this.txtIDEspecialidad.Name = "txtIDEspecialidad";
-            this.txtIDEspecialidad.Size = new System.Drawing.Size(100, 20);
-            this.txtIDEspecialidad.TabIndex = 5;
             // 
             // btnAceptar
             // 
@@ -143,6 +135,15 @@ namespace UI.Desktop
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // cbIDEspecialidad
+            // 
+            this.cbIDEspecialidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbIDEspecialidad.FormattingEnabled = true;
+            this.cbIDEspecialidad.Location = new System.Drawing.Point(420, 94);
+            this.cbIDEspecialidad.Name = "cbIDEspecialidad";
+            this.cbIDEspecialidad.Size = new System.Drawing.Size(121, 21);
+            this.cbIDEspecialidad.TabIndex = 8;
+            // 
             // PlanDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +152,7 @@ namespace UI.Desktop
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlanDesktop";
             this.Text = "PlanDesktop";
+            this.Load += new System.EventHandler(this.PlanDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -165,8 +167,8 @@ namespace UI.Desktop
         private System.Windows.Forms.Label lblIDEspecialidad;
         private System.Windows.Forms.TextBox txtIDPlan;
         private System.Windows.Forms.TextBox txtDescPlan;
-        private System.Windows.Forms.TextBox txtIDEspecialidad;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbIDEspecialidad;
     }
 }

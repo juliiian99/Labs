@@ -47,7 +47,7 @@ namespace UI.Desktop
             this.txtDescMateria.Text = this.MateriaActual.Descripcion;
             this.txtHsSemana.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHorasAnual.Text = this.MateriaActual.HSTotales.ToString();
-            this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
+            this.cbIDPlan.SelectedValue = this.MateriaActual.IDPlan.ToString();
 
             switch (Modo)
             {
@@ -75,7 +75,7 @@ namespace UI.Desktop
                     this.MateriaActual.Descripcion = this.txtDescMateria.Text;
                     this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
                     this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
-                    this.MateriaActual.IDPlan = int.Parse(this.txtIDPlan.Text);
+                    this.MateriaActual.IDPlan = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                     this.MateriaActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
@@ -83,7 +83,7 @@ namespace UI.Desktop
                     this.MateriaActual.Descripcion = this.txtDescMateria.Text;
                     this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
                     this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
-                    this.MateriaActual.IDPlan = int.Parse(this.txtIDPlan.Text);
+                    this.MateriaActual.IDPlan = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                     this.MateriaActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
@@ -91,7 +91,7 @@ namespace UI.Desktop
                     this.MateriaActual.Descripcion = this.txtDescMateria.Text;
                     this.MateriaActual.HSSemanales = int.Parse(this.txtHsSemana.Text);
                     this.MateriaActual.HSTotales = int.Parse(this.txtHorasAnual.Text);
-                    this.MateriaActual.IDPlan = int.Parse(this.txtIDPlan.Text);
+                    this.MateriaActual.IDPlan = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                     this.MateriaActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
@@ -103,12 +103,10 @@ namespace UI.Desktop
         public new bool Validar()
         {
             PlanLogic planActual = new PlanLogic();
-            var plan = planActual.GetOne(Convert.ToInt32(txtIDPlan.Text));
             if (!this.txtDescMateria.Text.Equals("") && !this.txtHsSemana.Text.Equals("") &&
-                !this.txtHorasAnual.Text.Equals("") && !this.txtIDPlan.Text.Equals(""))
+                !this.txtHorasAnual.Text.Equals(""))
             {
-                if (!(plan is null)) return true;
-                else return false;
+                return true;;
             }
             else
             {
@@ -141,6 +139,10 @@ namespace UI.Desktop
 
         private void MateriaDesktop_Load(object sender, EventArgs e)
         {
+            MateriaLogic materia = new MateriaLogic();
+            cbIDPlan.DataSource = materia.GetPlanes();
+            cbIDPlan.ValueMember = "id_plan";
+            cbIDPlan.DisplayMember = "desc_plan";
         }
     }
 }

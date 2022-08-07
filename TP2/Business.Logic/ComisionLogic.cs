@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,11 @@ namespace Business.Logic
         public void Update(Business.Entities.Comision COM)
         {
             ComisionData.Update(COM);
+        }
+
+        public DataTable GetPlanes()
+        {
+            return ComisionData.GetPlanes();
         }
     }
 }

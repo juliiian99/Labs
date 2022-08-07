@@ -168,5 +168,27 @@ namespace Data.Database
             }
             materia.State = BusinessEntity.States.Unmodified;
         }
+
+        public DataTable GetPlanes()
+        {
+            DataTable planes = new DataTable();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPlan = new SqlCommand("select id_plan, desc_plan from planes", sqlConn);
+                SqlDataAdapter daMateria = new SqlDataAdapter(cmdPlan);
+                daMateria.Fill(planes);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de planes", Ex);
+                throw Ex;
+            }
+            finally { this.CloseConnection(); }
+
+            return planes;
+        }
     }
 }
