@@ -73,21 +73,21 @@ namespace UI.Desktop
                 case ModoForm.Alta:
                     this.ComisionActual.Descripcion = this.txtDescomision.Text;
                     this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbIDPlan.Text);
+                    this.ComisionActual.IDPlan = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                     this.ComisionActual.State = BusinessEntity.States.New;
                     break;
                 case ModoForm.Modificacion:
                     this.ComisionActual.ID = int.Parse(this.txtID.Text);
                     this.ComisionActual.Descripcion = this.txtDescomision.Text;
                     this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbIDPlan.Text);
+                    this.ComisionActual.IDPlan = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                     this.ComisionActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
                     this.ComisionActual.ID = int.Parse(this.txtID.Text);
                     this.ComisionActual.Descripcion = this.txtDescomision.Text;
                     this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioespecial.Text);
-                    this.ComisionActual.IDPlan = int.Parse(this.cbIDPlan.Text);
+                    this.ComisionActual.IDPlan = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                     this.ComisionActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
