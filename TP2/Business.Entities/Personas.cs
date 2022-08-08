@@ -73,8 +73,8 @@ namespace Business.Entities
 
         public enum TiposPersonas
         {
-            menor,
-            mayor
+            Docente,
+            Alumno
         }
 
 
