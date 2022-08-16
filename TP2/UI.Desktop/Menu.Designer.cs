@@ -35,6 +35,11 @@ namespace UI.Desktop
             this.btnComisiones = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abmcPersonas = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUsuarios
@@ -97,20 +102,61 @@ namespace UI.Desktop
             this.btnCursos.UseVisualStyleBackColor = true;
             this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.personasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(435, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // personasToolStripMenuItem
+            // 
+            this.personasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem});
+            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.personasToolStripMenuItem.Text = "Personas";
+            // 
+            // altaToolStripMenuItem
+            // 
+            this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaToolStripMenuItem.Text = "Alta";
+            this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
+            // 
+            // abmcPersonas
+            // 
+            this.abmcPersonas.Location = new System.Drawing.Point(178, 280);
+            this.abmcPersonas.Name = "abmcPersonas";
+            this.abmcPersonas.Size = new System.Drawing.Size(75, 42);
+            this.abmcPersonas.TabIndex = 7;
+            this.abmcPersonas.Text = "ABMC  Personas";
+            this.abmcPersonas.UseVisualStyleBackColor = true;
+            this.abmcPersonas.Click += new System.EventHandler(this.abmcPersonas_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 241);
+            this.ClientSize = new System.Drawing.Size(435, 373);
+            this.Controls.Add(this.abmcPersonas);
             this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.btnMaterias);
             this.Controls.Add(this.btnEspecialidad);
             this.Controls.Add(this.btnUsuarios);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,5 +168,9 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnComisiones;
         private System.Windows.Forms.Button btnPlanes;
         private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
+        private System.Windows.Forms.Button abmcPersonas;
     }
 }

@@ -52,5 +52,17 @@ namespace UI.Desktop
             Cursos cursoAbmc = new Cursos();
             cursoAbmc.ShowDialog();
         }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PersonaDesktop personaAbmc = new PersonaDesktop();
+            personaAbmc.ShowDialog();
+        }
+
+        private void abmcPersonas_Click(object sender, EventArgs e)
+        {
+            Personas personaABMC = new Personas();
+            personaABMC.ShowDialog();
+        }
     }
 }
