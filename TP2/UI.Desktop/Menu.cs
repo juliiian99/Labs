@@ -17,52 +17,46 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Usuarios usuarioAbmc = new Usuarios();
             usuarioAbmc.ShowDialog();
         }
 
-        private void btnEspecialidad_Click(object sender, EventArgs e)
+        private void personasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Personas personaABMC = new Personas();
+            personaABMC.ShowDialog();
+        }
+
+        private void especialidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Especialidades especialidadAbmc = new Especialidades();
             especialidadAbmc.ShowDialog();
         }
 
-        private void btnMaterias_Click(object sender, EventArgs e)
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Materias materiasAbmc = new Materias();
             materiasAbmc.ShowDialog();
         }
 
-        private void btnComisiones_Click(object sender, EventArgs e)
+        private void comisionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Comisiones comisionesAbmc = new Comisiones();
             comisionesAbmc.ShowDialog();
         }
 
-        private void btnPlanes_Click(object sender, EventArgs e)
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Planes planAbmc = new Planes();
             planAbmc.ShowDialog();
         }
 
-        private void btnCursos_Click(object sender, EventArgs e)
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cursos cursoAbmc = new Cursos();
             cursoAbmc.ShowDialog();
-        }
-
-        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PersonaDesktop personaAbmc = new PersonaDesktop();
-            personaAbmc.ShowDialog();
-        }
-
-        private void abmcPersonas_Click(object sender, EventArgs e)
-        {
-            Personas personaABMC = new Personas();
-            personaABMC.ShowDialog();
         }
     }
 }

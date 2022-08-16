@@ -56,5 +56,13 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+            CursoDesktop formCurso = new CursoDesktop(ID, ApplicationForm.ModoForm.Consulta);
+            formCurso.ShowDialog();
+            this.Listar();
+        }
     }
 }

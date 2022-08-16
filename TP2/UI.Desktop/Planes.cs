@@ -56,5 +56,13 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+            PlanDesktop formPlan = new PlanDesktop(ID, ApplicationForm.ModoForm.Consulta);
+            formPlan.ShowDialog();
+            this.Listar();
+        }
     }
 }

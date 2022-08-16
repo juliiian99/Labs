@@ -57,5 +57,20 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void btnAlta1_Click(object sender, EventArgs e)
+        {
+            MateriaDesktop formMateria = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
+            formMateria.ShowDialog();
+            this.Listar();
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+            MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Consulta);
+            formMateria.ShowDialog();
+            this.Listar();
+        }
     }
 }

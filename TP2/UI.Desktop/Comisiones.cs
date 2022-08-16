@@ -57,5 +57,13 @@ namespace UI.Desktop
         {
                 Listar();
         }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+            ComisionDesktop formComision= new ComisionDesktop(ID, ApplicationForm.ModoForm.Consulta);
+            formComision.ShowDialog();
+            this.Listar();
+        }
     }
 }

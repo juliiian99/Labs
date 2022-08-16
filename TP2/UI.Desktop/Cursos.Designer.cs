@@ -41,6 +41,13 @@ namespace UI.Desktop
             this.academiaDataSet = new UI.Desktop.AcademiaDataSet();
             this.cursosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cursosTableAdapter = new UI.Desktop.AcademiaDataSetTableAdapters.cursosTableAdapter();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anioCalendarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDComisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcCursos.ContentPanel.SuspendLayout();
             this.tcCursos.TopToolStripPanel.SuspendLayout();
             this.tcCursos.SuspendLayout();
@@ -48,6 +55,7 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.academiaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcCursos
@@ -56,11 +64,11 @@ namespace UI.Desktop
             // tcCursos.ContentPanel
             // 
             this.tcCursos.ContentPanel.Controls.Add(this.tlCursos);
-            this.tcCursos.ContentPanel.Size = new System.Drawing.Size(709, 351);
+            this.tcCursos.ContentPanel.Size = new System.Drawing.Size(652, 315);
             this.tcCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcCursos.Location = new System.Drawing.Point(0, 0);
             this.tcCursos.Name = "tcCursos";
-            this.tcCursos.Size = new System.Drawing.Size(709, 376);
+            this.tcCursos.Size = new System.Drawing.Size(652, 340);
             this.tcCursos.TabIndex = 0;
             this.tcCursos.Text = "toolStripContainer1";
             // 
@@ -70,47 +78,56 @@ namespace UI.Desktop
             // 
             // tlCursos
             // 
-            this.tlCursos.ColumnCount = 4;
-            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlCursos.ColumnCount = 5;
+            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlCursos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlCursos.Controls.Add(this.dgvCursos, 0, 0);
             this.tlCursos.Controls.Add(this.btnAlta, 0, 1);
             this.tlCursos.Controls.Add(this.btnModificar, 1, 1);
-            this.tlCursos.Controls.Add(this.btnBaja, 2, 1);
-            this.tlCursos.Controls.Add(this.btnSalir, 3, 1);
+            this.tlCursos.Controls.Add(this.btnSalir, 4, 1);
+            this.tlCursos.Controls.Add(this.btnBaja, 3, 1);
+            this.tlCursos.Controls.Add(this.btnConsulta, 2, 1);
             this.tlCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlCursos.Location = new System.Drawing.Point(0, 0);
             this.tlCursos.Name = "tlCursos";
             this.tlCursos.RowCount = 2;
-            this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.65517F));
-            this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
-            this.tlCursos.Size = new System.Drawing.Size(709, 351);
+            this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.79365F));
+            this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.206349F));
+            this.tlCursos.Size = new System.Drawing.Size(652, 315);
             this.tlCursos.TabIndex = 0;
             // 
             // dgvCursos
             // 
             this.dgvCursos.AllowUserToAddRows = false;
             this.dgvCursos.AllowUserToDeleteRows = false;
-            this.dgvCursos.AllowUserToOrderColumns = true;
+            this.dgvCursos.AutoGenerateColumns = false;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tlCursos.SetColumnSpan(this.dgvCursos, 4);
+            this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.anioCalendarioDataGridViewTextBoxColumn,
+            this.cupoDataGridViewTextBoxColumn,
+            this.iDComisionDataGridViewTextBoxColumn,
+            this.iDMateriaDataGridViewTextBoxColumn});
+            this.tlCursos.SetColumnSpan(this.dgvCursos, 5);
+            this.dgvCursos.DataSource = this.cursoBindingSource;
             this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCursos.Location = new System.Drawing.Point(3, 3);
             this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.ReadOnly = true;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(703, 308);
+            this.dgvCursos.Size = new System.Drawing.Size(646, 279);
             this.dgvCursos.TabIndex = 0;
             // 
             // btnAlta
             // 
-            this.btnAlta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlta.Location = new System.Drawing.Point(3, 321);
+            this.btnAlta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAlta.Location = new System.Drawing.Point(234, 289);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(171, 23);
+            this.btnAlta.Size = new System.Drawing.Size(79, 23);
             this.btnAlta.TabIndex = 1;
             this.btnAlta.Text = "Alta";
             this.btnAlta.UseVisualStyleBackColor = true;
@@ -118,10 +135,10 @@ namespace UI.Desktop
             // 
             // btnModificar
             // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(180, 321);
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.Location = new System.Drawing.Point(319, 289);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(171, 23);
+            this.btnModificar.Size = new System.Drawing.Size(79, 23);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -129,10 +146,10 @@ namespace UI.Desktop
             // 
             // btnBaja
             // 
-            this.btnBaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBaja.Location = new System.Drawing.Point(357, 321);
+            this.btnBaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBaja.Location = new System.Drawing.Point(485, 289);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(171, 23);
+            this.btnBaja.Size = new System.Drawing.Size(79, 23);
             this.btnBaja.TabIndex = 3;
             this.btnBaja.Text = "Baja";
             this.btnBaja.UseVisualStyleBackColor = true;
@@ -140,10 +157,10 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(534, 321);
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(570, 289);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(172, 23);
+            this.btnSalir.Size = new System.Drawing.Size(79, 23);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -171,11 +188,61 @@ namespace UI.Desktop
             // 
             this.cursosTableAdapter.ClearBeforeFill = true;
             // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConsulta.Location = new System.Drawing.Point(404, 289);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnConsulta.TabIndex = 5;
+            this.btnConsulta.Text = "Consulta";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataSource = typeof(Business.Entities.Curso);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID Curso";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // anioCalendarioDataGridViewTextBoxColumn
+            // 
+            this.anioCalendarioDataGridViewTextBoxColumn.DataPropertyName = "AnioCalendario";
+            this.anioCalendarioDataGridViewTextBoxColumn.HeaderText = "Año Calendario";
+            this.anioCalendarioDataGridViewTextBoxColumn.Name = "anioCalendarioDataGridViewTextBoxColumn";
+            this.anioCalendarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cupoDataGridViewTextBoxColumn
+            // 
+            this.cupoDataGridViewTextBoxColumn.DataPropertyName = "Cupo";
+            this.cupoDataGridViewTextBoxColumn.HeaderText = "Cupo";
+            this.cupoDataGridViewTextBoxColumn.Name = "cupoDataGridViewTextBoxColumn";
+            this.cupoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDComisionDataGridViewTextBoxColumn
+            // 
+            this.iDComisionDataGridViewTextBoxColumn.DataPropertyName = "IDComision";
+            this.iDComisionDataGridViewTextBoxColumn.HeaderText = "IDComision";
+            this.iDComisionDataGridViewTextBoxColumn.Name = "iDComisionDataGridViewTextBoxColumn";
+            this.iDComisionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDMateriaDataGridViewTextBoxColumn
+            // 
+            this.iDMateriaDataGridViewTextBoxColumn.DataPropertyName = "IDMateria";
+            this.iDMateriaDataGridViewTextBoxColumn.HeaderText = "IDMateria";
+            this.iDMateriaDataGridViewTextBoxColumn.Name = "iDMateriaDataGridViewTextBoxColumn";
+            this.iDMateriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 376);
+            this.ClientSize = new System.Drawing.Size(652, 340);
             this.Controls.Add(this.tcCursos);
             this.Name = "Cursos";
             this.Text = "Cursos";
@@ -189,6 +256,7 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.academiaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +274,12 @@ namespace UI.Desktop
         private AcademiaDataSet academiaDataSet;
         private System.Windows.Forms.BindingSource cursosBindingSource;
         private AcademiaDataSetTableAdapters.cursosTableAdapter cursosTableAdapter;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anioCalendarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cupoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDComisionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMateriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cursoBindingSource;
     }
 }

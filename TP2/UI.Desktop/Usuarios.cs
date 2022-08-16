@@ -12,7 +12,14 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e) //Deberia ser Usuarios_Load
+        private void btnAlta_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            formUsuario.ShowDialog();
+            this.Listar();
+        }
+
+        private void Usuarios_Load(object sender, EventArgs e)
         {
             Listar();
         }
@@ -21,13 +28,6 @@ namespace UI.Desktop
         {
             UsuarioLogic ul = new UsuarioLogic();
             this.dgvUsuarios.DataSource = ul.GetAll();
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        { 
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            formUsuario.ShowDialog();
-            this.Listar();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -51,13 +51,6 @@ namespace UI.Desktop
             this.Close();
         }
 
-
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
@@ -65,5 +58,6 @@ namespace UI.Desktop
             formUsuario.ShowDialog();
             this.Listar();
         }
+
     }
 }
