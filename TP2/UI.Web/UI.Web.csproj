@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6D18188B-AA5F-4E97-93F0-7BDD42F20D17}</ProjectGuid>
+    <ProjectGuid>{8A33D7FE-C326-4D44-8FDB-DEA771AB48F1}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -89,16 +89,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
-      <Project>{47d3d31a-871c-48f6-8349-de5ebf0ce9b1}</Project>
-      <Name>Business.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
-      <Project>{b6de5a71-dae1-45c2-877a-1c43041fd513}</Project>
-      <Name>Business.Logic</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -112,7 +102,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61715</DevelopmentServerPort>
+          <DevelopmentServerPort>50853</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44385/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
