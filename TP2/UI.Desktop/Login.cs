@@ -23,7 +23,7 @@ namespace UI.Desktop
         {
             UsuarioAdapter ua = new UsuarioAdapter();
             Usuario u = ua.Login(this.txtUsuario.Text, this.txtContraseña.Text);
-            if (u.Nombre != null)
+            if (u != null)
             {
                 Menu menu = new Menu();
                 menu.ShowDialog();
