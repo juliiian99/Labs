@@ -22,7 +22,7 @@ namespace UI.Web
             UsuarioAdapter ua = new UsuarioAdapter();
             Usuario u = ua.Login(this.txtUsuario.Text, this.txtClave.Text);
 
-            if (u != null)
+            if (u.NombreUsuario != null)
             {
                 Page.Response.Redirect("https://localhost:44385/");
             }
@@ -34,7 +34,7 @@ namespace UI.Web
 
         protected void lnkRecordarClave_Click(object sender, EventArgs e)
         {
-            Response.Redirect("-/Default.aspx?msj=Es ud. un usuario muy descuidado, haga memoria");
+            Page.Response.Redirect("OlvidaClave.aspx");
         }
     }
 }

@@ -14,6 +14,7 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             this.LoadGrid();
+            formPanel.Visible = false;
         }
 
         UsuarioLogic _logic;

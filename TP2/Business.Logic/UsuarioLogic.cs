@@ -44,5 +44,11 @@ namespace Business.Logic
         {
             UsuarioData.Update(USU);
         }
+
+
+        public Usuario ActualizarContraseña(string us, string conNueva)
+        {
+            return UsuarioData.ActualizarContraseña(us, conNueva);
+        }
     }
 }

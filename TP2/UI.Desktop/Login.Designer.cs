@@ -34,6 +34,7 @@ namespace UI.Desktop
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
+            this.lnkOlvidaClave = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnIngresar
@@ -79,11 +80,23 @@ namespace UI.Desktop
             this.lblContraseña.TabIndex = 4;
             this.lblContraseña.Text = "Contraseña";
             // 
+            // lnkOlvidaClave
+            // 
+            this.lnkOlvidaClave.AutoSize = true;
+            this.lnkOlvidaClave.Location = new System.Drawing.Point(13, 207);
+            this.lnkOlvidaClave.Name = "lnkOlvidaClave";
+            this.lnkOlvidaClave.Size = new System.Drawing.Size(106, 13);
+            this.lnkOlvidaClave.TabIndex = 5;
+            this.lnkOlvidaClave.TabStop = true;
+            this.lnkOlvidaClave.Text = "Olvide mi contraseña";
+            this.lnkOlvidaClave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOlvidaClave_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 232);
+            this.Controls.Add(this.lnkOlvidaClave);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtContraseña);
@@ -103,5 +116,6 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.LinkLabel lnkOlvidaClave;
     }
 }

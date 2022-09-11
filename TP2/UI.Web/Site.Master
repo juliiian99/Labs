@@ -1,18 +1,35 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.SiteMaster" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.SiteMaster" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title>Academia</title>
-    </head>
-    <body>
-        <form id="bodyForm" runat="server">
-            <asp:Menu runat="server" ID="Menu" DataSourceID="SiteMapDataSource">
-            </asp:Menu>
-            <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
-            <div>
-                <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-        </form>
-    </body>
+</head>
+<body>
+    <form id="bodyForm" runat="server">
+        <asp:Menu runat="server" ID="Menu" DataSourceID="SiteMapDataSource">
+        </asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+        <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%"> 
+<tr> 
+            <td valign="top" width="150"> 
+                <table border="0" width="100%" cellpadding="4" cellspacing="0"> 
+                    <tr>
+                        <td><a href="Usuarios.aspx">Usuarios</a></td> 
+                    </tr>
+                    <tr>
+                        <td><a href="Especialidades.aspx">Especialidades</a></td> 
+                    </tr>
+                </table> 
+            </td> 
+             
+            <td valign="top" align="left">              
+                        <div>
+            <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+            </td> 
+        </tr> 
+    </table> 
+    </form>
+</body>
 </html>

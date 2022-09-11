@@ -4,6 +4,7 @@ using System.Text;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
+using Data.Database;
 
 namespace Data.Database
 {
@@ -210,6 +211,68 @@ namespace Data.Database
                 this.Update(usuario);
             }
             usuario.State = BusinessEntity.States.Unmodified;
+        }
+
+        public Usuario ActualizarContraseña(string us, string conNueva)
+        {
+            Usuario usuario = new Usuario();
+            usuario = ExisteUsuario(us);
+            if (!(usuario is null))
+            {
+                try
+                {
+                    OpenConnection();
+                    SqlCommand cmdAct = new SqlCommand("update usuarios set clave = @clave_nueva, cambia_clave = 1 " + // ver cambia clave
+                                                        "where id_usuario = @id", sqlConn);
+
+                    cmdAct.Parameters.Add("@clave_nueva", SqlDbType.VarChar, 50).Value = conNueva;
+                    cmdAct.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                    cmdAct.ExecuteNonQuery();
+                }
+                catch
+                {
+                    Exception ExcepcionManejada = new Exception("Error al modificar la contraseña");
+                    throw ExcepcionManejada;
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+            return usuario;
+        }
+
+        public Usuario ExisteUsuario(string nombre)
+        {
+            Usuario usr = new Usuario();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where nombre_usuario = @nombre ", sqlConn);
+                cmdUsuarios.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = nombre;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                if (drUsuarios.Read())
+                {
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.EMail = (string)drUsuarios["email"];
+                }
+                else { usr = null; }
+                drUsuarios.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos de usuario", Ex);
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usr;
         }
     }
 }

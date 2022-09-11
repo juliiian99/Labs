@@ -23,7 +23,7 @@ namespace UI.Desktop
         {
             UsuarioAdapter ua = new UsuarioAdapter();
             Usuario u = ua.Login(this.txtUsuario.Text, this.txtContraseña.Text);
-            if (u != null)
+            if (u.NombreUsuario != null)
             {
                 Menu menu = new Menu();
                 menu.ShowDialog();
@@ -34,6 +34,12 @@ namespace UI.Desktop
             }
 
 
+        }
+
+        private void lnkOlvidaClave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OlvidaClave olvida = new OlvidaClave();
+            olvida.ShowDialog();
         }
     }
 }

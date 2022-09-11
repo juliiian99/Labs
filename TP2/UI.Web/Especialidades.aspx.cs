@@ -14,7 +14,7 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             this.LoadGrid();
-            this.gridActionsPanel.Visible = true;
+            formPanel.Visible = false;
         }
 
         EspecialidadLogic _logic;
@@ -32,7 +32,6 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.EnableForm(false);
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
         }
