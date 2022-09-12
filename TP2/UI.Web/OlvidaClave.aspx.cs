@@ -14,8 +14,7 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblSuContraseña.Visible = false;
-            txtSuContraseña.Visible = false;
+
         }
 
 
@@ -26,6 +25,7 @@ namespace UI.Web
             if (!(usu is null))
             {
                 Page.Response.Write("La contraseña se cambio con exito");
+                Page.Response.Redirect("Login.aspx");
             }
             else
             {

@@ -58,8 +58,7 @@
             <tr>
                 <td class="auto-style3"></td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtClaveAnterior" runat="server"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
                 <td class="auto-style5">
                     <asp:Button ID="btnRecuperarContraseña" runat="server" OnClick="btnRecuperarContraseña_Click" Text="Recuperar contraseña" />
                 </td>
@@ -68,12 +67,9 @@
                 <td class="auto-style1">
                     &nbsp;</td>
                 <td class="auto-style2">
-                    <asp:Label ID="lblSuContraseña" runat="server" Text="Su contraseña es: "></asp:Label>
-                </td>
+                    &nbsp;</td>
                 <td>
-                    <asp:TextBox ID="txtSuContraseña" runat="server"></asp:TextBox>
-
-                </td>
+                    &nbsp;</td>
             </tr>
         </table>
         </form>

@@ -69,15 +69,6 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox txtNuevaClave;
 
         /// <summary>
-        /// Control txtClaveAnterior.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClaveAnterior;
-
-        /// <summary>
         /// Control btnRecuperarContraseña.
         /// </summary>
         /// <remarks>
@@ -85,23 +76,5 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRecuperarContraseña;
-
-        /// <summary>
-        /// Control lblSuContraseña.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuContraseña;
-
-        /// <summary>
-        /// Control txtSuContraseña.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSuContraseña;
     }
 }
