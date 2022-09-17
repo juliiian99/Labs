@@ -4,28 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Business.Logic;
 using Business.Entities;
+using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class Planes : System.Web.UI.Page 
+    public partial class Materias : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
             gridView.Visible = true;
-            
+
         }
 
-        PlanLogic _logic;
-        private PlanLogic Logic {
-            get 
+        MateriaLogic _logic;
+        private MateriaLogic Logic
+        {
+            get
             {
                 if (_logic == null)
                 {
-                    _logic = new PlanLogic();
+                    _logic = new MateriaLogic();
                 }
                 return _logic;
             }
@@ -44,18 +45,22 @@ namespace UI.Web
             Modificacion
         }
 
-        public FormModes FormMode {
+        public FormModes FormMode
+        {
             get { return (FormModes)this.ViewState["FormMode"]; }
             set { this.ViewState["FormMode"] = value; }
         }
 
-        private Plan Entity {
+        private Materia Entity
+        {
             get;
             set;
         }
 
-        private int SelectedID {
-            get {
+        private int SelectedID
+        {
+            get
+            {
                 if (this.ViewState["SelectedID"] != null)
                 {
                     return (int)this.ViewState["SelectedID"];
@@ -65,13 +70,16 @@ namespace UI.Web
                     return 0;
                 }
             }
-            set {
+            set
+            {
                 this.ViewState["SelectedID"] = value;
             }
         }
 
-        private bool IsEntitySelected {
-            get {
+        private bool IsEntitySelected
+        {
+            get
+            {
                 return (this.SelectedID != 0);
             }
         }
@@ -85,7 +93,9 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
-            this.especialidadDropDownList.SelectedValue = this.Entity.IDEspecialidad.ToString(); 
+            this.hsSemanalesTextBox.Text = this.Entity.HSSemanales.ToString();
+            this.hsTotalesTextBox.Text = this.Entity.HSTotales.ToString();
+            this.planDropDownList.SelectedValue = this.Entity.IDPlan.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -103,22 +113,26 @@ namespace UI.Web
         {
 
             this.descripcionTextBox.Enabled = Enable;
-            this.especialidadDropDownList.Enabled = Enable;
-            especialidadDropDownList.DataSource = this.Logic.GetEspecialidades();
-            especialidadDropDownList.DataValueField = "id_especialidad";
-            especialidadDropDownList.DataTextField = "desc_especialidad";
-            especialidadDropDownList.DataBind();
+            this.hsSemanalesTextBox.Enabled = Enable;
+            this.hsTotalesTextBox.Enabled = Enable;
+            this.planDropDownList.Enabled = Enable;
+            planDropDownList.DataSource = this.Logic.GetPlanes();
+            planDropDownList.DataValueField = "id_plan";
+            planDropDownList.DataTextField = "desc_plan";
+            planDropDownList.DataBind();
         }
 
-        private void LoadEntity(Plan plan)
+        private void LoadEntity(Materia materia)
         {
-            plan.Descripcion = this.descripcionTextBox.Text;
-            plan.IDEspecialidad = Convert.ToInt32(this.especialidadDropDownList.SelectedValue);
+            materia.Descripcion = this.descripcionTextBox.Text;
+            materia.HSSemanales = Convert.ToInt32(this.hsSemanalesTextBox.Text);
+            materia.HSTotales = Convert.ToInt32(this.hsTotalesTextBox.Text);
+            materia.IDPlan = Convert.ToInt32(this.planDropDownList.SelectedValue);
         }
 
-        private void SaveEntity(Plan plan)
+        private void SaveEntity(Materia materia)
         {
-            this.Logic.Save(plan);
+            this.Logic.Save(materia);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -129,17 +143,17 @@ namespace UI.Web
                     this.DeleteEntity(this.SelectedID);
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Plan();
+                    this.Entity = new Materia();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     break;
                 case FormModes.Alta:
-                    this.Entity = new Plan();
+                    this.Entity = new Materia();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
-                    
+
                     break;
                 default:
                     break;
@@ -175,6 +189,8 @@ namespace UI.Web
         private void ClearForm()
         {
             this.descripcionTextBox.Text = string.Empty;
+            this.hsSemanalesTextBox.Text = string.Empty;
+            this.hsTotalesTextBox.Text = string.Empty;
             //this.especialidadDropDownList.SelectedValue = string.Empty;
         }
 

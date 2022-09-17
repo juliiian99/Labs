@@ -101,10 +101,10 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                    "UPDATE planes SET desc_plan = @desc_especialidad, id_especialidad = @id_especialidad" +
-                    "WHERE id_especialidad = @id", this.sqlConn);
+                    "UPDATE planes SET desc_plan = @desc_plan, id_especialidad = @id_especialidad " +
+                    "WHERE id_plan = @id", this.sqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = plan.ID;
-                cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = plan.Descripcion;
+                cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
                 cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IDEspecialidad;
                 cmdSave.ExecuteNonQuery();
             }
@@ -127,9 +127,9 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
                     "INSERT INTO dbo.planes(desc_plan, id_especialidad) " +
-                    "values(@desc_especialidad, @id_especialidad) " +
+                    "values(@desc_plan, @id_especialidad) " +
                     "select @@identity", this.sqlConn);
-                cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = plan.Descripcion;
+                cmdSave.Parameters.Add("@desc_plan", SqlDbType.VarChar, 50).Value = plan.Descripcion;
                 cmdSave.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = plan.IDEspecialidad;
                 plan.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }

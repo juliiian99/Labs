@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="UI.Web.Planes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="UI.Web.Materias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
@@ -8,7 +8,9 @@
             <Columns>
                 <asp:BoundField HeaderText="ID" DataField="ID" />
                 <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
-                <asp:BoundField HeaderText="ID Especialidad" DataField="IDEspecialidad" />
+                <asp:BoundField HeaderText="Horas semanales" DataField="HsSemanales" />
+                <asp:BoundField HeaderText="Horas totales" DataField="HsTotales" />
+                <asp:BoundField HeaderText="ID Plan" DataField="IDPlan" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
@@ -19,16 +21,21 @@
         <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvNombreTxt" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="La descripcion no puede estar vacía" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad: "></asp:Label>
-        <asp:DropDownList ID="especialidadDropDownList" runat="server" >
-        </asp:DropDownList>
+        <asp:Label ID="hsSemanalesLabel" runat="server" Text="Horas semanales: "></asp:Label>
+        <asp:TextBox ID="hsSemanalesTextBox" runat="server"></asp:TextBox>
         <br />
-
+        <asp:Label ID="hsTotalesLabel" runat="server" Text="Horas totales: "></asp:Label>
+        <asp:TextBox ID="hsTotalesTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblPlan" runat="server" Text="Plan: "></asp:Label>
+        <asp:DropDownList ID="planDropDownList" runat="server" >
+        </asp:DropDownList>        
+        <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
         </asp:Panel>
-        <asp:ValidationSummary ID="nombreValidationSummary" runat="server" DisplayMode="BulletList" ShowSummary="true" HeaderText="Errors: " ForeColor="Red" />
+        <asp:ValidationSummary ID="vs" runat="server" DisplayMode="BulletList" ShowSummary="true" HeaderText="Errors: " ForeColor="Red" />
     </asp:Panel>
 
     <asp:Panel ID="gridActionsPanel" runat="server">

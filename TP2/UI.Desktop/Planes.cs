@@ -38,7 +38,7 @@ namespace UI.Desktop
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.Materia)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
             PlanDesktop formPlan = new PlanDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             formPlan.ShowDialog();
             this.Listar();

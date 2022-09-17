@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class Planes
+    public partial class Materias
     {
 
         /// <summary>
@@ -69,22 +69,58 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreTxt;
 
         /// <summary>
-        /// Control lblEspecialidad.
+        /// Control hsSemanalesLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEspecialidad;
+        protected global::System.Web.UI.WebControls.Label hsSemanalesLabel;
 
         /// <summary>
-        /// Control especialidadDropDownList.
+        /// Control hsSemanalesTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList especialidadDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox hsSemanalesTextBox;
+
+        /// <summary>
+        /// Control hsTotalesLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label hsTotalesLabel;
+
+        /// <summary>
+        /// Control hsTotalesTextBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox hsTotalesTextBox;
+
+        /// <summary>
+        /// Control lblPlan.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPlan;
+
+        /// <summary>
+        /// Control planDropDownList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList planDropDownList;
 
         /// <summary>
         /// Control formActionsPanel.
@@ -114,13 +150,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.LinkButton cancelarLinkButton;
 
         /// <summary>
-        /// Control nombreValidationSummary.
+        /// Control vs.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary nombreValidationSummary;
+        protected global::System.Web.UI.WebControls.ValidationSummary vs;
 
         /// <summary>
         /// Control gridActionsPanel.

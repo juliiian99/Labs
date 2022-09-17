@@ -156,6 +156,7 @@ namespace UI.Web
             this.apellidoTextBox.Enabled = Enable;
             this.emailTextBox.Enabled = Enable;
             this.nombreUsuarioTextBox.Enabled = Enable;
+            this.HabilitadoCheckBox.Enabled = Enable;
             this.claveTextBox.Visible = Enable;
             this.claveLabel.Visible = Enable;
             this.repetirClaveTextBox.Visible = Enable;

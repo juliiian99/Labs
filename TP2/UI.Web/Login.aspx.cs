@@ -28,7 +28,7 @@ namespace UI.Web
             }
             else
             {
-                Page.Response.Write("Usuario y/o contraseña incorrectos");
+                Page.Response.Write("<script>alert('Usuario y/o clave incorrecta')</script>");
             }
         }
 

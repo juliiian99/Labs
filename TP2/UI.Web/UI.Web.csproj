@@ -163,6 +163,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Materias.aspx" />
     <Content Include="OlvidaClave.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -227,6 +228,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Materias.aspx.cs">
+      <DependentUpon>Materias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Materias.aspx.designer.cs">
+      <DependentUpon>Materias.aspx</DependentUpon>
     </Compile>
     <Compile Include="OlvidaClave.aspx.cs">
       <DependentUpon>OlvidaClave.aspx</DependentUpon>

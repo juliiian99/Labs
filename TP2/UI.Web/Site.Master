@@ -22,6 +22,9 @@
                     <tr>
                         <td><a href="Planes.aspx">Planes</a></td> 
                     </tr>
+                    <tr>
+                        <td><a href="Materias.aspx">Materias</a></td> 
+                    </tr>
 
                 </table> 
             </td> 
