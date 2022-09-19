@@ -25,6 +25,9 @@
                     <tr>
                         <td><a href="Materias.aspx">Materias</a></td> 
                     </tr>
+                    <tr>
+                        <td><a href="Comisiones.aspx">Comisiones</a></td> 
+                    </tr>
 
                 </table> 
             </td> 
