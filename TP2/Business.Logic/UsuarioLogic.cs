@@ -45,6 +45,11 @@ namespace Business.Logic
             UsuarioData.Update(USU);
         }
 
+        public Usuario Login (string usu, string contraseña)
+        {
+            return UsuarioData.Login(usu, contraseña);
+        }
+
 
         public Usuario ActualizarContraseña(string us, string conNueva)
         {

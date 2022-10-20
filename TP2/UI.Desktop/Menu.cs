@@ -7,14 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
 
 namespace UI.Desktop
 {
     public partial class Menu : Form
     {
-        public Menu()
+        public Menu(Persona.TiposPersonas TPer)
         {
+
             InitializeComponent();
+            switch (TPer) 
+            {
+                case Persona.TiposPersonas.Docente:
+                    {
+                        usuariosToolStripMenuItem.Visible = false;
+                        personasToolStripMenuItem.Visible = false;
+                        especialidadToolStripMenuItem.Visible = false;
+                        materiasToolStripMenuItem.Visible = false;
+                        comisionesToolStripMenuItem.Visible = false;
+                        planesToolStripMenuItem.Visible = false;
+                        cursosToolStripMenuItem.Visible = false;
+                        break;
+                    }
+                case Persona.TiposPersonas.Alumno:
+                    {
+                        usuariosToolStripMenuItem.Visible = false;
+                        personasToolStripMenuItem.Visible = false;
+                        especialidadToolStripMenuItem.Visible = false;
+                        materiasToolStripMenuItem.Visible = false;
+                        comisionesToolStripMenuItem.Visible = false;
+                        planesToolStripMenuItem.Visible = false;
+                        cursosToolStripMenuItem.Visible = false;
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)

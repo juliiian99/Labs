@@ -77,16 +77,18 @@ namespace UI.Desktop
             switch (Modo)
             {
                 case ModoForm.Alta:
+                    
                     this.PersonaActual.Nombre = this.txtNombre.Text;
                     this.PersonaActual.Apellido = this.txtApellido.Text;
                     this.PersonaActual.Direccion = this.txtDireccion.Text;
                     this.PersonaActual.EMail = this.txtEmail.Text;
                     this.PersonaActual.Telefono = this.txtTelefono.Text;
                     this.PersonaActual.FechaNacimiento = this.dtFechaNac.Value;
-                    this.PersonaActual.Legajo = int.Parse(this.txtLegajo.Text);
+                    this.PersonaActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
                     this.PersonaActual.TipoPersona = (Persona.TiposPersonas)this.cbTipoPersona.SelectedItem;
                     this.PersonaActual.IDPlan = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                     this.PersonaActual.State = BusinessEntity.States.New;
+                    
                     break;
                 case ModoForm.Modificacion:
                     this.PersonaActual.ID = int.Parse(this.txtID.Text);
@@ -138,6 +140,22 @@ namespace UI.Desktop
             MapearADatos();
             PersonaAdapter pa = new PersonaAdapter();
             pa.Save(this.PersonaActual);
+            if (Modo == ModoForm.Alta)
+            {
+                UsuarioDesktop formUsuario = new UsuarioDesktop();
+                PersonaLogic p = new PersonaLogic();
+                Business.Entities.Persona per = p.GetLast();
+                AddOwnedForm(formUsuario);
+                formUsuario.txtApellido.Text = txtApellido.Text;
+                formUsuario.txtEmail.Text = txtEmail.Text;
+                formUsuario.txtNombre.Text = txtNombre.Text;
+                formUsuario.txtIDPersona.Text = per.ID.ToString();
+                formUsuario.txtNombre.Enabled = false;
+                formUsuario.txtEmail.Enabled = false;
+                formUsuario.txtApellido.Enabled = false;
+                formUsuario.txtIDPersona.Enabled = false;
+                formUsuario.ShowDialog();
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

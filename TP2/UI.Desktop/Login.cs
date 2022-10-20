@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data.Database;
 using Business.Entities;
+using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -21,16 +22,18 @@ namespace UI.Desktop
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            UsuarioAdapter ua = new UsuarioAdapter();
-            Usuario u = ua.Login(this.txtUsuario.Text, this.txtContraseña.Text);
-            if (u.NombreUsuario != null)
+            UsuarioLogic usuarioActual = new UsuarioLogic();
+            Usuario usuario = usuarioActual.Login(txtUsuario.Text, txtContraseña.Text);
+            if (usuario is null)
             {
-                Menu menu = new Menu();
-                menu.ShowDialog();
+                MessageBox.Show("No se encontró el usuario");
             }
             else
             {
-                MessageBox.Show("Usuario y/o contraseña incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PersonaLogic per = new PersonaLogic();
+                Business.Entities.Persona persona = per.GetOne(usuario.IDPersona);
+                Menu ini = new Menu(persona.TipoPersona);
+                ini.ShowDialog();
             }
 
 

@@ -46,6 +46,7 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
+            this.txtIDPersona.Text = this.UsuarioActual.IDPersona.ToString();
             switch (Modo)
             {
                 case ModoForm.Alta:
@@ -75,6 +76,7 @@ namespace UI.Desktop
                     this.UsuarioActual.EMail = this.txtEmail.Text;
                     this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                     this.UsuarioActual.Clave  = this.txtClave.Text;
+                    this.UsuarioActual.IDPersona = Convert.ToInt32(txtIDPersona.Text);
                     this.UsuarioActual.State = BusinessEntity.States.New;
             break;
                 case ModoForm.Modificacion:
@@ -85,6 +87,7 @@ namespace UI.Desktop
                     this.UsuarioActual.EMail = this.txtEmail.Text;
                     this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                     this.UsuarioActual.Clave = this.txtClave.Text;
+                    this.UsuarioActual.IDPersona = Convert.ToInt32(this.txtIDPersona.Text);
                     this.UsuarioActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
@@ -95,6 +98,7 @@ namespace UI.Desktop
                     this.UsuarioActual.EMail = this.txtEmail.Text;
                     this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                     this.UsuarioActual.Clave = this.txtClave.Text;
+                    this.UsuarioActual.IDPersona = Convert.ToInt32(this.txtIDPersona.Text);
                     this.UsuarioActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:

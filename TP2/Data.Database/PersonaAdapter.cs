@@ -17,42 +17,35 @@ namespace Data.Database
             List<Persona> personas = new List<Persona>();
             try
             {
-                this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas", this.sqlConn);
+                OpenConnection();
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas", sqlConn);
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
                 while (drPersonas.Read())
                 {
-                    Persona per = new Persona();
-                    per.ID = (int)drPersonas["id_persona"];
-                    per.Nombre = (string)drPersonas["nombre"];
-                    per.Apellido = (string)drPersonas["apellido"];
-                    per.Direccion = (string)drPersonas["direccion"];
-                    per.EMail = (string)drPersonas["email"];
-                    per.Telefono = (string)drPersonas["telefono"];
-                    per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
-                    per.Legajo = (int)drPersonas["legajo"];
-                    if ((int)drPersonas["tipo_persona"] == 0)
-                    {
-                        per.TipoPersona = Business.Entities.Persona.TiposPersonas.Docente;
-                    }
-                    else
-                    {
-                        per.TipoPersona = Business.Entities.Persona.TiposPersonas.Alumno;
-                    }
-                    per.IDPlan = (int)drPersonas["id_plan"];
-                    personas.Add(per);
+                    Persona persona = new Persona();
+                    persona.ID = (int)drPersonas["id_persona"];
+                    persona.Legajo = (int)drPersonas["legajo"];
+                    persona.Apellido = (string)drPersonas["apellido"];
+                    persona.Nombre = (string)drPersonas["nombre"];
+                    persona.Direccion = (string)drPersonas["direccion"];
+                    persona.EMail = (string)drPersonas["email"];
+                    persona.Telefono = (string)drPersonas["telefono"];
+                    persona.FechaNacimiento = Convert.ToDateTime(drPersonas["fecha_nac"]);
+                    persona.IDPlan = (int)drPersonas["id_plan"];
+                    persona.TipoPersona = (Persona.TiposPersonas)(drPersonas["tipo_persona"]);
+
+                    personas.Add(persona);
                 }
                 drPersonas.Close();
             }
-            catch (Exception Ex)
+            catch
             {
-                Exception ExcepcionManejada =
-                    new Exception("Error al recuperar lista de personas", Ex);
-                throw ExcepcionManejada;
+                Exception Ex = new Exception("Error al recuperar personas");
+                throw Ex;
             }
             finally
             {
-                this.CloseConnection();
+                CloseConnection();
             }
             return personas;
         }
@@ -99,9 +92,12 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete personas where id_persona = @id", this.sqlConn);
-                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                cmdDelete.ExecuteNonQuery();
+                SqlCommand cmdDeleteUsuario = new SqlCommand("delete usuarios where id_persona = @id", this.sqlConn);
+                cmdDeleteUsuario.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlCommand cmdDeletePersona = new SqlCommand("delete personas where id_persona = @id", this.sqlConn);
+                cmdDeletePersona.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdDeleteUsuario.ExecuteNonQuery();
+                cmdDeletePersona.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -131,16 +127,8 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.EMail;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
-                cmdSave.Parameters.Add("@lejago", SqlDbType.Int).Value = persona.Legajo;
-                if (persona.TipoPersona.Equals("Docente"))
-                {
-                    cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = 0;
-                }
-                else
-                {
-                    cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = 1;
-                }
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
+                cmdSave.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = Convert.ToInt32(persona.TipoPersona);
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
                 cmdSave.ExecuteNonQuery();
             }
@@ -226,6 +214,42 @@ namespace Data.Database
             finally { this.CloseConnection(); }
 
             return planes;
+        }
+
+        public Persona GetLast()
+        {
+            Persona per = new Persona();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPersonas = new SqlCommand("select TOP 1 * from personas order by id_persona desc", this.sqlConn);
+                SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
+                if (drPersonas.Read())
+                {
+                    per.ID = (int)drPersonas["id_persona"];
+                    per.Nombre = (string)drPersonas["nombre"];
+                    per.Apellido = (string)drPersonas["apellido"];
+                    per.Direccion = (string)drPersonas["direccion"];
+                    per.EMail = (string)drPersonas["email"];
+                    per.Telefono = (string)drPersonas["telefono"];
+                    per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
+                    per.Legajo = (int)drPersonas["legajo"];
+                    per.TipoPersona = (Persona.TiposPersonas)(int)drPersonas["tipo_persona"];
+                    per.IDPlan = (int)drPersonas["id_plan"];
+                    drPersonas.Close();
+                }
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al recuperar la persona", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return per;
         }
 
     }

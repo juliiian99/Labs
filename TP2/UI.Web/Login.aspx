@@ -25,7 +25,7 @@
              height: 23px;
          }
      </style>
-
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -62,7 +62,7 @@
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
                 <td>
-            <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
+            <asp:Button CssClass="btn btn-success" ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
                 </td>
             </tr>
             <tr>
@@ -76,5 +76,9 @@
             </tr>
         </table>
     </form>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
 </body>
+
 </html>

@@ -44,9 +44,11 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblIDPersona = new System.Windows.Forms.Label();
+            this.txtIDPersona = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tblUsuarioDskp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -75,7 +77,9 @@
             this.tblUsuarioDskp.Controls.Add(this.chkHabilitado, 2, 0);
             this.tblUsuarioDskp.Controls.Add(this.btnCancelar, 3, 4);
             this.tblUsuarioDskp.Controls.Add(this.txtApellido, 3, 1);
-            this.tblUsuarioDskp.Controls.Add(this.btnAceptar, 1, 4);
+            this.tblUsuarioDskp.Controls.Add(this.btnAceptar, 2, 4);
+            this.tblUsuarioDskp.Controls.Add(this.lblIDPersona, 0, 4);
+            this.tblUsuarioDskp.Controls.Add(this.txtIDPersona, 1, 4);
             this.tblUsuarioDskp.Location = new System.Drawing.Point(12, 12);
             this.tblUsuarioDskp.Name = "tblUsuarioDskp";
             this.tblUsuarioDskp.RowCount = 5;
@@ -217,17 +221,6 @@
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptar.Location = new System.Drawing.Point(180, 217);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 17;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -246,6 +239,36 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(164, 20);
             this.txtApellido.TabIndex = 13;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAceptar.Location = new System.Drawing.Point(330, 217);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 17;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // lblIDPersona
+            // 
+            this.lblIDPersona.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIDPersona.AutoSize = true;
+            this.lblIDPersona.Location = new System.Drawing.Point(37, 222);
+            this.lblIDPersona.Name = "lblIDPersona";
+            this.lblIDPersona.Size = new System.Drawing.Size(60, 13);
+            this.lblIDPersona.TabIndex = 19;
+            this.lblIDPersona.Text = "ID Persona";
+            // 
+            // txtIDPersona
+            // 
+            this.txtIDPersona.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtIDPersona.Location = new System.Drawing.Point(138, 210);
+            this.txtIDPersona.Name = "txtIDPersona";
+            this.txtIDPersona.ReadOnly = true;
+            this.txtIDPersona.Size = new System.Drawing.Size(98, 20);
+            this.txtIDPersona.TabIndex = 20;
             // 
             // UsuarioDesktop
             // 
@@ -273,16 +296,18 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblConfirmarClave;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtConfirmarClave;
         private System.Windows.Forms.CheckBox chkHabilitado;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label lblIDPersona;
+        public System.Windows.Forms.TextBox txtID;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtIDPersona;
+        public System.Windows.Forms.TextBox txtApellido;
     }
 }

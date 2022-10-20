@@ -63,7 +63,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblApellido, 0, 2);
@@ -130,7 +130,7 @@ namespace UI.Desktop
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtID.Location = new System.Drawing.Point(106, 32);
+            this.txtID.Location = new System.Drawing.Point(105, 32);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 20);
@@ -139,7 +139,7 @@ namespace UI.Desktop
             // txtNombre
             // 
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombre.Location = new System.Drawing.Point(106, 117);
+            this.txtNombre.Location = new System.Drawing.Point(105, 117);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 11;
@@ -147,7 +147,7 @@ namespace UI.Desktop
             // txtApellido
             // 
             this.txtApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtApellido.Location = new System.Drawing.Point(106, 204);
+            this.txtApellido.Location = new System.Drawing.Point(105, 204);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 12;
@@ -155,7 +155,7 @@ namespace UI.Desktop
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(478, 307);
+            this.btnAceptar.Location = new System.Drawing.Point(477, 307);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 20;
@@ -187,7 +187,7 @@ namespace UI.Desktop
             // txtDireccion
             // 
             this.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDireccion.Location = new System.Drawing.Point(106, 285);
+            this.txtDireccion.Location = new System.Drawing.Point(105, 285);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 13;
@@ -196,7 +196,7 @@ namespace UI.Desktop
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(301, 35);
+            this.lblEmail.Location = new System.Drawing.Point(300, 35);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 4;
@@ -205,7 +205,7 @@ namespace UI.Desktop
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEmail.Location = new System.Drawing.Point(355, 32);
+            this.txtEmail.Location = new System.Drawing.Point(354, 32);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 14;
@@ -214,7 +214,7 @@ namespace UI.Desktop
             // 
             this.lblTelefono.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(284, 121);
+            this.lblTelefono.Location = new System.Drawing.Point(283, 121);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 5;
@@ -223,7 +223,7 @@ namespace UI.Desktop
             // txtTelefono
             // 
             this.txtTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTelefono.Location = new System.Drawing.Point(355, 117);
+            this.txtTelefono.Location = new System.Drawing.Point(354, 117);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 15;
@@ -232,7 +232,7 @@ namespace UI.Desktop
             // 
             this.lblFechaNac.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblFechaNac.AutoSize = true;
-            this.lblFechaNac.Location = new System.Drawing.Point(225, 207);
+            this.lblFechaNac.Location = new System.Drawing.Point(224, 207);
             this.lblFechaNac.Name = "lblFechaNac";
             this.lblFechaNac.Size = new System.Drawing.Size(108, 13);
             this.lblFechaNac.TabIndex = 6;
@@ -241,7 +241,7 @@ namespace UI.Desktop
             // dtFechaNac
             // 
             this.dtFechaNac.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtFechaNac.Location = new System.Drawing.Point(339, 204);
+            this.dtFechaNac.Location = new System.Drawing.Point(338, 204);
             this.dtFechaNac.Name = "dtFechaNac";
             this.dtFechaNac.Size = new System.Drawing.Size(133, 20);
             this.dtFechaNac.TabIndex = 16;
@@ -250,7 +250,7 @@ namespace UI.Desktop
             // 
             this.lblLegajo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(514, 35);
+            this.lblLegajo.Location = new System.Drawing.Point(513, 35);
             this.lblLegajo.Name = "lblLegajo";
             this.lblLegajo.Size = new System.Drawing.Size(39, 13);
             this.lblLegajo.TabIndex = 7;
@@ -268,7 +268,7 @@ namespace UI.Desktop
             // 
             this.lblTipoPersona.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblTipoPersona.AutoSize = true;
-            this.lblTipoPersona.Location = new System.Drawing.Point(484, 121);
+            this.lblTipoPersona.Location = new System.Drawing.Point(483, 121);
             this.lblTipoPersona.Name = "lblTipoPersona";
             this.lblTipoPersona.Size = new System.Drawing.Size(69, 13);
             this.lblTipoPersona.TabIndex = 8;
@@ -278,7 +278,7 @@ namespace UI.Desktop
             // 
             this.cbTipoPersona.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTipoPersona.FormattingEnabled = true;
-            this.cbTipoPersona.Location = new System.Drawing.Point(563, 117);
+            this.cbTipoPersona.Location = new System.Drawing.Point(562, 117);
             this.cbTipoPersona.Name = "cbTipoPersona";
             this.cbTipoPersona.Size = new System.Drawing.Size(121, 21);
             this.cbTipoPersona.TabIndex = 18;
@@ -287,7 +287,7 @@ namespace UI.Desktop
             // 
             this.lblIDPlan.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblIDPlan.AutoSize = true;
-            this.lblIDPlan.Location = new System.Drawing.Point(511, 207);
+            this.lblIDPlan.Location = new System.Drawing.Point(510, 207);
             this.lblIDPlan.Name = "lblIDPlan";
             this.lblIDPlan.Size = new System.Drawing.Size(42, 13);
             this.lblIDPlan.TabIndex = 9;
@@ -297,7 +297,7 @@ namespace UI.Desktop
             // 
             this.cbIDPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbIDPlan.FormattingEnabled = true;
-            this.cbIDPlan.Location = new System.Drawing.Point(563, 203);
+            this.cbIDPlan.Location = new System.Drawing.Point(562, 203);
             this.cbIDPlan.Name = "cbIDPlan";
             this.cbIDPlan.Size = new System.Drawing.Size(121, 21);
             this.cbIDPlan.TabIndex = 19;

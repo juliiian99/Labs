@@ -22,7 +22,7 @@ namespace UI.Web
             UsuarioAdapter ua = new UsuarioAdapter();
             Usuario u = ua.Login(this.txtUsuario.Text, this.txtClave.Text);
 
-            if (u.NombreUsuario != null)
+            if (u!= null)
             {
                 Page.Response.Redirect("https://localhost:44385/");
             }

@@ -1,6 +1,6 @@
 ﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.SiteMaster" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head runat="server">
         <title>Academia</title>
 </head>
@@ -12,7 +12,10 @@
         <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%"> 
 <tr> 
             <td valign="top" width="150"> 
-                <table border="0" width="100%" cellpadding="4" cellspacing="0"> 
+                <table class="table table-dark" border="0" width="100%" cellpadding="4" cellspacing="0"> 
+                    <tr>
+                        <td><a href="Personas.aspx">Personas</a></td> 
+                    </tr>
                     <tr>
                         <td><a href="Usuarios.aspx">Usuarios</a></td> 
                     </tr>
@@ -27,6 +30,9 @@
                     </tr>
                     <tr>
                         <td><a href="Comisiones.aspx">Comisiones</a></td> 
+                    </tr>
+                    <tr>
+                        <td><a href="Cursos.aspx">Cursos</a></td> 
                     </tr>
 
                 </table> 
