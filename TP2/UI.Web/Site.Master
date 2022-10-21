@@ -13,26 +13,30 @@
 <tr> 
             <td valign="top" width="150"> 
                 <table class="table table-dark" border="0" width="100%" cellpadding="4" cellspacing="0"> 
-                    <tr>
-                        <td><a href="Personas.aspx">Personas</a></td> 
+                    <tr> 
+                        <td align="center" class="titulo">Inicio</td> 
+                    </tr> 
+                    <tr> 
+                        <td><a href="Login.aspx" id="Login">Login</a></td> 
                     </tr>
                     <tr>
-                        <td><a href="Usuarios.aspx">Usuarios</a></td> 
+                        <td><asp:HyperLink ID="usuariosLink" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink></td>
+                    </tr>
+                    <tr> <td><asp:HyperLink ID="personasLink" runat="server" NavigateUrl="~/Personas.aspx">Personas</asp:HyperLink></td></tr>
+                    <tr>
+                        <td><asp:HyperLink ID="especialidadesLink" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink></td>
                     </tr>
                     <tr>
-                        <td><a href="Especialidades.aspx">Especialidades</a></td> 
+                        <td><asp:HyperLink ID="planesLink" runat="server" NavigateUrl="~/Planes.aspx">Planes</asp:HyperLink></td>
                     </tr>
                     <tr>
-                        <td><a href="Planes.aspx">Planes</a></td> 
+                        <td><asp:HyperLink ID="materiasLink" runat="server" NavigateUrl="~/Materias.aspx">Materias</asp:HyperLink></td>
                     </tr>
                     <tr>
-                        <td><a href="Materias.aspx">Materias</a></td> 
+                        <td><asp:HyperLink ID="comisionesLink" runat="server" NavigateUrl="~/Comisiones.aspx">Comisiones</asp:HyperLink></td>
                     </tr>
                     <tr>
-                        <td><a href="Comisiones.aspx">Comisiones</a></td> 
-                    </tr>
-                    <tr>
-                        <td><a href="Cursos.aspx">Cursos</a></td> 
+                        <td><asp:HyperLink ID="cursosLink" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink></td>
                     </tr>
 
                 </table> 

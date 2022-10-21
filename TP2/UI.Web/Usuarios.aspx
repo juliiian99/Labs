@@ -44,10 +44,13 @@
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave: "></asp:Label>
         <asp:TextBox ID="repetirClaveTextBox" runat="server"></asp:TextBox>
         <br />
+        <asp:Label ID="lblIDPersona" runat="server" Text="ID Persona: "></asp:Label>
+        <asp:TextBox ID="idPersonaTextBox" runat="server"></asp:TextBox>
+        <br />
 
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click" CausesValidation="False">Cancelar</asp:LinkButton>
         </asp:Panel>
         <asp:ValidationSummary ID="nombreValidationSummary" runat="server" DisplayMode="BulletList" ShowSummary="true" HeaderText="Errors: " ForeColor="Red" />
     </asp:Panel>

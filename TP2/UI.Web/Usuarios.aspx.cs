@@ -14,7 +14,18 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             this.LoadGrid();
-            formPanel.Visible = false;
+            if(Request.QueryString["nombre"] is null)
+            {
+                formPanel.Visible = false;
+            }
+            else
+            {
+                this.nombreTextBox.Text = Request.QueryString["nombre"];
+                this.apellidoTextBox.Text = Request.QueryString["apellido"];
+                this.emailTextBox.Text = Request.QueryString["email"];
+                this.idPersonaTextBox.Text = Request.QueryString["id_per"];
+                formPanel.Visible = true;
+            }
         }
 
         UsuarioLogic _logic;
@@ -95,6 +106,7 @@ namespace UI.Web
             this.emailTextBox.Text = this.Entity.EMail;
             this.HabilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.claveTextBox.Text = this.Entity.Clave;
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -161,6 +173,7 @@ namespace UI.Web
             this.claveLabel.Visible = Enable;
             this.repetirClaveTextBox.Visible = Enable;
             this.repetirClaveLabel.Visible = Enable;
+            this.idPersonaTextBox.Visible = Enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -194,6 +207,7 @@ namespace UI.Web
             this.emailTextBox.Text = string.Empty;
             this.HabilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
+            this.idPersonaTextBox.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

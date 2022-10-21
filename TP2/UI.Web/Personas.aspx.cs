@@ -150,6 +150,11 @@ namespace UI.Web
         private void SaveEntity(Persona persona)
         {
             this.Logic.Save(persona);
+            PersonaLogic p = new PersonaLogic();
+            Business.Entities.Persona per = p.GetLast();
+            string no = per.Nombre; string ape = per.Apellido; string mail = per.EMail; int id = per.ID;
+            Response.Redirect("~/Usuarios.aspx?nombre="+no+"&apellido="+ape+"&email="+mail+"&id_per="+id);
+            
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)

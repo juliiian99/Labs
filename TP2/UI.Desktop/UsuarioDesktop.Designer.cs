@@ -263,11 +263,11 @@
             // 
             // txtIDPersona
             // 
-            this.txtIDPersona.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtIDPersona.Location = new System.Drawing.Point(138, 210);
+            this.txtIDPersona.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIDPersona.Location = new System.Drawing.Point(138, 219);
             this.txtIDPersona.Name = "txtIDPersona";
             this.txtIDPersona.ReadOnly = true;
-            this.txtIDPersona.Size = new System.Drawing.Size(98, 20);
+            this.txtIDPersona.Size = new System.Drawing.Size(159, 20);
             this.txtIDPersona.TabIndex = 20;
             // 
             // UsuarioDesktop

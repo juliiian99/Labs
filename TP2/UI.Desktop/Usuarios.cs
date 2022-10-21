@@ -14,8 +14,9 @@ namespace UI.Desktop
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            formUsuario.ShowDialog();
+            MessageBox.Show("Para crear un usuario debe crear una persona");
+            //UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            //formUsuario.ShowDialog();
             this.Listar();
         }
 

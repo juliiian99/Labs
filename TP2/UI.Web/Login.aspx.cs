@@ -24,6 +24,9 @@ namespace UI.Web
 
             if (u!= null)
             {
+                PersonaLogic per = new PersonaLogic();
+                Persona persona = per.GetOne(u.IDPersona);
+                Session.Add("tipo", persona.TipoPersona);
                 Page.Response.Redirect("https://localhost:44385/");
             }
             else
