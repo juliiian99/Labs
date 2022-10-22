@@ -190,7 +190,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_persona, nombre, apellido from personas where tipo_persona=0", sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_persona,concat( nombre,' ', apellido)nape from personas where tipo_persona=0", sqlConn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(docentes);
             }

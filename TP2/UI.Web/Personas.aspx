@@ -63,6 +63,7 @@
         <asp:Label ID="lblPlan" runat="server" Text="Plan: "></asp:Label>
         <asp:DropDownList ID="planDropDownList" runat="server" >
         </asp:DropDownList>
+
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click" CausesValidation="False">Cancelar</asp:LinkButton>

@@ -39,6 +39,9 @@
                     <tr>
                         <td><asp:HyperLink ID="cursosLink" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink></td>
                     </tr>
+                    <tr>
+                        <td><asp:HyperLink ID="docenteCursoLink" runat="server" NavigateUrl="~/DocentesCursos.aspx">Asigna curso a docente</asp:HyperLink></td>
+                    </tr>
 
                 </table> 
             </td> 

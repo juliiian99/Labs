@@ -145,7 +145,6 @@ namespace UI.Web
             planDropDownList.DataValueField = "id_plan";
             planDropDownList.DataTextField = "desc_plan";
             planDropDownList.DataBind();
-
         }
         private void SaveEntity(Persona persona)
         {

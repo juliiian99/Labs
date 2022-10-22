@@ -28,6 +28,7 @@ namespace UI.Desktop
                         comisionesToolStripMenuItem.Visible = false;
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
+                        btnAgregarDocur.Visible = false;
                         break;
                     }
                 case Persona.TiposPersonas.Alumno:
@@ -39,6 +40,7 @@ namespace UI.Desktop
                         comisionesToolStripMenuItem.Visible = false;
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
+                        btnAgregarDocur.Visible = false;
                         break;
                     }
                 default:

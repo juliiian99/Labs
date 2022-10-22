@@ -110,7 +110,7 @@ namespace UI.Desktop
         {
             DocenteCursoLogic docur = new DocenteCursoLogic();
             cbDocente.DataSource = docur.GetDocentes();
-            cbDocente.DisplayMember =  ("nombre");
+            cbDocente.DisplayMember =  ("nape");
             cbDocente.ValueMember = "id_persona";
             cbIDCurso.DataSource = docur.GetCursos();
             cbIDCurso.DisplayMember = "id_curso";
