@@ -14,7 +14,7 @@ namespace Data.Database
     {
         public List<Plan> GetAll()
         {
-            List<Plan> especialidades = new List<Plan>();
+            List<Plan> planes = new List<Plan>();
             try
             {
                 this.OpenConnection();
@@ -26,7 +26,7 @@ namespace Data.Database
                     pla.ID = (int)drPlan["id_plan"];
                     pla.Descripcion = (string)drPlan["desc_plan"];
                     pla.IDEspecialidad = (int)drPlan["id_especialidad"];
-                    especialidades.Add(pla);
+                    planes.Add(pla);
                 }
                 drPlan.Close();
             }
@@ -40,7 +40,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            return especialidades;
+            return planes;
         }
 
         public Plan GetOne(int ID)
@@ -78,8 +78,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete =
-                    new SqlCommand("delete planes where id_plan = @id", this.sqlConn);
+                SqlCommand cmdDelete =new SqlCommand("delete planes where id_plan = @id", this.sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
             }

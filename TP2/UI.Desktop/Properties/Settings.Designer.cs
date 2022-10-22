@@ -33,5 +33,16 @@ namespace UI.Desktop.Properties {
                 return ((string)(this["AcademiaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Academia;Integrated Security=Fal" +
+            "se;User ID=net")]
+        public string AcademiaConnectionString1 {
+            get {
+                return ((string)(this["AcademiaConnectionString1"]));
+            }
+        }
     }
 }

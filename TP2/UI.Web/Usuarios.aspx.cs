@@ -20,11 +20,17 @@ namespace UI.Web
             }
             else
             {
+                this.FormMode = FormModes.Alta;
+                formPanel.Visible = true;
                 this.nombreTextBox.Text = Request.QueryString["nombre"];
                 this.apellidoTextBox.Text = Request.QueryString["apellido"];
                 this.emailTextBox.Text = Request.QueryString["email"];
                 this.idPersonaTextBox.Text = Request.QueryString["id_per"];
-                formPanel.Visible = true;
+                this.nombreTextBox.Enabled = false;
+                this.apellidoTextBox.Enabled = false;
+                this.emailTextBox.Enabled = false;
+                this.idPersonaTextBox.Enabled = false;
+                
             }
         }
 
@@ -107,6 +113,7 @@ namespace UI.Web
             this.HabilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.claveTextBox.Text = this.Entity.Clave;
+            this.idPersonaTextBox.Text = this.Entity.IDPersona.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -128,6 +135,7 @@ namespace UI.Web
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.HabilitadoCheckBox.Checked;
+            usuario.IDPersona = Convert.ToInt32(this.idPersonaTextBox.Text);
         }
 
         private void SaveEntity(Usuario usuario)

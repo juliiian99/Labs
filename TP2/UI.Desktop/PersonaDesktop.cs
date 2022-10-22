@@ -179,9 +179,6 @@ namespace UI.Desktop
             cbIDPlan.ValueMember = "id_plan";
             cbIDPlan.DisplayMember = "desc_plan";
             cbTipoPersona.DataSource = Enum.GetValues(typeof(Persona.TiposPersonas));
-
-            
-
         }
     }
 }

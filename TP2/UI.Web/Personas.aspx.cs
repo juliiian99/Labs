@@ -150,18 +150,21 @@ namespace UI.Web
         private void SaveEntity(Persona persona)
         {
             this.Logic.Save(persona);
+        }
+
+        private void AddUsuario()
+        {
             PersonaLogic p = new PersonaLogic();
             Business.Entities.Persona per = p.GetLast();
             string no = per.Nombre; string ape = per.Apellido; string mail = per.EMail; int id = per.ID;
-            Response.Redirect("~/Usuarios.aspx?nombre="+no+"&apellido="+ape+"&email="+mail+"&id_per="+id);
-            
+            Response.Redirect("~/Usuarios.aspx?nombre=" + per.Nombre + "&apellido=" + per.Apellido + "&email=" + per.EMail + "&id_per=" + per.ID);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            if (fNacCalendar.SelectedDate.Date == null)
+            if ((fNacCalendar.SelectedDate.Date.Year)<1900)
             {
-                Response.Write("Seleccione una fecha de nacimiento");
+                Response.Write("Seleccione una fecha de nacimiento valida");
             }
             else
             {
@@ -183,6 +186,7 @@ namespace UI.Web
                         this.Entity = new Persona();
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
+                        this.AddUsuario();
                         this.LoadGrid();
                         break;
                     default:

@@ -90,5 +90,11 @@ namespace UI.Desktop
             Cursos cursoAbmc = new Cursos();
             cursoAbmc.ShowDialog();
         }
+
+        private void btnAgregarDocur_Click(object sender, EventArgs e)
+        {
+            DocentesCursos docurAbmc = new DocentesCursos();
+            docurAbmc.ShowDialog();
+        }
     }
 }

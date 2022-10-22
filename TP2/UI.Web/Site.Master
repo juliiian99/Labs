@@ -22,7 +22,8 @@
                     <tr>
                         <td><asp:HyperLink ID="usuariosLink" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink></td>
                     </tr>
-                    <tr> <td><asp:HyperLink ID="personasLink" runat="server" NavigateUrl="~/Personas.aspx">Personas</asp:HyperLink></td></tr>
+                    <tr> <td><asp:HyperLink ID="personasLink" runat="server" NavigateUrl="~/Personas.aspx">Personas</asp:HyperLink></td>
+                    </tr>
                     <tr>
                         <td><asp:HyperLink ID="especialidadesLink" runat="server" NavigateUrl="~/Especialidades.aspx">Especialidades</asp:HyperLink></td>
                     </tr>

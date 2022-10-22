@@ -1,5 +1,4 @@
-﻿using Business.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Logic;
+using Business.Entities;
 
 namespace UI.Desktop
 {
@@ -21,12 +22,7 @@ namespace UI.Desktop
         public void Listar()
         {
             CursoLogic cl = new CursoLogic();
-            this.dgvCursos.DataSource = cl.GetAll();
-        }
-
-        private void Cursos_Load(object sender, EventArgs e)
-        {
-            this.Listar();
+            this.dgvCursos.DataSource =cl.GetAll();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -44,6 +40,14 @@ namespace UI.Desktop
             this.Listar();
         }
 
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+            CursoDesktop formCurso = new CursoDesktop(ID, ApplicationForm.ModoForm.Consulta);
+            formCurso.ShowDialog();
+            this.Listar();
+        }
+
         private void btnBaja_Click(object sender, EventArgs e)
         {
             int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
@@ -57,12 +61,9 @@ namespace UI.Desktop
             this.Close();
         }
 
-        private void btnConsulta_Click(object sender, EventArgs e)
+        private void Cursos_Load(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
-            CursoDesktop formCurso = new CursoDesktop(ID, ApplicationForm.ModoForm.Consulta);
-            formCurso.ShowDialog();
-            this.Listar();
+            Listar();
         }
     }
 }
