@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
+using Business.Logic;
 
 namespace UI.Desktop
 {
     public partial class Menu : Form
     {
-        public Menu(Persona.TiposPersonas TPer)
+        public Menu(Persona Per)
         {
 
             InitializeComponent();
+            Persona.TiposPersonas TPer = Per.TipoPersona;
             switch (TPer) 
             {
                 case Persona.TiposPersonas.Docente:
@@ -41,6 +43,13 @@ namespace UI.Desktop
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
                         btnAgregarDocur.Visible = false;
+                        cbAlumnos.Visible = true;
+                        AlumnoInscripcionLogic auil = new AlumnoInscripcionLogic();
+                        cbAlumnos.DataSource = auil.GetAlumnos();
+                        cbAlumnos.ValueMember = "id_persona";
+                        cbAlumnos.DisplayMember = "legajo";
+                        //cbAlumnos.ValueMember = "id_persona";
+
                         break;
                     }
                 default:
@@ -97,6 +106,14 @@ namespace UI.Desktop
         {
             DocentesCursos docurAbmc = new DocentesCursos();
             docurAbmc.ShowDialog();
+        }
+
+        private void cbAlumnos_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            AlumnosInscripciones alu = new AlumnosInscripciones(Convert.ToInt32(cbAlumnos.SelectedValue));
+            //AlumnosInscripciones.ID = Convert.ToInt32(cbAlumnos.SelectedValue);
+            alu.ShowDialog();
+            
         }
     }
 }

@@ -32,7 +32,7 @@ namespace UI.Desktop
             {
                 PersonaLogic per = new PersonaLogic();
                 Business.Entities.Persona persona = per.GetOne(usuario.IDPersona);
-                Menu ini = new Menu(persona.TipoPersona);
+                Menu ini = new Menu(persona);
                 ini.ShowDialog();
             }
 

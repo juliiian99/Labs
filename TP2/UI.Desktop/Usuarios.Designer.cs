@@ -164,7 +164,7 @@
             // 
             // usuarioBindingSource
             // 
-            this.usuarioBindingSource.DataSource = typeof(Business.Entities.Usuario);
+            this.usuarioBindingSource.DataSource = typeof(Business.Entities.AlumnoInscripcion);
             // 
             // btnSalir
             // 

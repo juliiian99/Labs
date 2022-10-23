@@ -38,6 +38,8 @@ namespace UI.Desktop
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAgregarDocur = new System.Windows.Forms.Button();
+            this.cbAlumnos = new System.Windows.Forms.ComboBox();
+            this.lblElegir = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +57,7 @@ namespace UI.Desktop
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(485, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,7 +112,7 @@ namespace UI.Desktop
             // 
             // btnAgregarDocur
             // 
-            this.btnAgregarDocur.Location = new System.Drawing.Point(64, 64);
+            this.btnAgregarDocur.Location = new System.Drawing.Point(198, 95);
             this.btnAgregarDocur.Name = "btnAgregarDocur";
             this.btnAgregarDocur.Size = new System.Drawing.Size(75, 56);
             this.btnAgregarDocur.TabIndex = 7;
@@ -118,11 +120,31 @@ namespace UI.Desktop
             this.btnAgregarDocur.UseVisualStyleBackColor = true;
             this.btnAgregarDocur.Click += new System.EventHandler(this.btnAgregarDocur_Click);
             // 
+            // cbAlumnos
+            // 
+            this.cbAlumnos.FormattingEnabled = true;
+            this.cbAlumnos.Location = new System.Drawing.Point(38, 95);
+            this.cbAlumnos.Name = "cbAlumnos";
+            this.cbAlumnos.Size = new System.Drawing.Size(121, 21);
+            this.cbAlumnos.TabIndex = 8;
+            this.cbAlumnos.SelectionChangeCommitted += new System.EventHandler(this.cbAlumnos_SelectionChangeCommitted);
+            // 
+            // lblElegir
+            // 
+            this.lblElegir.AutoSize = true;
+            this.lblElegir.Location = new System.Drawing.Point(38, 56);
+            this.lblElegir.Name = "lblElegir";
+            this.lblElegir.Size = new System.Drawing.Size(124, 13);
+            this.lblElegir.TabIndex = 9;
+            this.lblElegir.Text = "Elija su numero de legajo";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 249);
+            this.ClientSize = new System.Drawing.Size(485, 249);
+            this.Controls.Add(this.lblElegir);
+            this.Controls.Add(this.cbAlumnos);
             this.Controls.Add(this.btnAgregarDocur);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -145,5 +167,7 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.Button btnAgregarDocur;
+        private System.Windows.Forms.ComboBox cbAlumnos;
+        private System.Windows.Forms.Label lblElegir;
     }
 }
