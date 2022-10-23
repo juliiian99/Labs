@@ -26,6 +26,7 @@ namespace UI.Web
             {
                 PersonaLogic per = new PersonaLogic();
                 Persona persona = per.GetOne(u.IDPersona);
+                Session["id_persona"] = persona.ID;
                 Session.Add("tipo", persona.TipoPersona);
                 Page.Response.Redirect("https://localhost:44385/");
             }

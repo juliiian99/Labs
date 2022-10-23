@@ -29,6 +29,7 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +41,11 @@ namespace UI.Desktop
             this.btnAgregarDocur = new System.Windows.Forms.Button();
             this.cbAlumnos = new System.Windows.Forms.ComboBox();
             this.lblElegir = new System.Windows.Forms.Label();
+            this.cbCursos = new System.Windows.Forms.ComboBox();
+            this.lblCurso = new System.Windows.Forms.Label();
+            this.docenteCursoLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.docenteCursoLogicBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -57,7 +62,7 @@ namespace UI.Desktop
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(485, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(513, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,7 +117,7 @@ namespace UI.Desktop
             // 
             // btnAgregarDocur
             // 
-            this.btnAgregarDocur.Location = new System.Drawing.Point(198, 95);
+            this.btnAgregarDocur.Location = new System.Drawing.Point(63, 76);
             this.btnAgregarDocur.Name = "btnAgregarDocur";
             this.btnAgregarDocur.Size = new System.Drawing.Size(75, 56);
             this.btnAgregarDocur.TabIndex = 7;
@@ -138,11 +143,38 @@ namespace UI.Desktop
             this.lblElegir.TabIndex = 9;
             this.lblElegir.Text = "Elija su numero de legajo";
             // 
+            // cbCursos
+            // 
+            this.cbCursos.DataSource = this.docenteCursoLogicBindingSource;
+            this.cbCursos.DisplayMember = "DocenteCursoData";
+            this.cbCursos.FormattingEnabled = true;
+            this.cbCursos.Location = new System.Drawing.Point(221, 95);
+            this.cbCursos.Name = "cbCursos";
+            this.cbCursos.Size = new System.Drawing.Size(121, 21);
+            this.cbCursos.TabIndex = 11;
+            this.cbCursos.ValueMember = "DocenteCursoData";
+            this.cbCursos.SelectionChangeCommitted += new System.EventHandler(this.cbCursos_SelectionChangeCommitted);
+            // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Location = new System.Drawing.Point(171, 98);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(34, 13);
+            this.lblCurso.TabIndex = 10;
+            this.lblCurso.Text = "Curso";
+            // 
+            // docenteCursoLogicBindingSource
+            // 
+            this.docenteCursoLogicBindingSource.DataSource = typeof(Business.Logic.DocenteCursoLogic);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 249);
+            this.ClientSize = new System.Drawing.Size(513, 214);
+            this.Controls.Add(this.cbCursos);
+            this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.lblElegir);
             this.Controls.Add(this.cbAlumnos);
             this.Controls.Add(this.btnAgregarDocur);
@@ -150,8 +182,10 @@ namespace UI.Desktop
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.docenteCursoLogicBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +203,8 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnAgregarDocur;
         private System.Windows.Forms.ComboBox cbAlumnos;
         private System.Windows.Forms.Label lblElegir;
+        private System.Windows.Forms.ComboBox cbCursos;
+        private System.Windows.Forms.Label lblCurso;
+        private System.Windows.Forms.BindingSource docenteCursoLogicBindingSource;
     }
 }

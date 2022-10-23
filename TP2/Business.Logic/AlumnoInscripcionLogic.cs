@@ -42,14 +42,19 @@ namespace Business.Logic
             AlumnoInscripcionData.Update(ALUI);
         }
 
-        public DataTable GetCursos()
+        public DataTable GetCursos(int id)
         {
-            return AlumnoInscripcionData.GetCursos();
+            return AlumnoInscripcionData.GetCursos(id);
         }
 
         public DataTable GetAlumnos()
         {
             return AlumnoInscripcionData.GetAlumnos();
+        }
+
+        public DataTable GetAlumnosCurso(int id)
+        {
+            return AlumnoInscripcionData.GetAlumnosCurso(id);
         }
     }
 }

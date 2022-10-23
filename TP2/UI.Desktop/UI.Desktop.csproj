@@ -65,6 +65,12 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CargaNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargaNotas.Designer.cs">
+      <DependentUpon>CargaNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComisionDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CargaNotas.resx">
+      <DependentUpon>CargaNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComisionDesktop.resx">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +270,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Business.Entities.AlumnoInscripcion.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Comision.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Curso.datasource" />
     <None Include="Properties\DataSources\Business.Entities.DocenteCurso+TiposCargos.datasource" />
@@ -270,6 +280,7 @@
     <None Include="Properties\DataSources\Business.Entities.Persona.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Plan.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Usuario.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.DocenteCursoLogic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,5 @@
-﻿using Data.Database;
+﻿using Business.Entities;
+using Data.Database;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -51,6 +52,11 @@ namespace Business.Logic
         public DataTable GetComisiones()
         {
             return CursoData.GetComisiones();
+        }
+
+        public void CambiaCupo(Curso cur, int i)
+        {
+            CursoData.CambiaCupo(cur, i);
         }
 
     }

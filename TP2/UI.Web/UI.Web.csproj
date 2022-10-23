@@ -143,6 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlumnoInscripcion.aspx" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -206,6 +207,13 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoInscripcion.aspx.cs">
+      <DependentUpon>AlumnoInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlumnoInscripcion.aspx.designer.cs">
+      <DependentUpon>AlumnoInscripcion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />

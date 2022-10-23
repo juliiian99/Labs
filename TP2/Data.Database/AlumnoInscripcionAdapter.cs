@@ -169,13 +169,14 @@ namespace Data.Database
             alui.State = BusinessEntity.States.Unmodified;
         }
 
-        public DataTable GetCursos()
+        public DataTable GetCursos(int id)
         {
             DataTable cursos = new DataTable();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_curso, id_materia, id_comision from cursos", sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_curso, id_materia, id_comision from cursos where id_curso not in(select id_curso from alumnos_inscripciones where id_alumno= @id )", sqlConn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataAdapter ca = new SqlDataAdapter(cmd);
                 ca.Fill(cursos);
             }
@@ -217,6 +218,31 @@ namespace Data.Database
             return alumnos;
         }
 
-        
+        public DataTable GetAlumnosCurso(int id_c)
+        {
+            DataTable alumnos = new DataTable();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select id_alumno, id_curso, condicion,nota from alumnos_inscripciones where id_curso=@id_curso", sqlConn);
+                cmd.Parameters.Add("@id_curso", SqlDbType.Int).Value = id_c;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(alumnos);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de alumnos", Ex);
+                throw Ex;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return alumnos;
+        }
+
+
     }
 }

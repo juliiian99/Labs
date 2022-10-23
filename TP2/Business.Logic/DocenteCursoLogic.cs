@@ -49,6 +49,11 @@ namespace Business.Logic
             return DocenteCursoData.GetCursos();
         }
 
+        public DataTable GetCursoss(int ID_PER)
+        {
+            return DocenteCursoData.GetCursoss(ID_PER);
+        }
+
         public DataTable GetDocentes()
         {
             return DocenteCursoData.GetDocentes();

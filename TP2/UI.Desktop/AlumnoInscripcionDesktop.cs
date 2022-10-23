@@ -91,7 +91,7 @@ namespace UI.Desktop
         public override void MapearADatos()
         {
             this.AlumnoInscripcionActual = new AlumnoInscripcion();
-            CursoAdapter ca = new CursoAdapter();
+            CursoLogic ca = new CursoLogic();
             Curso cur= ca.GetOne(Convert.ToInt32(cbIDCurso.SelectedValue));
             switch (Modo)
             {
@@ -160,7 +160,7 @@ namespace UI.Desktop
         private void AlumnoInscripcionDesktop_Load(object sender, EventArgs e)
         {
             AlumnoInscripcionLogic alui = new AlumnoInscripcionLogic();
-            cbIDCurso.DataSource = alui.GetCursos();
+            cbIDCurso.DataSource = alui.GetCursos(Global.ID);
             cbIDCurso.ValueMember = "id_curso";
             cbIDCurso.DisplayMember = "id_curso";
 

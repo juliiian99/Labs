@@ -47,7 +47,7 @@ namespace UI.Desktop
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.Usuario)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
             PersonaDesktop formPersona = new PersonaDesktop(ID, ApplicationForm.ModoForm.Consulta);
             formPersona.ShowDialog();
             this.Listar();

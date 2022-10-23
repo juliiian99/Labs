@@ -166,7 +166,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_curso, id_materia, id_comision from cursos", sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_curso, id_materia, id_comision from cursos c", sqlConn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(cursos);
             }
@@ -180,6 +180,32 @@ namespace Data.Database
             finally 
             { 
                 this.CloseConnection(); 
+            }
+            return cursos;
+        }
+
+        public DataTable GetCursoss(int id_per)
+        {
+            DataTable cursos = new DataTable();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select id_curso, id_docente from docentes_cursos where id_docente=1025 ", sqlConn);
+                cmd.Parameters.Add("@id_doce", SqlDbType.Int).Value = id_per;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(cursos);
+                //
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de cursos", Ex);
+                throw Ex;
+            }
+            finally
+            {
+                this.CloseConnection();
             }
             return cursos;
         }
@@ -207,5 +233,7 @@ namespace Data.Database
             }
             return docentes;
         }
+
+        
     }
 }

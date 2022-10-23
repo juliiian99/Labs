@@ -14,9 +14,14 @@ namespace UI.Desktop
 {
     public partial class Menu : Form
     {
+        static class Global
+        {
+            static public Persona Pers;
+        }
+
         public Menu(Persona Per)
         {
-
+            Global.Pers = Per;
             InitializeComponent();
             Persona.TiposPersonas TPer = Per.TipoPersona;
             switch (TPer) 
@@ -33,6 +38,12 @@ namespace UI.Desktop
                         btnAgregarDocur.Visible = false;
                         cbAlumnos.Visible = false;
                         lblElegir.Visible = false;
+                        lblCurso.Visible = true;
+                        cbCursos.Visible = true;
+                        DocenteCursoLogic dcl = new DocenteCursoLogic();
+                        cbAlumnos.DataSource= dcl.GetCursos();
+                        cbAlumnos.DisplayMember = "id_curso";
+                        cbAlumnos.ValueMember = "id_curso";
                         break;
                     }
                 case Persona.TiposPersonas.Alumno:
@@ -46,10 +57,15 @@ namespace UI.Desktop
                         cursosToolStripMenuItem.Visible = false;
                         btnAgregarDocur.Visible = false;
                         cbAlumnos.Visible = true;
-                        AlumnoInscripcionLogic auil = new AlumnoInscripcionLogic();
-                        cbAlumnos.DataSource = auil.GetAlumnos();
-                        cbAlumnos.ValueMember = "id_persona";
-                        cbAlumnos.DisplayMember = "legajo";
+                        AlumnosInscripciones alu = new AlumnosInscripciones(Global.Pers.ID);
+                        //AlumnosInscripciones.ID = Convert.ToInt32(cbAlumnos.SelectedValue);
+                        alu.ShowDialog();
+                        lblCurso.Visible = false;
+                        cbCursos.Visible = false;
+                        //AlumnoInscripcionLogic auil = new AlumnoInscripcionLogic();
+                        //cbAlumnos.DataSource = auil.GetAlumnos();
+                        //cbAlumnos.ValueMember = "id_persona";
+                        //cbAlumnos.DisplayMember = "legajo";
                         //cbAlumnos.ValueMember = "id_persona";
 
                         break;
@@ -58,6 +74,8 @@ namespace UI.Desktop
                     {
                         cbAlumnos.Visible = false;
                         lblElegir.Visible = false;
+                        lblCurso.Visible = false;
+                        cbCursos.Visible = false;
                         break;
                     }
             }
@@ -114,10 +132,25 @@ namespace UI.Desktop
 
         private void cbAlumnos_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            AlumnosInscripciones alu = new AlumnosInscripciones(Convert.ToInt32(cbAlumnos.SelectedValue));
+            AlumnosInscripciones alu = new AlumnosInscripciones(Global.Pers.ID);
             //AlumnosInscripciones.ID = Convert.ToInt32(cbAlumnos.SelectedValue);
             alu.ShowDialog();
             
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            DocenteCursoLogic dcl = new DocenteCursoLogic();
+            cbAlumnos.DataSource = dcl.GetCursoss(Global.Pers.ID);
+            cbAlumnos.DisplayMember = "id_curso";
+            cbAlumnos.ValueMember = "id_curso";
+        }
+
+        private void cbCursos_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CargaNotas cn = new CargaNotas(Convert.ToInt32(cbCursos.SelectedValue));
+            cn.ShowDialog();
+
         }
     }
 }
