@@ -31,6 +31,8 @@ namespace UI.Desktop
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
                         btnAgregarDocur.Visible = false;
+                        cbAlumnos.Visible = false;
+                        lblElegir.Visible = false;
                         break;
                     }
                 case Persona.TiposPersonas.Alumno:
@@ -54,6 +56,8 @@ namespace UI.Desktop
                     }
                 default:
                     {
+                        cbAlumnos.Visible = false;
+                        lblElegir.Visible = false;
                         break;
                     }
             }

@@ -215,5 +215,32 @@ namespace Data.Database
             }
             curso.State = BusinessEntity.States.Unmodified;
         }
+
+        public void CambiaCupo(Curso curso, int cant)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand(
+                    "UPDATE cursos SET id_materia = @id_materia, id_comision = @id_comision, anio_calendario = @anio_calendario, cupo = @cupo " +
+                    "WHERE id_curso = @id", this.sqlConn);
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
+                cmdSave.Parameters.Add("@id_materia", SqlDbType.VarChar, 50).Value = curso.IDMateria;
+                cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IDComision;
+                cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
+                cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo + cant;
+                cmdSave.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al modificar datos del curso", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
     }
 }

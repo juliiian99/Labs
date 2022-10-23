@@ -55,37 +55,37 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblIDInscripcion, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblIDCurso, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIDAlumno, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblCondicion, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblNota, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbIDCurso, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.nNota, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblMateria, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblComision, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbCondicion, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtIDAlumno, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblCondicion, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbCondicion, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblNota, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.nNota, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 461);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(460, 268);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptar.Location = new System.Drawing.Point(120, 434);
+            this.btnAceptar.Location = new System.Drawing.Point(135, 241);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace UI.Desktop
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.Location = new System.Drawing.Point(330, 434);
+            this.btnCancelar.Location = new System.Drawing.Point(365, 241);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 1;
@@ -108,7 +108,7 @@ namespace UI.Desktop
             // 
             this.lblIDInscripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIDInscripcion.AutoSize = true;
-            this.lblIDInscripcion.Location = new System.Drawing.Point(16, 36);
+            this.lblIDInscripcion.Location = new System.Drawing.Point(21, 33);
             this.lblIDInscripcion.Name = "lblIDInscripcion";
             this.lblIDInscripcion.Size = new System.Drawing.Size(72, 13);
             this.lblIDInscripcion.TabIndex = 2;
@@ -118,7 +118,7 @@ namespace UI.Desktop
             // 
             this.lblIDCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIDCurso.AutoSize = true;
-            this.lblIDCurso.Location = new System.Drawing.Point(28, 122);
+            this.lblIDCurso.Location = new System.Drawing.Point(33, 112);
             this.lblIDCurso.Name = "lblIDCurso";
             this.lblIDCurso.Size = new System.Drawing.Size(48, 13);
             this.lblIDCurso.TabIndex = 3;
@@ -128,7 +128,7 @@ namespace UI.Desktop
             // 
             this.lblIDAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIDAlumno.AutoSize = true;
-            this.lblIDAlumno.Location = new System.Drawing.Point(24, 208);
+            this.lblIDAlumno.Location = new System.Drawing.Point(29, 191);
             this.lblIDAlumno.Name = "lblIDAlumno";
             this.lblIDAlumno.Size = new System.Drawing.Size(56, 13);
             this.lblIDAlumno.TabIndex = 4;
@@ -138,7 +138,7 @@ namespace UI.Desktop
             // 
             this.lblCondicion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCondicion.AutoSize = true;
-            this.lblCondicion.Location = new System.Drawing.Point(25, 294);
+            this.lblCondicion.Location = new System.Drawing.Point(260, 191);
             this.lblCondicion.Name = "lblCondicion";
             this.lblCondicion.Size = new System.Drawing.Size(54, 13);
             this.lblCondicion.TabIndex = 5;
@@ -148,7 +148,7 @@ namespace UI.Desktop
             // 
             this.lblNota.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNota.AutoSize = true;
-            this.lblNota.Location = new System.Drawing.Point(37, 380);
+            this.lblNota.Location = new System.Drawing.Point(272, 33);
             this.lblNota.Name = "lblNota";
             this.lblNota.Size = new System.Drawing.Size(30, 13);
             this.lblNota.TabIndex = 6;
@@ -157,7 +157,7 @@ namespace UI.Desktop
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtID.Location = new System.Drawing.Point(108, 33);
+            this.txtID.Location = new System.Drawing.Point(123, 29);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(99, 20);
@@ -167,7 +167,7 @@ namespace UI.Desktop
             // 
             this.cbIDCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbIDCurso.FormattingEnabled = true;
-            this.cbIDCurso.Location = new System.Drawing.Point(108, 118);
+            this.cbIDCurso.Location = new System.Drawing.Point(123, 108);
             this.cbIDCurso.Name = "cbIDCurso";
             this.cbIDCurso.Size = new System.Drawing.Size(99, 21);
             this.cbIDCurso.TabIndex = 8;
@@ -176,7 +176,7 @@ namespace UI.Desktop
             // nNota
             // 
             this.nNota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nNota.Location = new System.Drawing.Point(108, 377);
+            this.nNota.Location = new System.Drawing.Point(353, 29);
             this.nNota.Maximum = new decimal(new int[] {
             10,
             0,
@@ -191,7 +191,7 @@ namespace UI.Desktop
             // 
             this.lblMateria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(245, 122);
+            this.lblMateria.Location = new System.Drawing.Point(270, 112);
             this.lblMateria.Name = "lblMateria";
             this.lblMateria.Size = new System.Drawing.Size(35, 13);
             this.lblMateria.TabIndex = 12;
@@ -201,7 +201,7 @@ namespace UI.Desktop
             // 
             this.lblComision.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblComision.AutoSize = true;
-            this.lblComision.Location = new System.Drawing.Point(350, 122);
+            this.lblComision.Location = new System.Drawing.Point(385, 112);
             this.lblComision.Name = "lblComision";
             this.lblComision.Size = new System.Drawing.Size(35, 13);
             this.lblComision.TabIndex = 13;
@@ -218,7 +218,7 @@ namespace UI.Desktop
             "Regular",
             "Aprobado",
             "Cursando"});
-            this.cbCondicion.Location = new System.Drawing.Point(108, 290);
+            this.cbCondicion.Location = new System.Drawing.Point(353, 187);
             this.cbCondicion.Name = "cbCondicion";
             this.cbCondicion.Size = new System.Drawing.Size(99, 21);
             this.cbCondicion.TabIndex = 16;
@@ -227,7 +227,7 @@ namespace UI.Desktop
             // txtIDAlumno
             // 
             this.txtIDAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIDAlumno.Location = new System.Drawing.Point(108, 205);
+            this.txtIDAlumno.Location = new System.Drawing.Point(123, 187);
             this.txtIDAlumno.Name = "txtIDAlumno";
             this.txtIDAlumno.ReadOnly = true;
             this.txtIDAlumno.Size = new System.Drawing.Size(99, 20);
@@ -237,7 +237,7 @@ namespace UI.Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 461);
+            this.ClientSize = new System.Drawing.Size(460, 268);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AlumnoInscripcionDesktop";
             this.Text = "AlumnoInscripcionDesktop";

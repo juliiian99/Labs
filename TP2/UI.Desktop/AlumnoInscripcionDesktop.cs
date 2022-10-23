@@ -91,15 +91,28 @@ namespace UI.Desktop
         public override void MapearADatos()
         {
             this.AlumnoInscripcionActual = new AlumnoInscripcion();
+            CursoAdapter ca = new CursoAdapter();
+            Curso cur= ca.GetOne(Convert.ToInt32(cbIDCurso.SelectedValue));
             switch (Modo)
             {
                 case ModoForm.Alta:
-                    this.AlumnoInscripcionActual.IDAlumno = Global.ID;
-                    this.AlumnoInscripcionActual.IDCurso = Convert.ToInt32(this.cbIDCurso.SelectedValue);
-                    this.AlumnoInscripcionActual.Condicion = this.cbCondicion.SelectedItem.ToString();
-                    this.AlumnoInscripcionActual.Nota = Convert.ToInt32(this.nNota.Value);
-                    this.AlumnoInscripcionActual.State = BusinessEntity.States.New;
-                    break;
+                    if(cur.Cupo != 0)
+                    {
+                        this.AlumnoInscripcionActual.IDAlumno = Global.ID;
+                        this.AlumnoInscripcionActual.IDCurso = Convert.ToInt32(this.cbIDCurso.SelectedValue);
+                        this.AlumnoInscripcionActual.Condicion = this.cbCondicion.SelectedItem.ToString();
+                        this.AlumnoInscripcionActual.Nota = Convert.ToInt32(this.nNota.Value);
+                        //CursoAdapter ca = new CursoAdapter();
+                        //ca.GetOne(Convert.ToInt32(cbIDCurso.SelectedValue));
+                        int i = -1; ca.CambiaCupo(cur, i);
+                        this.AlumnoInscripcionActual.State = BusinessEntity.States.New;
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cupo agotado!");
+                        break;
+                    }                    
                 case ModoForm.Modificacion:
                     this.AlumnoInscripcionActual.ID = int.Parse(this.txtID.Text);
                     this.AlumnoInscripcionActual.IDAlumno = Global.ID;
@@ -114,6 +127,7 @@ namespace UI.Desktop
                     this.AlumnoInscripcionActual.IDCurso = Convert.ToInt32(this.cbIDCurso.SelectedValue);
                     this.AlumnoInscripcionActual.Condicion = this.cbCondicion.SelectedItem.ToString();
                     this.AlumnoInscripcionActual.Nota = Convert.ToInt32(this.nNota.Value);
+                    int e = 1; ca.CambiaCupo(cur, e);
                     this.AlumnoInscripcionActual.State = BusinessEntity.States.Deleted;
                     break;
                 case ModoForm.Consulta:
@@ -125,8 +139,11 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            AlumnoInscripcionAdapter aia = new AlumnoInscripcionAdapter();
-            aia.Save(this.AlumnoInscripcionActual);
+            if(AlumnoInscripcionActual.IDCurso!= 0)
+            {
+                AlumnoInscripcionAdapter aia = new AlumnoInscripcionAdapter();
+                aia.Save(this.AlumnoInscripcionActual);
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
