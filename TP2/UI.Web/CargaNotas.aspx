@@ -33,8 +33,8 @@
          </asp:Panel>
 
     <asp:Panel ID="formPanel" Visible="false" runat="server">
-        <asp:Label ID="idCursoLabel" runat="server" Text="ID Curso: "></asp:Label>
-        <asp:DropDownList ID="idCursoDropDownList" runat="server" > </asp:DropDownList>        
+        <asp:Label ID="idCursoLabel" runat="server" Text="ID Curso: " Visible="False"></asp:Label>
+        <asp:DropDownList ID="idCursoDropDownList" runat="server" Visible="False" > </asp:DropDownList>        
         <br />
         <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
         <asp:DropDownList ID="condicionDropDownList" runat="server">
@@ -45,7 +45,7 @@
         </asp:DropDownList>
         <br />
         <asp:Label ID="notaLabel" runat="server" Text="Nota: "></asp:Label>
-        <asp:TextBox ID="notaTextBox" runat="server" Width="40px"></asp:TextBox>
+        <asp:TextBox ID="notaTextBox" runat="server" Width="40px" MaxLength="2"></asp:TextBox>
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
