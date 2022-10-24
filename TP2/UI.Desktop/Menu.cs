@@ -40,10 +40,10 @@ namespace UI.Desktop
                         lblElegir.Visible = false;
                         lblCurso.Visible = true;
                         cbCursos.Visible = true;
-                        DocenteCursoLogic dcl = new DocenteCursoLogic();
-                        cbAlumnos.DataSource= dcl.GetCursos();
-                        cbAlumnos.DisplayMember = "id_curso";
-                        cbAlumnos.ValueMember = "id_curso";
+                        DocenteCursoLogic dl = new DocenteCursoLogic();
+                        cbCursos.DataSource= dl.GetCursoss(Global.Pers.ID);
+                        cbCursos.DisplayMember = "id_curso";
+                        cbCursos.ValueMember = "id_curso";
                         break;
                     }
                 case Persona.TiposPersonas.Alumno:
@@ -140,8 +140,8 @@ namespace UI.Desktop
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            DocenteCursoLogic dcl = new DocenteCursoLogic();
-            cbAlumnos.DataSource = dcl.GetCursoss(Global.Pers.ID);
+            DocenteCursoLogic dl = new DocenteCursoLogic();
+            cbAlumnos.DataSource = dl.GetCursoss(Global.Pers.ID);
             cbAlumnos.DisplayMember = "id_curso";
             cbAlumnos.ValueMember = "id_curso";
         }

@@ -1,5 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AlumnoInscripcion.aspx.cs" Inherits="UI.Web.AlumnoInscripcion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CargaNotas.aspx.cs" Inherits="UI.Web.CargaNotas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+    <asp:Label ID="cursoLabel1" runat="server" Text="Curso: "></asp:Label>
+    <asp:DropDownList ID="cursoDropDownList" runat="server" AutoPostBack="True">
+    </asp:DropDownList>
+    <asp:Button ID="buscarButton" runat="server" Text="Buscar " OnClick="buscarButton_Click" />
+    <br />
     <asp:Panel ID="gridPanel" runat="server">
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black"
@@ -32,10 +37,15 @@
         <asp:DropDownList ID="idCursoDropDownList" runat="server" > </asp:DropDownList>        
         <br />
         <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
-        <asp:TextBox ID="condicionTextBox" runat="server" ReadOnly="True" Width="75px">Inscripto</asp:TextBox>
+        <asp:DropDownList ID="condicionDropDownList" runat="server">
+            <asp:ListItem>Inscripto</asp:ListItem>
+            <asp:ListItem>Libre</asp:ListItem>
+            <asp:ListItem>Aprobado</asp:ListItem>
+            <asp:ListItem>Cursando</asp:ListItem>
+        </asp:DropDownList>
         <br />
         <asp:Label ID="notaLabel" runat="server" Text="Nota: "></asp:Label>
-        <asp:TextBox ID="notaTextBox" runat="server" ReadOnly="True" Width="40px">0</asp:TextBox>
+        <asp:TextBox ID="notaTextBox" runat="server" Width="40px"></asp:TextBox>
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
@@ -44,9 +54,6 @@
     </asp:Panel>
 
     <asp:Panel ID="gridActionsPanel" runat="server">
-        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
-        <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
-        <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
+        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar condicion alumno</asp:LinkButton>
     </asp:Panel>
-
 </asp:Content>

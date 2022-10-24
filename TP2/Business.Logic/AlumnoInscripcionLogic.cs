@@ -52,7 +52,7 @@ namespace Business.Logic
             return AlumnoInscripcionData.GetAlumnos();
         }
 
-        public DataTable GetAlumnosCurso(int id)
+        public List<Business.Entities.AlumnoInscripcion> GetAlumnosCurso(int id)
         {
             return AlumnoInscripcionData.GetAlumnosCurso(id);
         }

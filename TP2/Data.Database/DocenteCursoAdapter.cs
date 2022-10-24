@@ -190,7 +190,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_curso, id_docente from docentes_cursos where id_docente=1025 ", sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_curso, id_docente from docentes_cursos where id_docente=@id_doce ", sqlConn);
                 cmd.Parameters.Add("@id_doce", SqlDbType.Int).Value = id_per;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(cursos);

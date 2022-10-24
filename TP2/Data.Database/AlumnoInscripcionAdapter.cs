@@ -218,16 +218,25 @@ namespace Data.Database
             return alumnos;
         }
 
-        public DataTable GetAlumnosCurso(int id_c)
+        public List<AlumnoInscripcion> GetAlumnosCurso(int id_c)
         {
-            DataTable alumnos = new DataTable();
+            List<AlumnoInscripcion> alumnos = new List<AlumnoInscripcion>();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_alumno, id_curso, condicion,nota from alumnos_inscripciones where id_curso=@id_curso", sqlConn);
+                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_curso=@id_curso", sqlConn);
                 cmd.Parameters.Add("@id_curso", SqlDbType.Int).Value = id_c;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(alumnos);
+                SqlDataReader da = cmd.ExecuteReader();
+                while (da.Read())
+                {
+                    AlumnoInscripcion alui = new AlumnoInscripcion();
+                    alui.ID = (int)da["id_inscripcion"];
+                    alui.IDAlumno = (int)da["id_alumno"];
+                    alui.IDCurso = (int)da["id_curso"];
+                    alui.Condicion = (string)da["condicion"];
+                    alui.Nota = (int)da["nota"];
+                    alumnos.Add(alui);
+                }
             }
 
             catch (Exception Ex)
@@ -242,6 +251,7 @@ namespace Data.Database
             }
             return alumnos;
         }
+
 
 
     }

@@ -107,7 +107,7 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            PlanAdapter pa = new PlanAdapter();
+            PlanLogic pa = new PlanLogic();
             pa.Save(this.PlanActual);
         }
 

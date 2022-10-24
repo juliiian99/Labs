@@ -23,6 +23,9 @@
                         <td><asp:HyperLink ID="inscripcionAlumnoLink" runat="server" NavigateUrl="~/AlumnoInscripcion.aspx">Inscripcion de alumno</asp:HyperLink></td>
                     </tr>
                     <tr>
+                        <td><asp:HyperLink ID="cargaNotasLink" runat="server" NavigateUrl="~/CargaNotas.aspx">Carga notas</asp:HyperLink></td>
+                    </tr>
+                    <tr>
                         <td><asp:HyperLink ID="usuariosLink" runat="server" NavigateUrl="~/Usuarios.aspx">Usuarios</asp:HyperLink></td>
                     </tr>
                     <tr> <td><asp:HyperLink ID="personasLink" runat="server" NavigateUrl="~/Personas.aspx">Personas</asp:HyperLink></td>

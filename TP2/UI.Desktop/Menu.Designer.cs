@@ -145,10 +145,8 @@ namespace UI.Desktop
             // 
             // cbCursos
             // 
-            this.cbCursos.DataSource = this.docenteCursoLogicBindingSource;
-            this.cbCursos.DisplayMember = "DocenteCursoData";
             this.cbCursos.FormattingEnabled = true;
-            this.cbCursos.Location = new System.Drawing.Point(221, 95);
+            this.cbCursos.Location = new System.Drawing.Point(185, 95);
             this.cbCursos.Name = "cbCursos";
             this.cbCursos.Size = new System.Drawing.Size(121, 21);
             this.cbCursos.TabIndex = 11;
@@ -158,11 +156,11 @@ namespace UI.Desktop
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(171, 98);
+            this.lblCurso.Location = new System.Drawing.Point(208, 56);
             this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(34, 13);
+            this.lblCurso.Size = new System.Drawing.Size(69, 13);
             this.lblCurso.TabIndex = 10;
-            this.lblCurso.Text = "Curso";
+            this.lblCurso.Text = "Elija su curso";
             // 
             // docenteCursoLogicBindingSource
             // 

@@ -59,5 +59,10 @@ namespace Business.Logic
             CursoData.CambiaCupo(cur, i);
         }
 
+        //public DataTable GetCursosDocente(int id_per)
+        //{
+        //    return CursoData.GetCursosDocente(id_per);
+        //}
+
     }
 }

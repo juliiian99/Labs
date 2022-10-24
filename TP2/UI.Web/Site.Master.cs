@@ -26,6 +26,7 @@ namespace UI.Web
                         EspecialidadesVisible = false;
                         DocentesCursosVisible = false;
                         InscripcionAlumnoVisible = true;
+                        CargaNotasVisible = false;
                         break;
                     case Business.Entities.Persona.TiposPersonas.Docente:
                         PersonasVisible = false;
@@ -37,12 +38,20 @@ namespace UI.Web
                         EspecialidadesVisible = false;
                         DocentesCursosVisible = false;
                         InscripcionAlumnoVisible = false;
+                        CargaNotasVisible = true;
                         break;
                     default: 
                         InscripcionAlumnoVisible = false;
+                        CargaNotasVisible = false;
                         break; 
                 }
             }
+        }
+
+        public bool CargaNotasVisible
+        {
+            get { return cargaNotasLink.Visible; }
+            set { cargaNotasLink.Visible = value; }
         }
 
         public bool InscripcionAlumnoVisible

@@ -11,133 +11,160 @@ namespace UI.Web
 {
 
 
-    public partial class SiteMaster
+    public partial class CargaNotas
     {
 
         /// <summary>
-        /// Control bodyForm.
+        /// Control cursoLabel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm bodyForm;
+        protected global::System.Web.UI.WebControls.Label cursoLabel1;
 
         /// <summary>
-        /// Control Menu.
+        /// Control cursoDropDownList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu;
+        protected global::System.Web.UI.WebControls.DropDownList cursoDropDownList;
 
         /// <summary>
-        /// Control SiteMapDataSource.
+        /// Control buscarButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource;
+        protected global::System.Web.UI.WebControls.Button buscarButton;
 
         /// <summary>
-        /// Control inscripcionAlumnoLink.
+        /// Control gridPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink inscripcionAlumnoLink;
+        protected global::System.Web.UI.WebControls.Panel gridPanel;
 
         /// <summary>
-        /// Control cargaNotasLink.
+        /// Control gridView.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink cargaNotasLink;
+        protected global::System.Web.UI.WebControls.GridView gridView;
 
         /// <summary>
-        /// Control usuariosLink.
+        /// Control formPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink usuariosLink;
+        protected global::System.Web.UI.WebControls.Panel formPanel;
 
         /// <summary>
-        /// Control personasLink.
+        /// Control idCursoLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink personasLink;
+        protected global::System.Web.UI.WebControls.Label idCursoLabel;
 
         /// <summary>
-        /// Control especialidadesLink.
+        /// Control idCursoDropDownList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink especialidadesLink;
+        protected global::System.Web.UI.WebControls.DropDownList idCursoDropDownList;
 
         /// <summary>
-        /// Control planesLink.
+        /// Control condicionLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink planesLink;
+        protected global::System.Web.UI.WebControls.Label condicionLabel;
 
         /// <summary>
-        /// Control materiasLink.
+        /// Control condicionDropDownList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink materiasLink;
+        protected global::System.Web.UI.WebControls.DropDownList condicionDropDownList;
 
         /// <summary>
-        /// Control comisionesLink.
+        /// Control notaLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink comisionesLink;
+        protected global::System.Web.UI.WebControls.Label notaLabel;
 
         /// <summary>
-        /// Control cursosLink.
+        /// Control notaTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink cursosLink;
+        protected global::System.Web.UI.WebControls.TextBox notaTextBox;
 
         /// <summary>
-        /// Control docenteCursoLink.
+        /// Control formActionsPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink docenteCursoLink;
+        protected global::System.Web.UI.WebControls.Panel formActionsPanel;
 
         /// <summary>
-        /// Control bodyContentPlaceHolder.
+        /// Control aceptarLinkButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.LinkButton aceptarLinkButton;
+
+        /// <summary>
+        /// Control cancelarLinkButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton cancelarLinkButton;
+
+        /// <summary>
+        /// Control gridActionsPanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel gridActionsPanel;
+
+        /// <summary>
+        /// Control editarLinkButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
     }
 }

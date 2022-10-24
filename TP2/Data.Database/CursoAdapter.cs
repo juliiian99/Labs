@@ -242,5 +242,30 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+
+        //public DataTable GetCursosDocente(int id_per)
+        //{
+        //    DataTable cursos = new DataTable();
+        //    try
+        //    {
+        //        this.OpenConnection();
+        //        SqlCommand cmd = new SqlCommand("select id_curso from docentes_cursos where id_docente=@id_doce ", sqlConn);
+        //        cmd.Parameters.Add("@id_doce", SqlDbType.Int).Value = id_per;
+        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //        da.Fill(cursos);
+        //    }
+
+        //    catch (Exception Ex)
+        //    {
+        //        Exception ExcepcionManejada =
+        //        new Exception("Error al recuperar lista de cursos", Ex);
+        //        throw Ex;
+        //    }
+        //    finally
+        //    {
+        //        this.CloseConnection();
+        //    }
+        //    return cursos;
+        //}
     }
 }
