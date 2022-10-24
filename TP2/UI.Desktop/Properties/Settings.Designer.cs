@@ -37,11 +37,21 @@ namespace UI.Desktop.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Academia;Integrated Security=Fal" +
-            "se;User ID=net")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost\\SQLEXPRESS;Database=Academia;\nIntegrated Security=false; User=ne" +
+            "t; Password=net;")]
         public string AcademiaConnectionString1 {
             get {
                 return ((string)(this["AcademiaConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=tp2_net;Integrated Security=True")]
+        public string tp2_netConnectionString {
+            get {
+                return ((string)(this["tp2_netConnectionString"]));
             }
         }
     }

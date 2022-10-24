@@ -43,6 +43,9 @@ namespace UI.Desktop
             this.lblElegir = new System.Windows.Forms.Label();
             this.cbCursos = new System.Windows.Forms.ComboBox();
             this.lblCurso = new System.Windows.Forms.Label();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.planesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.docenteCursoLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.docenteCursoLogicBindingSource)).BeginInit();
@@ -58,11 +61,12 @@ namespace UI.Desktop
             this.materiasToolStripMenuItem,
             this.comisionesToolStripMenuItem,
             this.planesToolStripMenuItem,
-            this.cursosToolStripMenuItem});
+            this.cursosToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(513, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(555, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -145,6 +149,7 @@ namespace UI.Desktop
             // 
             // cbCursos
             // 
+            this.cbCursos.DisplayMember = "DocenteCursoData";
             this.cbCursos.FormattingEnabled = true;
             this.cbCursos.Location = new System.Drawing.Point(185, 95);
             this.cbCursos.Name = "cbCursos";
@@ -162,6 +167,29 @@ namespace UI.Desktop
             this.lblCurso.TabIndex = 10;
             this.lblCurso.Text = "Elija su curso";
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cursosToolStripMenuItem1,
+            this.planesToolStripMenuItem1});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // cursosToolStripMenuItem1
+            // 
+            this.cursosToolStripMenuItem1.Name = "cursosToolStripMenuItem1";
+            this.cursosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cursosToolStripMenuItem1.Text = "Cursos";
+            this.cursosToolStripMenuItem1.Click += new System.EventHandler(this.cursosToolStripMenuItem1_Click);
+            // 
+            // planesToolStripMenuItem1
+            // 
+            this.planesToolStripMenuItem1.Name = "planesToolStripMenuItem1";
+            this.planesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.planesToolStripMenuItem1.Text = "Planes";
+            this.planesToolStripMenuItem1.Click += new System.EventHandler(this.planesToolStripMenuItem1_Click);
+            // 
             // docenteCursoLogicBindingSource
             // 
             this.docenteCursoLogicBindingSource.DataSource = typeof(Business.Logic.DocenteCursoLogic);
@@ -170,7 +198,7 @@ namespace UI.Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 214);
+            this.ClientSize = new System.Drawing.Size(555, 214);
             this.Controls.Add(this.cbCursos);
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.lblElegir);
@@ -204,5 +232,8 @@ namespace UI.Desktop
         private System.Windows.Forms.ComboBox cbCursos;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.BindingSource docenteCursoLogicBindingSource;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem1;
     }
 }

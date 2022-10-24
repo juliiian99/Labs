@@ -24,15 +24,6 @@ namespace UI.Web
         protected global::System.Web.UI.HtmlControls.HtmlForm bodyForm;
 
         /// <summary>
-        /// Control Menu.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu;
-
-        /// <summary>
         /// Control SiteMapDataSource.
         /// </summary>
         /// <remarks>
@@ -130,6 +121,24 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink docenteCursoLink;
+
+        /// <summary>
+        /// Control reportePlanesLink.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink reportePlanesLink;
+
+        /// <summary>
+        /// Control reporteCursoLink.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink reporteCursoLink;
 
         /// <summary>
         /// Control bodyContentPlaceHolder.

@@ -35,6 +35,7 @@ namespace UI.Desktop
                         comisionesToolStripMenuItem.Visible = false;
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
+                        reportesToolStripMenuItem.Visible = false;
                         btnAgregarDocur.Visible = false;
                         cbAlumnos.Visible = false;
                         lblElegir.Visible = false;
@@ -55,6 +56,7 @@ namespace UI.Desktop
                         comisionesToolStripMenuItem.Visible = false;
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
+                        reportesToolStripMenuItem.Visible = false;
                         btnAgregarDocur.Visible = false;
                         cbAlumnos.Visible = true;
                         AlumnosInscripciones alu = new AlumnosInscripciones(Global.Pers.ID);
@@ -151,6 +153,18 @@ namespace UI.Desktop
             CargaNotas cn = new CargaNotas(Convert.ToInt32(cbCursos.SelectedValue));
             cn.ShowDialog();
 
+        }
+
+        private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReporteCursos rc = new ReporteCursos();
+            rc.ShowDialog();
+        }
+
+        private void planesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReportePlanes rp = new ReportePlanes();
+            rp.ShowDialog();
         }
     }
 }
