@@ -17,17 +17,26 @@ namespace UI.Web
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!Page.IsPostBack)
             {
-                DocenteCursoLogic dl = new DocenteCursoLogic();
-                cursoDropDownList.DataSource = dl.GetCursoss(Convert.ToInt32(Session["id_persona"]));
-                cursoDropDownList.DataValueField ="id_curso";
-                cursoDropDownList.DataTextField = "id_curso";
-                cursoDropDownList.DataBind();
-                Session["id_cur"] = cursoDropDownList.SelectedValue;
-                this.gridView.DataBind();
-                gridView.Visible = true;
+                if (((Persona.TiposPersonas)Session["tipo"] == Persona.TiposPersonas.Docente))
+                {
+                    DocenteCursoLogic dl = new DocenteCursoLogic();
+                    cursoDropDownList.DataSource = dl.GetCursoss(Convert.ToInt32(Session["id_persona"]));
+                    cursoDropDownList.DataValueField = "id_curso";
+                    cursoDropDownList.DataTextField = "id_curso";
+                    cursoDropDownList.DataBind();
+                    Session["id_cur"] = cursoDropDownList.SelectedValue;
+                    this.gridView.DataBind();
+                    gridView.Visible = true;
+                }
             }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+                
         }
 
         public void Listar()

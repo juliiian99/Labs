@@ -32,8 +32,18 @@ namespace UI.Desktop
             {
                 PersonaLogic per = new PersonaLogic();
                 Business.Entities.Persona persona = per.GetOne(usuario.IDPersona);
-                Menu ini = new Menu(persona);
-                ini.ShowDialog();
+                if(persona.TipoPersona == Persona.TiposPersonas.Alumno)
+                {
+                    AlumnosInscripciones aiform = new AlumnosInscripciones(persona.ID);
+                    aiform.ShowDialog();
+
+                }
+                else
+                {
+                    Menu ini = new Menu(persona);
+                    ini.ShowDialog();
+                }
+                
             }
 
 

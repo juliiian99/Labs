@@ -13,8 +13,16 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadGrid();
-            formPanel.Visible = false;
+            if (((Persona.TiposPersonas)Session["tipo"] == Persona.TiposPersonas.Admin))
+            {
+
+                this.LoadGrid();
+                formPanel.Visible = false;
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx");
+            }
         }
 
         EspecialidadLogic _logic;

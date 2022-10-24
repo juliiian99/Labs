@@ -54,6 +54,7 @@ namespace UI.Desktop
                 case ModoForm.Baja:
                     this.Ver(false);
                     this.btnAceptar.Text = "Eliminar";
+                    Desactivar();
                     break;
                 case ModoForm.Modificacion:
                     this.Ver(true);
@@ -62,10 +63,17 @@ namespace UI.Desktop
                 case ModoForm.Consulta:
                     this.Ver(false);
                     this.btnAceptar.Text = "Consultar";
+                    Desactivar();
                     break;
             }
         }
 
+        public void Desactivar()
+        {
+            cbIDCurso.Enabled = false;
+            cbDocente.Enabled = false;
+            cbCargo.Enabled = false;
+        }
         public void Ver(Boolean ver)
         {
             cbCargo.Enabled = ver;

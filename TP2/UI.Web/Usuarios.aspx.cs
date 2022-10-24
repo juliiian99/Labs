@@ -13,25 +13,33 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadGrid();
-            if(Request.QueryString["nombre"] is null)
+            if (((Persona.TiposPersonas)Session["tipo"] == Persona.TiposPersonas.Admin))
             {
-                formPanel.Visible = false;
+                this.LoadGrid();
+                if (Request.QueryString["nombre"] is null)
+                {
+                    formPanel.Visible = false;
+                }
+                else
+                {
+                    this.FormMode = FormModes.Alta;
+                    formPanel.Visible = true;
+                    this.nombreTextBox.Text = Request.QueryString["nombre"];
+                    this.apellidoTextBox.Text = Request.QueryString["apellido"];
+                    this.emailTextBox.Text = Request.QueryString["email"];
+                    this.idPersonaTextBox.Text = Request.QueryString["id_per"];
+                    this.nombreTextBox.Enabled = false;
+                    this.apellidoTextBox.Enabled = false;
+                    this.emailTextBox.Enabled = false;
+                    this.idPersonaTextBox.Enabled = false;
+
+                }
             }
             else
             {
-                this.FormMode = FormModes.Alta;
-                formPanel.Visible = true;
-                this.nombreTextBox.Text = Request.QueryString["nombre"];
-                this.apellidoTextBox.Text = Request.QueryString["apellido"];
-                this.emailTextBox.Text = Request.QueryString["email"];
-                this.idPersonaTextBox.Text = Request.QueryString["id_per"];
-                this.nombreTextBox.Enabled = false;
-                this.apellidoTextBox.Enabled = false;
-                this.emailTextBox.Enabled = false;
-                this.idPersonaTextBox.Enabled = false;
-                
+                Response.Redirect("~/Login.aspx");
             }
+            
         }
 
         UsuarioLogic _logic;

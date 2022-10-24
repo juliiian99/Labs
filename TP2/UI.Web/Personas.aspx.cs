@@ -15,8 +15,16 @@ namespace UI.Web
         {
             if (!Page.IsPostBack)
             {
-                this.LoadGrid();
-                formPanel.Visible = false;
+                if (((Persona.TiposPersonas)Session["tipo"] == Persona.TiposPersonas.Admin))
+                {
+                    this.LoadGrid();
+                    formPanel.Visible = false;
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+                
             }
         }
 

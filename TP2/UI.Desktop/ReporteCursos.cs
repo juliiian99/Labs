@@ -22,7 +22,7 @@ namespace UI.Desktop
         private void ReporteCursos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'tp2_netDataSet.cursos' Puede moverla o quitarla según sea necesario.
-            this.cursosTableAdapter.Fill(this.tp2_netDataSet.cursos);
+            //this.cursosTableAdapter.Fill(this.tp2_netDataSet.cursos);
             CursoLogic cl = new CursoLogic();
             ReportDataSource rds = new ReportDataSource("DataSet2", cl.GetAll());
             reportViewer1.LocalReport.DataSources.Add(rds);

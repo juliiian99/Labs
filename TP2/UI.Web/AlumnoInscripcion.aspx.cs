@@ -13,9 +13,16 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.gridView.DataSource = this.Logic.GetAll(Convert.ToInt32(Session["id_persona"]));
-            this.gridView.DataBind();
-            gridView.Visible = true;
+            if (((Persona.TiposPersonas)Session["tipo"] == Persona.TiposPersonas.Alumno))
+            {
+                this.gridView.DataSource = this.Logic.GetAll(Convert.ToInt32(Session["id_persona"]));
+                this.gridView.DataBind();
+                gridView.Visible = true;
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx");
+            }
         }
 
         AlumnoInscripcionLogic _logic;

@@ -64,6 +64,19 @@ namespace UI.Desktop
             }
         }
 
+        public void Desactivar()
+        {
+            txtApellido.Enabled = false;
+            txtNombre.Enabled = false;
+            txtEmail.Enabled = false;
+            txtClave.Enabled = false;
+            txtConfirmarClave.Enabled = false;
+            txtUsuario.Enabled = false;
+            txtIDPersona.Enabled = false;
+            chkHabilitado.Enabled = false;
+
+        }
+
         public override void MapearADatos()
         {
             this.UsuarioActual = new Usuario();

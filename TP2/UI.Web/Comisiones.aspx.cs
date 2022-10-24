@@ -13,9 +13,17 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.DataBind();
-            gridView.Visible = true;
+            if (((Persona.TiposPersonas)Session["tipo"] == Persona.TiposPersonas.Admin))
+            {
+                this.gridView.DataSource = this.Logic.GetAll();
+                this.gridView.DataBind();
+                gridView.Visible = true;
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+            
 
         }
 

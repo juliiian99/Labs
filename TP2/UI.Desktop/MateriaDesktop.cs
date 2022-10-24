@@ -56,12 +56,14 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.btnAceptar.Text = "Eliminar";
+                    Desactivar();
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Modificar";
                     break;
                 case ModoForm.Consulta:
                     this.btnAceptar.Text = "Consultar";
+                    Desactivar();
                     break;
             }
         }
@@ -98,6 +100,14 @@ namespace UI.Desktop
                     this.MateriaActual.State = BusinessEntity.States.Unmodified;
                     break;
             }
+        }
+
+        public void Desactivar()
+        {
+            txtDescMateria.Enabled = false;
+            txtHorasAnual.Enabled = false;
+            txtHsSemana.Enabled = false;
+            cbIDPlan.Enabled = false;
         }
 
         public new bool Validar()

@@ -53,14 +53,22 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.btnAceptar.Text = "Eliminar";
+                    Desactivar();
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Modificar";
                     break;
                 case ModoForm.Consulta:
                     this.btnAceptar.Text = "Consultar";
+                    Desactivar();
                     break;
             }
+        }
+
+        public void Desactivar()
+        {
+            txtDescPlan.Enabled = false;
+            cbIDEspecialidad.Enabled = false;
         }
 
         public override void MapearADatos()

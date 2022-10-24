@@ -37,8 +37,6 @@ namespace UI.Desktop
                         cursosToolStripMenuItem.Visible = false;
                         reportesToolStripMenuItem.Visible = false;
                         btnAgregarDocur.Visible = false;
-                        cbAlumnos.Visible = false;
-                        lblElegir.Visible = false;
                         lblCurso.Visible = true;
                         cbCursos.Visible = true;
                         DocenteCursoLogic dl = new DocenteCursoLogic();
@@ -58,7 +56,6 @@ namespace UI.Desktop
                         cursosToolStripMenuItem.Visible = false;
                         reportesToolStripMenuItem.Visible = false;
                         btnAgregarDocur.Visible = false;
-                        cbAlumnos.Visible = true;
                         AlumnosInscripciones alu = new AlumnosInscripciones(Global.Pers.ID);
                         //AlumnosInscripciones.ID = Convert.ToInt32(cbAlumnos.SelectedValue);
                         alu.ShowDialog();
@@ -74,8 +71,6 @@ namespace UI.Desktop
                     }
                 default:
                     {
-                        cbAlumnos.Visible = false;
-                        lblElegir.Visible = false;
                         lblCurso.Visible = false;
                         cbCursos.Visible = false;
                         break;
@@ -143,9 +138,6 @@ namespace UI.Desktop
         private void Menu_Load(object sender, EventArgs e)
         {
             DocenteCursoLogic dl = new DocenteCursoLogic();
-            cbAlumnos.DataSource = dl.GetCursoss(Global.Pers.ID);
-            cbAlumnos.DisplayMember = "id_curso";
-            cbAlumnos.ValueMember = "id_curso";
         }
 
         private void cbCursos_SelectionChangeCommitted(object sender, EventArgs e)

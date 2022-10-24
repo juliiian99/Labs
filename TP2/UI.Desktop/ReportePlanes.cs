@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Logic;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +22,9 @@ namespace UI.Desktop
         private void ReportePlanes_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'tp2_netDataSet1.planes' Puede moverla o quitarla según sea necesario.
-            this.planesTableAdapter.Fill(this.tp2_netDataSet1.planes);
+            PlanLogic pl = new PlanLogic();
+            ReportDataSource rds = new ReportDataSource("DataSet1", pl.GetAll());
+            reportViewer1.LocalReport.DataSources.Add(rds);
 
             this.reportViewer1.RefreshReport();
         }
