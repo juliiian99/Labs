@@ -19,11 +19,18 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios " +
+                    "join personas on personas.id_persona = usuarios.id_persona " +
+                    "join planes on personas.id_plan = planes.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad"
+                , sqlConn);
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
                 while (drUsuarios.Read())
                 {
                     Usuario usr = new Usuario();
+                    Persona per = new Persona();
+                    Especialidad esp = new Especialidad();
+                    Plan plan = new Plan();
                     usr.ID = (int)drUsuarios["id_usuario"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
@@ -32,7 +39,20 @@ namespace Data.Database
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
                     usr.IDPersona = (int)drUsuarios["id_persona"];
-
+                    per.ID = (int)drUsuarios["id_persona"];
+                    per.Nombre = (string)drUsuarios["nombre"];
+                    per.Apellido = (string)drUsuarios["apellido"];
+                    per.Direccion = (string)drUsuarios["direccion"];
+                    per.EMail = (string)drUsuarios["email"];
+                    per.Telefono = (string)drUsuarios["telefono"];
+                    per.FechaNacimiento = (DateTime)drUsuarios["fecha_nac"];
+                    per.Legajo = (int)drUsuarios["legajo"];
+                    per.TipoPersona = (Persona.TiposPersonas)drUsuarios["tipo_persona"];
+                    esp.ID = (int)drUsuarios["id_plan"];
+                    esp.Descripcion = (string)drUsuarios["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    per.Plan = plan;
+                    usr.Persona = per;
                     usuarios.Add(usr);
                 }
 
@@ -52,9 +72,18 @@ namespace Data.Database
         public Business.Entities.Usuario GetOne(int ID)
         {
             Usuario usr = new Usuario();
-            try {
+            Persona per = new Persona();
+            Especialidad esp = new Especialidad();
+            Plan plan = new Plan();
+            try
+            {
                 this.OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where id_usuario = @id", this.sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios " +
+                    "join personas on personas.id_persona = usuarios.id_persona " +
+                    "join planes on personas.id_plan = planes.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " +
+                    "where id_usuario = @id"
+                , this.sqlConn);
                 cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
                 if (drUsuarios.Read())
@@ -67,6 +96,20 @@ namespace Data.Database
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
                     usr.IDPersona = (int)drUsuarios["id_persona"];
+                    per.ID = (int)drUsuarios["id_persona"];
+                    per.Nombre = (string)drUsuarios["nombre"];
+                    per.Apellido = (string)drUsuarios["apellido"];
+                    per.Direccion = (string)drUsuarios["direccion"];
+                    per.EMail = (string)drUsuarios["email"];
+                    per.Telefono = (string)drUsuarios["telefono"];
+                    per.FechaNacimiento = (DateTime)drUsuarios["fecha_nac"];
+                    per.Legajo = (int)drUsuarios["legajo"];
+                    per.TipoPersona = (Persona.TiposPersonas)drUsuarios["tipo_persona"];
+                    esp.ID = (int)drUsuarios["id_plan"];
+                    esp.Descripcion = (string)drUsuarios["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    per.Plan = plan;
+                    usr.Persona = per;
                     drUsuarios.Close();
                 }
             }

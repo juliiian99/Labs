@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class AlumnoInscripcion :BusinessEntity
+    public class AlumnoInscripcion : BusinessEntity
     {
         private string _Condicion;
         public string Condicion
@@ -22,11 +22,26 @@ namespace Business.Entities
             set { _IDAlumno = value; }
         }
 
+        private Persona _alumno;
+        public Persona Alumno
+        {
+            get { return _alumno; }
+            set { _alumno = value; }
+        }
+
         private int _IDCurso;
         public int IDCurso
         {
             get { return _IDCurso; }
             set { _IDCurso = value; }
+        }
+
+
+        private Curso _curso;
+        public Curso Curso
+        {
+            get { return _curso; }
+            set { _curso = value; }
         }
 
         private int _Nota;

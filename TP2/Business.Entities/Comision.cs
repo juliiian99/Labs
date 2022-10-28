@@ -28,5 +28,12 @@ namespace Business.Entities
             get { return _IDPlan; }
             set { _IDPlan = value; }
         }
+
+        private Plan _plan;
+        public Plan Plan
+        {
+            get { return _plan; }
+            set { _plan = value; }
+        }
     }
 }

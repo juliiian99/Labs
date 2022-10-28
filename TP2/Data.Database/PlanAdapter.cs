@@ -18,14 +18,18 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPlan = new SqlCommand("select * from planes", this.sqlConn);
+                SqlCommand cmdPlan = new SqlCommand("SELECT planes.*, especialidades.* FROM planes JOIN especialidades on especialidades.id_especialidad = planes.id_especialidad", this.sqlConn);
                 SqlDataReader drPlan = cmdPlan.ExecuteReader();
                 while (drPlan.Read())
                 {
                     Plan pla = new Plan();
+                    Especialidad esp = new Especialidad();
                     pla.ID = (int)drPlan["id_plan"];
+                    esp.ID = (int)drPlan["id_especialidad"];
+                    esp.Descripcion = (string)drPlan["desc_especialidad"];
                     pla.Descripcion = (string)drPlan["desc_plan"];
                     pla.IDEspecialidad = (int)drPlan["id_especialidad"];
+                    pla.Especialidad = esp;
                     planes.Add(pla);
                 }
                 drPlan.Close();
@@ -46,10 +50,14 @@ namespace Data.Database
         public Plan GetOne(int ID)
         {
             Plan pla = new Plan();
+            Especialidad esp = new Especialidad();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPlan = new SqlCommand("select * from planes where id_plan = @id", this.sqlConn);
+                SqlCommand cmdPlan = new SqlCommand("select planes.*, especialidades.* FROM planes " +
+                    "JOIN especialidades on especialidades.id_especialidad = planes.id_especialidad " +
+                    "where planes.id_plan = @id"
+                , this.sqlConn);
                 cmdPlan.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPlan = cmdPlan.ExecuteReader();
                 if (drPlan.Read())
@@ -57,6 +65,9 @@ namespace Data.Database
                     pla.ID = (int)drPlan["id_plan"];
                     pla.Descripcion = (string)drPlan["desc_plan"];
                     pla.IDEspecialidad = (int)drPlan["id_especialidad"];
+                    esp.ID = (int)drPlan["id_especialidad"];
+                    esp.Descripcion = (string)drPlan["desc_especialidad"];
+                    pla.Especialidad = esp;
                     drPlan.Close();
                 }
             }

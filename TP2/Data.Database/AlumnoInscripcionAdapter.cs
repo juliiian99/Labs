@@ -19,17 +19,47 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_alumno= @id", sqlConn);
+                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones " +
+                    "join personas on personas.id_persona = alumnos_inscripciones.id_persona" +
+                    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso" +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join materias on materias.id_materia = cursos.id_materia " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join especialidades on especialidades.id_plan = planes.id_plan " +
+                    "where id_alumno= @id"
+                , sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     AlumnoInscripcion alui = new AlumnoInscripcion();
+                    Persona per = new Persona();
+                    Curso cur = new Curso();
+                    Especialidad esp = new Especialidad();
+                    Comision com = new Comision();
+                    Plan plan = new Plan();
                     alui.ID = (int)dr["id_inscripcion"];
                     alui.IDAlumno = (int)dr["id_alumno"];
                     alui.IDCurso = (int)dr["id_curso"];
+                    cur.Cupo = (int)dr["cupo"];
+                    cur.AnioCalendario = (int)dr["anio_calendario"];
+                    cur.IDComision = (int)dr["id_comision"];
+                    com.ID = (int)dr["id_comision"];
+                    com.Descripcion = (string)dr["desc_comision"];
+                    com.AnioEspecialidad = (int)dr["anio_especialdiad"];
+                    cur.Comision = com;
+                    plan.ID = (int)dr["id_plan"];
+                    plan.Descripcion = (string)dr["descripcion"];
+                    esp.ID = (int)dr["id_especialidad"];
+                    esp.Descripcion = (string)dr["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    com.Plan = plan;
+                    cur.IDMateria = (int)dr["id_materia"];
+                    cur.ID = (int)dr["id_curso"];
                     alui.Condicion = (string)dr["condicion"];
                     alui.Nota = (int)dr["nota"];
+                    alui.Curso = cur;
+                    alui.Alumno = per;
                     alumnosinsc.Add(alui);
                 }
 
@@ -49,10 +79,23 @@ namespace Data.Database
         public Business.Entities.AlumnoInscripcion GetOne(int ID)
         {
             AlumnoInscripcion alui = new AlumnoInscripcion();
+            Persona per = new Persona();
+            Curso cur = new Curso();
+            Especialidad esp = new Especialidad();
+            Comision com = new Comision();
+            Plan plan = new Plan();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_inscripcion = @id", this.sqlConn);
+                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones " +
+                    "join personas on personas.id_persona = alumnos_inscripciones.id_persona" +
+                    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso" +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join materias on materias.id_materia = cursos.id_materia " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join especialidades on especialidades.id_plan = planes.id_plan " + 
+                    "where id_inscripcion = @id"
+                , this.sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader dr= cmd.ExecuteReader();
                 if (dr.Read())
@@ -60,8 +103,25 @@ namespace Data.Database
                     alui.ID = (int)dr["id_inscripcion"];
                     alui.IDAlumno = (int)dr["id_alumno"];
                     alui.IDCurso = (int)dr["id_curso"];
+                    cur.Cupo = (int)dr["cupo"];
+                    cur.AnioCalendario = (int)dr["anio_calendario"];
+                    cur.IDComision = (int)dr["id_comision"];
+                    com.ID = (int)dr["id_comision"];
+                    com.Descripcion = (string)dr["desc_comision"];
+                    com.AnioEspecialidad = (int)dr["anio_especialdiad"];
+                    cur.Comision = com;
+                    plan.ID = (int)dr["id_plan"];
+                    plan.Descripcion = (string)dr["descripcion"];
+                    esp.ID = (int)dr["id_especialidad"];
+                    esp.Descripcion = (string)dr["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    com.Plan = plan;
+                    cur.IDMateria = (int)dr["id_materia"];
+                    cur.ID = (int)dr["id_curso"];
                     alui.Condicion = (string)dr["condicion"];
                     alui.Nota = (int)dr["nota"];
+                    alui.Curso = cur;
+                    alui.Alumno = per;
                     dr.Close();
                 }
             }

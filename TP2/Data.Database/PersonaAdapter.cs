@@ -18,11 +18,17 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas", sqlConn);
+                SqlCommand cmdPersonas = new SqlCommand(
+                    "select * from personas " +
+                    "join planes on personas.id_plan = planes.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad "
+                , sqlConn);
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
                 while (drPersonas.Read())
                 {
                     Persona persona = new Persona();
+                    Plan plan = new Plan();
+                    Especialidad esp = new Especialidad();
                     persona.ID = (int)drPersonas["id_persona"];
                     persona.Legajo = (int)drPersonas["legajo"];
                     persona.Apellido = (string)drPersonas["apellido"];
@@ -32,8 +38,13 @@ namespace Data.Database
                     persona.Telefono = (string)drPersonas["telefono"];
                     persona.FechaNacimiento = Convert.ToDateTime(drPersonas["fecha_nac"]);
                     persona.IDPlan = (int)drPersonas["id_plan"];
+                    plan.ID = (int)drPersonas["id_plan"];
+                    plan.Descripcion = (string)drPersonas["desc_plan"];
+                    esp.ID = (int)drPersonas["id_plan"];
+                    esp.Descripcion = (string)drPersonas["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    persona.Plan = plan;
                     persona.TipoPersona = (Persona.TiposPersonas)(drPersonas["tipo_persona"]);
-
                     personas.Add(persona);
                 }
                 drPersonas.Close();
@@ -53,10 +64,16 @@ namespace Data.Database
         public Persona GetOne(int ID)
         {
             Persona per = new Persona();
+            Plan plan = new Plan();
+            Especialidad esp = new Especialidad();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_persona = @id", this.sqlConn);
+                SqlCommand cmdPersonas = new SqlCommand("select personas.*, especialidades.*, planes.* from personas " +
+                    "join planes on personas.id_plan = planes.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " +
+                    "where personas.id_persona = @id"
+                , this.sqlConn);
                 cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
                 if (drPersonas.Read())
@@ -71,6 +88,12 @@ namespace Data.Database
                     per.Legajo = (int)drPersonas["legajo"];
                     per.TipoPersona = (Persona.TiposPersonas)(int)drPersonas["tipo_persona"];
                     per.IDPlan = (int)drPersonas["id_plan"];
+                    plan.ID = (int)drPersonas["id_plan"];
+                    plan.Descripcion = (string)drPersonas["desc_plan"];
+                    esp.ID = (int)drPersonas["id_plan"];
+                    esp.Descripcion = (string)drPersonas["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    per.Plan = plan;
                     drPersonas.Close();
                 }
             }

@@ -50,6 +50,13 @@ namespace Business.Entities
             set { _IDPlan = value; }
         }
 
+        private Plan _plan;
+        public Plan Plan
+        {
+            get { return _plan; }
+            set { _plan = value; }
+        }
+
         private int _Legajo;
         public int Legajo
         {

@@ -18,16 +18,27 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMateria = new SqlCommand("select * from materias", this.sqlConn);
+                SqlCommand cmdMateria = new SqlCommand("select * from materias " +
+                    "join planes on planes.id_plan = materias.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad "
+                , this.sqlConn);
                 SqlDataReader drMateria = cmdMateria.ExecuteReader();
                 while (drMateria.Read())
                 {
                     Materia mat = new Materia();
+                    Plan plan = new Plan();
+                    Especialidad esp = new Especialidad();
                     mat.ID = (int)drMateria["id_materia"];
                     mat.Descripcion = (string)drMateria["desc_materia"];
                     mat.HSSemanales = (int)drMateria["hs_semanales"];
                     mat.HSTotales = (int)drMateria["hs_totales"];
                     mat.IDPlan = (int)drMateria["id_plan"];
+                    plan.ID = (int)drMateria["id_plan"];
+                    plan.Descripcion = (string)drMateria["desc_plan"];
+                    esp.ID = (int)drMateria["id_especialidad"];
+                    esp.Descripcion = (string)drMateria["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    mat.PLan = plan;
                     materias.Add(mat);
                 }
                 drMateria.Close();
@@ -48,10 +59,16 @@ namespace Data.Database
         public Materia GetOne(int ID)
         {
             Materia mat = new Materia();
+            Plan plan = new Plan();
+            Especialidad esp = new Especialidad();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMateria = new SqlCommand("select * from materias where id_materia = @id", this.sqlConn);
+                SqlCommand cmdMateria = new SqlCommand("select * from materias " +
+                    "join planes on planes.id_plan = materias.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " + 
+                    "where id_materia = @id"
+                , this.sqlConn);
                 cmdMateria.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drMateria = cmdMateria.ExecuteReader();
                 if (drMateria.Read())
@@ -61,6 +78,12 @@ namespace Data.Database
                     mat.HSSemanales = (int)drMateria["hs_semanales"];
                     mat.HSTotales = (int)drMateria["hs_totales"];
                     mat.IDPlan = (int)drMateria["id_plan"];
+                    plan.ID = (int)drMateria["id_plan"];
+                    plan.Descripcion = (string)drMateria["desc_plan"];
+                    esp.ID = (int)drMateria["id_especialidad"];
+                    esp.Descripcion = (string)drMateria["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    mat.PLan = plan;
                     drMateria.Close();
                 }
             }

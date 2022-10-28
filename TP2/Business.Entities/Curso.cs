@@ -29,6 +29,13 @@ namespace Business.Entities
             set { _IDComision = value; }
         }
 
+        private Comision _comision;
+        public Comision Comision
+        {
+            get { return _comision; }
+            set { _comision = value; }
+        }
+
         private int _IDMateria;
         public int IDMateria
         {
@@ -36,6 +43,12 @@ namespace Business.Entities
             set { _IDMateria = value; }
         }
 
+        private Materia _materia;
+        public Materia Materia
+        {
+            get { return _materia; }
+            set { _materia = value; }
+        }
 
     }
 }

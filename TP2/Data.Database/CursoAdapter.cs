@@ -65,16 +65,37 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCurso = new SqlCommand("select * from cursos", this.sqlConn);
+                SqlCommand cmdCurso = new SqlCommand("select * from cursos " +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join materias on materias.id_materia = cursos.id_materia " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad "
+                , this.sqlConn);
                 SqlDataReader drCurso = cmdCurso.ExecuteReader();
                 while (drCurso.Read())
                 {
                     Curso cur = new Curso();
+                    Materia mat = new Materia();
+                    Comision com = new Comision();
+                    Plan plan = new Plan();
+                    Especialidad esp = new Especialidad();
                     cur.Cupo = (int)drCurso["cupo"];
                     cur.AnioCalendario = (int)drCurso["anio_calendario"];
                     cur.IDComision = (int)drCurso["id_comision"];
+                    com.ID = (int)drCurso["id_comision"];
+                    com.Descripcion = (string)drCurso["desc_comision"];
+                    com.AnioEspecialidad = (int)drCurso["anio_especialidad"];
+                    plan.ID = (int)drCurso["id_plan"];
+                    plan.Descripcion = (string)drCurso["desc_plan"];
+                    esp.ID = (int)drCurso["id_especialidad"];
+                    esp.Descripcion = (string)drCurso["desc_especialidad"];
                     cur.IDMateria = (int)drCurso["id_materia"];
                     cur.ID = (int)drCurso["id_curso"];
+                    plan.Especialidad = esp;
+                    mat.PLan = plan;
+                    com.Plan = plan;
+                    cur.Comision = com;
+                    cur.Materia = mat;
                     cursos.Add(cur);
                 }
                 drCurso.Close();
@@ -95,19 +116,42 @@ namespace Data.Database
         public Curso GetOne(int ID)
         {
             Curso cur = new Curso();
+            Materia mat = new Materia();
+            Comision com = new Comision();
+            Plan plan = new Plan();
+            Especialidad esp = new Especialidad();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCurso = new SqlCommand("select * from cursos where id_curso = @id", this.sqlConn);
+                SqlCommand cmdCurso = new SqlCommand("select * from cursos " +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join materias on materias.id_materia = cursos.id_materia " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " + 
+                    " where id_curso = @id"
+                , this.sqlConn);
                 cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drCurso = cmdCurso.ExecuteReader();
                 if (drCurso.Read())
                 {
-                    cur.ID = (int)drCurso["id_curso"];
-                    cur.IDMateria = (int)drCurso["id_materia"];
-                    cur.IDComision = (int)drCurso["id_comision"];
-                    cur.AnioCalendario = (int)drCurso["anio_calendario"];
                     cur.Cupo = (int)drCurso["cupo"];
+                    cur.AnioCalendario = (int)drCurso["anio_calendario"];
+                    cur.IDComision = (int)drCurso["id_comision"];
+                    com.ID = (int)drCurso["id_comision"];
+                    com.Descripcion = (string)drCurso["desc_comision"];
+                    com.AnioEspecialidad = (int)drCurso["anio_especialidad"];
+                    plan.ID = (int)drCurso["id_plan"];
+                    plan.Descripcion = (string)drCurso["desc_plan"];
+                    esp.ID = (int)drCurso["id_especialidad"];
+                    esp.Descripcion = (string)drCurso["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    cur.IDMateria = (int)drCurso["id_materia"];
+                    cur.ID = (int)drCurso["id_curso"];
+                    plan.Especialidad = esp;
+                    mat.PLan = plan;
+                    com.Plan = plan;
+                    cur.Comision = com;
+                    cur.Materia = mat;
                     drCurso.Close();
                 }
             }

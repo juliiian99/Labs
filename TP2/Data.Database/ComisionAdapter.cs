@@ -18,15 +18,27 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("select * from comisiones", this.sqlConn);
+                SqlCommand cmdComision = new SqlCommand(
+                    "select planes.*, comisiones.*, especialidades.* from comisiones " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad"
+                , this.sqlConn);
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 while (drComision.Read())
                 {
                     Comision com = new Comision();
+                    Plan plan = new Plan();
+                    Especialidad esp = new Especialidad();
                     com.ID = (int)drComision["id_comision"];
                     com.Descripcion = (string)drComision["desc_comision"];
                     com.AnioEspecialidad = (int)drComision["anio_especialidad"];
                     com.IDPlan = (int)drComision["id_plan"];
+                    plan.ID = (int)drComision["id_plan"];
+                    plan.Descripcion = (string)drComision["desc_plan"];
+                    esp.ID = (int)drComision["id_especialidad"];
+                    esp.Descripcion = (string)drComision["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    com.Plan = plan;
                     comisiones.Add(com);
                 }
                 drComision.Close();
@@ -47,10 +59,15 @@ namespace Data.Database
         public Comision GetOne(int ID)
         {
             Comision com = new Comision();
+            Plan plan = new Plan();
+            Especialidad esp = new Especialidad();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComision = new SqlCommand("select * from comisiones where id_comision = @id", this.sqlConn);
+                SqlCommand cmdComision = new SqlCommand("select * from comisiones " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " +
+                    "where comisiones.id_comision = @id", this.sqlConn);
                 cmdComision.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drComision = cmdComision.ExecuteReader();
                 if (drComision.Read())
@@ -59,6 +76,12 @@ namespace Data.Database
                     com.Descripcion = (string)drComision["desc_comision"];
                     com.AnioEspecialidad = (int)drComision["anio_especialidad"];
                     com.IDPlan = (int)drComision["id_plan"];
+                    plan.ID = (int)drComision["id_plan"];
+                    plan.Descripcion = (string)drComision["desc_plan"];
+                    esp.ID = (int)drComision["id_especialidad"];
+                    esp.Descripcion = (string)drComision["desc_especialidad"];
+                    plan.Especialidad = esp;
+                    com.Plan = plan;
                     drComision.Close();
                 }
             }

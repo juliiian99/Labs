@@ -21,5 +21,12 @@ namespace Business.Entities
             get { return _IDEspecialidad; }
             set { _IDEspecialidad = value; }
         }
+
+        private Especialidad _especialidad;
+        public Especialidad Especialidad
+        {
+            get { return _especialidad; }
+            set { _especialidad = value; }
+        }
     }
 }

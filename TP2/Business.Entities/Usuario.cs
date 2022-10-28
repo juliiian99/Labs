@@ -56,5 +56,13 @@ namespace Business.Entities
             get { return _IDPersona; }
             set { _IDPersona = value; }
         }
+
+        private Persona _persona;
+
+        public Persona Persona
+        {
+            get { return _persona; }
+            set { _persona = value; }
+        }
     }
 }
