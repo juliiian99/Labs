@@ -37,6 +37,7 @@ namespace UI.Desktop
                         cursosToolStripMenuItem.Visible = false;
                         reportesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
+                        docenteCursoToolStripMenuItem.Visible = false;
                         lblCurso.Visible = true;
                         cbCursos.Visible = true;
                         DocenteCursoLogic dl = new DocenteCursoLogic();

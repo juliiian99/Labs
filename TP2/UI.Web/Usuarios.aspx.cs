@@ -210,10 +210,7 @@ namespace UI.Web
 
         protected void nuevoLinkButton_Click(object sender, EventArgs e)
         {
-            this.formPanel.Visible = true;
-            this.FormMode = FormModes.Alta;
-            this.ClearForm();
-            this.EnableForm(true);
+            Page.Response.Write("<script>alert('Debe crear una persona para crear un usuario')</script>");
         }
 
         private void ClearForm()
