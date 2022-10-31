@@ -8,8 +8,8 @@
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField HeaderText="ID" DataField="ID" />
-                <asp:BoundField HeaderText="IDAlumno" DataField="IDAlumno" />
-                <asp:BoundField HeaderText="ID Curso" DataField="IDCurso" />
+                <asp:BoundField HeaderText="Alumno" DataField="Alumno" />
+                <asp:BoundField HeaderText="Curso" DataField="Curso" />
                 <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
                 <asp:BoundField HeaderText="Nota" DataField="Nota" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
@@ -28,14 +28,14 @@
          </asp:Panel>
 
     <asp:Panel ID="formPanel" Visible="false" runat="server">
-        <asp:Label ID="idCursoLabel" runat="server" Text="ID Curso: "></asp:Label>
+        <asp:Label ID="idCursoLabel" runat="server" Text="Curso: "></asp:Label>
         <asp:DropDownList ID="idCursoDropDownList" runat="server" > </asp:DropDownList>        
         <br />
         <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
-        <asp:TextBox ID="condicionTextBox" runat="server" ReadOnly="True" Width="75px">Inscripto</asp:TextBox>
+        <asp:TextBox ID="condicionTextBox" runat="server" ReadOnly="True" Width="75px" Enabled="False">Inscripto</asp:TextBox>
         <br />
         <asp:Label ID="notaLabel" runat="server" Text="Nota: "></asp:Label>
-        <asp:TextBox ID="notaTextBox" runat="server" ReadOnly="True" Width="40px">0</asp:TextBox>
+        <asp:TextBox ID="notaTextBox" runat="server" ReadOnly="True" Width="40px" Enabled="False">0</asp:TextBox>
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

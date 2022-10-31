@@ -89,8 +89,8 @@ namespace UI.Desktop
             this.tlpMaterias.Location = new System.Drawing.Point(0, 0);
             this.tlpMaterias.Name = "tlpMaterias";
             this.tlpMaterias.RowCount = 2;
-            this.tlpMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92F));
-            this.tlpMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tlpMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.06622F));
+            this.tlpMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.933775F));
             this.tlpMaterias.Size = new System.Drawing.Size(619, 302);
             this.tlpMaterias.TabIndex = 0;
             // 
@@ -112,7 +112,7 @@ namespace UI.Desktop
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(613, 271);
+            this.dgvMaterias.Size = new System.Drawing.Size(613, 265);
             this.dgvMaterias.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
@@ -149,10 +149,11 @@ namespace UI.Desktop
             // 
             // btnAlta1
             // 
-            this.btnAlta1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlta1.Location = new System.Drawing.Point(217, 280);
+            this.btnAlta1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAlta1.Location = new System.Drawing.Point(217, 274);
             this.btnAlta1.Name = "btnAlta1";
-            this.btnAlta1.Size = new System.Drawing.Size(75, 19);
+            this.btnAlta1.Size = new System.Drawing.Size(75, 25);
             this.btnAlta1.TabIndex = 1;
             this.btnAlta1.Text = "Alta";
             this.btnAlta1.UseVisualStyleBackColor = true;
@@ -160,10 +161,11 @@ namespace UI.Desktop
             // 
             // btnModificar
             // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(298, 280);
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.Location = new System.Drawing.Point(298, 274);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 19);
+            this.btnModificar.Size = new System.Drawing.Size(75, 25);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -171,10 +173,11 @@ namespace UI.Desktop
             // 
             // btnConsulta
             // 
-            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsulta.Location = new System.Drawing.Point(379, 280);
+            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConsulta.Location = new System.Drawing.Point(379, 274);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(75, 19);
+            this.btnConsulta.Size = new System.Drawing.Size(75, 25);
             this.btnConsulta.TabIndex = 3;
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.UseVisualStyleBackColor = true;
@@ -182,10 +185,11 @@ namespace UI.Desktop
             // 
             // btnBaja
             // 
-            this.btnBaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBaja.Location = new System.Drawing.Point(460, 280);
+            this.btnBaja.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBaja.Location = new System.Drawing.Point(460, 274);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(75, 19);
+            this.btnBaja.Size = new System.Drawing.Size(75, 25);
             this.btnBaja.TabIndex = 4;
             this.btnBaja.Text = "Baja";
             this.btnBaja.UseVisualStyleBackColor = true;
@@ -193,10 +197,11 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(541, 280);
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(541, 274);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 19);
+            this.btnSalir.Size = new System.Drawing.Size(75, 25);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;

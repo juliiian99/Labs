@@ -116,13 +116,10 @@ namespace UI.Web
 
         private void EnableForm(bool Enable)
         {
-
-            this.condicionTextBox.Enabled = Enable;
-            this.notaTextBox.Enabled = Enable;
             this.idCursoDropDownList.Enabled = Enable;
             idCursoDropDownList.DataSource = this.Logic.GetCursos(Convert.ToInt32(Session["id_persona"]));
             idCursoDropDownList.DataValueField = "id_curso";
-            idCursoDropDownList.DataTextField = "id_curso";
+            idCursoDropDownList.DataTextField = "cur";
             idCursoDropDownList.DataBind();
         }
 

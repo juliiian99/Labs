@@ -54,12 +54,14 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.btnAceptar.Text = "Eliminar";
+                    Desactivar();
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Modificacion";
                     break;
                 case ModoForm.Consulta:
                     this.btnAceptar.Text = "Consulta";
+                    Desactivar();
                     break;
             }
         }

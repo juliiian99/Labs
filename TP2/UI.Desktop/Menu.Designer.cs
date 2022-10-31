@@ -41,10 +41,10 @@ namespace UI.Desktop
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.planesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAgregarDocur = new System.Windows.Forms.Button();
             this.cbCursos = new System.Windows.Forms.ComboBox();
             this.lblCurso = new System.Windows.Forms.Label();
             this.docenteCursoLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.docenteCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.docenteCursoLogicBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -60,11 +60,12 @@ namespace UI.Desktop
             this.comisionesToolStripMenuItem,
             this.planesToolStripMenuItem,
             this.cursosToolStripMenuItem,
+            this.docenteCursoToolStripMenuItem,
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(555, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(643, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -129,26 +130,16 @@ namespace UI.Desktop
             // cursosToolStripMenuItem1
             // 
             this.cursosToolStripMenuItem1.Name = "cursosToolStripMenuItem1";
-            this.cursosToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.cursosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.cursosToolStripMenuItem1.Text = "Cursos";
             this.cursosToolStripMenuItem1.Click += new System.EventHandler(this.cursosToolStripMenuItem1_Click);
             // 
             // planesToolStripMenuItem1
             // 
             this.planesToolStripMenuItem1.Name = "planesToolStripMenuItem1";
-            this.planesToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.planesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.planesToolStripMenuItem1.Text = "Planes";
             this.planesToolStripMenuItem1.Click += new System.EventHandler(this.planesToolStripMenuItem1_Click);
-            // 
-            // btnAgregarDocur
-            // 
-            this.btnAgregarDocur.Location = new System.Drawing.Point(63, 76);
-            this.btnAgregarDocur.Name = "btnAgregarDocur";
-            this.btnAgregarDocur.Size = new System.Drawing.Size(75, 56);
-            this.btnAgregarDocur.TabIndex = 7;
-            this.btnAgregarDocur.Text = "Agregar Docente a Curso";
-            this.btnAgregarDocur.UseVisualStyleBackColor = true;
-            this.btnAgregarDocur.Click += new System.EventHandler(this.btnAgregarDocur_Click);
             // 
             // cbCursos
             // 
@@ -174,14 +165,20 @@ namespace UI.Desktop
             // 
             this.docenteCursoLogicBindingSource.DataSource = typeof(Business.Logic.DocenteCursoLogic);
             // 
+            // docenteCursoToolStripMenuItem
+            // 
+            this.docenteCursoToolStripMenuItem.Name = "docenteCursoToolStripMenuItem";
+            this.docenteCursoToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.docenteCursoToolStripMenuItem.Text = "Docente Curso";
+            this.docenteCursoToolStripMenuItem.Click += new System.EventHandler(this.docenteCursoToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 214);
+            this.ClientSize = new System.Drawing.Size(643, 225);
             this.Controls.Add(this.cbCursos);
             this.Controls.Add(this.lblCurso);
-            this.Controls.Add(this.btnAgregarDocur);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
@@ -204,12 +201,12 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem comisionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
-        private System.Windows.Forms.Button btnAgregarDocur;
         private System.Windows.Forms.ComboBox cbCursos;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.BindingSource docenteCursoLogicBindingSource;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem docenteCursoToolStripMenuItem;
     }
 }

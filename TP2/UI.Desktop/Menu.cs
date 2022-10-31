@@ -36,7 +36,7 @@ namespace UI.Desktop
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
                         reportesToolStripMenuItem.Visible = false;
-                        btnAgregarDocur.Visible = false;
+                        cursosToolStripMenuItem.Visible = false;
                         lblCurso.Visible = true;
                         cbCursos.Visible = true;
                         DocenteCursoLogic dl = new DocenteCursoLogic();
@@ -55,7 +55,7 @@ namespace UI.Desktop
                         planesToolStripMenuItem.Visible = false;
                         cursosToolStripMenuItem.Visible = false;
                         reportesToolStripMenuItem.Visible = false;
-                        btnAgregarDocur.Visible = false;
+                        cursosToolStripMenuItem.Visible = false;
                         AlumnosInscripciones alu = new AlumnosInscripciones(Global.Pers.ID);
                         //AlumnosInscripciones.ID = Convert.ToInt32(cbAlumnos.SelectedValue);
                         alu.ShowDialog();
@@ -121,19 +121,6 @@ namespace UI.Desktop
             cursoAbmc.ShowDialog();
         }
 
-        private void btnAgregarDocur_Click(object sender, EventArgs e)
-        {
-            DocentesCursos docurAbmc = new DocentesCursos();
-            docurAbmc.ShowDialog();
-        }
-
-        private void cbAlumnos_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            AlumnosInscripciones alu = new AlumnosInscripciones(Global.Pers.ID);
-            //AlumnosInscripciones.ID = Convert.ToInt32(cbAlumnos.SelectedValue);
-            alu.ShowDialog();
-            
-        }
 
         private void Menu_Load(object sender, EventArgs e)
         {
@@ -157,6 +144,12 @@ namespace UI.Desktop
         {
             ReportePlanes rp = new ReportePlanes();
             rp.ShowDialog();
+        }
+
+        private void docenteCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DocentesCursos docurAbmc = new DocentesCursos();
+            docurAbmc.ShowDialog();
         }
     }
 }

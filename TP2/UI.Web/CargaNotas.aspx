@@ -13,8 +13,8 @@
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField HeaderText="ID" DataField="ID" />
-                <asp:BoundField HeaderText="IDAlumno" DataField="IDAlumno" />
-                <asp:BoundField HeaderText="ID Curso" DataField="IDCurso" />
+                <asp:BoundField HeaderText="Alumno" DataField="Alumno" />
+                <asp:BoundField HeaderText="Curso" DataField="Curso" />
                 <asp:BoundField HeaderText="Condicion" DataField="Condicion" />
                 <asp:BoundField HeaderText="Nota" DataField="Nota" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
@@ -33,7 +33,7 @@
          </asp:Panel>
 
     <asp:Panel ID="formPanel" Visible="false" runat="server">
-        <asp:Label ID="idCursoLabel" runat="server" Text="ID Curso: " Visible="False"></asp:Label>
+        <asp:Label ID="idCursoLabel" runat="server" Text="Curso: " Visible="False"></asp:Label>
         <asp:DropDownList ID="idCursoDropDownList" runat="server" Visible="False" > </asp:DropDownList>        
         <br />
         <asp:Label ID="condicionLabel" runat="server" Text="Condicion: "></asp:Label>
@@ -45,7 +45,7 @@
         </asp:DropDownList>
         <br />
         <asp:Label ID="notaLabel" runat="server" Text="Nota: "></asp:Label>
-        <asp:TextBox ID="notaTextBox" runat="server" Width="40px" MaxLength="2"></asp:TextBox>
+        <asp:TextBox ID="notaTextBox" runat="server" Width="40px" MaxLength="2"></asp:TextBox><asp:RangeValidator ID="rvNota" runat="server" ErrorMessage="La nota debe ser numerica, entre 0 y 10" ControlToValidate="notaTextBox" ForeColor="Red" MaximumValue="100" MinimumValue="0" Type="Integer"></asp:RangeValidator>
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

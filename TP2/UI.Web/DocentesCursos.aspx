@@ -9,8 +9,8 @@
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField HeaderText="ID " DataField="ID" />
-                <asp:BoundField HeaderText="ID Curso" DataField="IDCurso" />
-                <asp:BoundField HeaderText="ID Docente" DataField="IDDocente" />
+                <asp:BoundField HeaderText="Curso" DataField="Curso" />
+                <asp:BoundField HeaderText="Docente" DataField="Docente" />
                 <asp:BoundField HeaderText="Cargo" DataField="Cargo" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
             </Columns>
@@ -29,13 +29,11 @@
 
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         
-        <asp:Label ID="IDCursoLabel" runat="server" Text="ID Curso: "></asp:Label>
-        <asp:DropDownList ID="IDCursoDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="IDCursoDropDownList_SelectedIndexChanged">
+        <asp:Label ID="IDCursoLabel" runat="server" Text="Curso: "></asp:Label>
+        <asp:DropDownList ID="IDCursoDropDownList" runat="server" AutoPostBack="True" >
         </asp:DropDownList>
-        <asp:Label ID="ComisionLabel" runat="server" Text="Label"></asp:Label>
-        <asp:Label ID="MateriaLabel" runat="server" Text="Label"></asp:Label>
         <br />
-        <asp:Label ID="IDDocenteLabel" runat="server" Text="ID Docente: "></asp:Label>
+        <asp:Label ID="IDDocenteLabel" runat="server" Text="Docente: "></asp:Label>
         <asp:DropDownList ID="IDDocenteDropDownList" runat="server">
         </asp:DropDownList>
         <br />

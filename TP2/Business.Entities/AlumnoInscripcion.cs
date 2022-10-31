@@ -22,8 +22,8 @@ namespace Business.Entities
             set { _IDAlumno = value; }
         }
 
-        private Persona _alumno;
-        public Persona Alumno
+        private string _alumno;
+        public string Alumno
         {
             get { return _alumno; }
             set { _alumno = value; }
@@ -37,8 +37,8 @@ namespace Business.Entities
         }
 
 
-        private Curso _curso;
-        public Curso Curso
+        private string _curso;
+        public string Curso
         {
             get { return _curso; }
             set { _curso = value; }

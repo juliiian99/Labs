@@ -47,10 +47,10 @@ namespace Business.Logic
             return AlumnoInscripcionData.GetCursos(id);
         }
 
-        public DataTable GetAlumnos()
-        {
-            return AlumnoInscripcionData.GetAlumnos();
-        }
+        //public DataTable GetAlumnos()
+        //{
+        //    return AlumnoInscripcionData.GetAlumnos();
+        //}
 
         public List<Business.Entities.AlumnoInscripcion> GetAlumnosCurso(int id)
         {

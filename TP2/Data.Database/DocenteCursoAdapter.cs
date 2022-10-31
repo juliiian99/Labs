@@ -17,13 +17,14 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from docentes_cursos " +
+                SqlCommand cmd = new SqlCommand("select id_docente, docentes_cursos.id_curso, id_dictado, cargo, concat(desc_comision, ' ', desc_materia, ' ', anio_especialidad)cur, " +
+                    "concat(nombre, ' ', apellido)nape from docentes_cursos " +
                     "join cursos on cursos.id_curso = docentes_cursos.id_curso " +
                     "join personas on personas.id_persona = docentes_cursos.id_docente " +
                     "join comisiones on comisiones.id_comision = cursos.id_comision " +
                     "join materias on materias.id_materia = cursos.id_materia " +
                     "join planes on planes.id_plan = comisiones.id_plan " +
-                    "join especialidades on especialidades.id_plan = planes.id_plan "
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad "
                 , this.sqlConn);
                 SqlDataReader dr= cmd.ExecuteReader();
                 while (dr.Read())
@@ -39,33 +40,35 @@ namespace Data.Database
                     docur.IDCurso = (int)dr["id_curso"];
                     docur.IDDocente = (int)dr["id_docente"];
                     docur.Cargo = (DocenteCurso.TiposCargos)dr["cargo"];
-                    cur.Cupo = (int)dr["cupo"];
-                    cur.AnioCalendario = (int)dr["anio_calendario"];
-                    cur.IDComision = (int)dr["id_comision"];
-                    com.ID = (int)dr["id_comision"];
-                    com.Descripcion = (string)dr["desc_comision"];
-                    com.AnioEspecialidad = (int)dr["anio_especialdiad"];
-                    plan.ID = (int)dr["id_plan"];
-                    plan.Descripcion = (string)dr["descripcion"];
-                    esp.ID = (int)dr["id_especialidad"];
-                    esp.Descripcion = (string)dr["desc_especialidad"];
-                    plan.Especialidad = esp;
-                    cur.IDMateria = (int)dr["id_materia"];
-                    cur.ID = (int)dr["id_curso"];
-                    cur.Materia = mat;
-                    per.ID = (int)dr["id_persona"];
-                    per.Legajo = (int)dr["legajo"];
-                    per.Apellido = (string)dr["apellido"];
-                    per.Nombre = (string)dr["nombre"];
-                    per.Direccion = (string)dr["direccion"];
-                    per.EMail = (string)dr["email"];
-                    per.Telefono = (string)dr["telefono"];
-                    per.FechaNacimiento = Convert.ToDateTime(dr["fecha_nac"]);
-                    per.IDPlan = (int)dr["id_plan"];
-                    cur.Comision = com;
-                    mat.PLan = plan;
-                    docur.Curso = cur;
-                    docur.Docente = per;
+                    docur.Curso = (string)dr["cur"];
+                    docur.Docente = (string)dr["nape"];
+                    //cur.Cupo = (int)dr["cupo"];
+                    //cur.AnioCalendario = (int)dr["anio_calendario"];
+                    //cur.IDComision = (int)dr["id_comision"];
+                    //com.ID = (int)dr["id_comision"];
+                    //com.Descripcion = (string)dr["desc_comision"];
+                    //com.AnioEspecialidad = (int)dr["anio_especialidad"];
+                    //plan.ID = (int)dr["id_plan"];
+                    //plan.Descripcion = (string)dr["desc_plan"];
+                    //esp.ID = (int)dr["id_especialidad"];
+                    //esp.Descripcion = (string)dr["desc_especialidad"];
+                    //plan.Especialidad = esp;
+                    //cur.IDMateria = (int)dr["id_materia"];
+                    //cur.ID = (int)dr["id_curso"];
+                    //cur.Materia = mat;
+                    //per.ID = (int)dr["id_persona"];
+                    //per.Legajo = (int)dr["legajo"];
+                    //per.Apellido = (string)dr["apellido"];
+                    //per.Nombre = (string)dr["nombre"];
+                    //per.Direccion = (string)dr["direccion"];
+                    //per.EMail = (string)dr["email"];
+                    //per.Telefono = (string)dr["telefono"];
+                    //per.FechaNacimiento = Convert.ToDateTime(dr["fecha_nac"]);
+                    //per.IDPlan = (int)dr["id_plan"];
+                    //cur.Comision = com;
+                    //mat.PLan = plan;
+                    //docur.Curso = cur;
+                    //docur.Docente = per;
                     docentesCursos.Add(docur);
                 }
                 dr.Close();
@@ -95,7 +98,17 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from docentes_cursos where id_dictado = @id", this.sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_docente, docentes_cursos.id_curso, id_dictado, cargo, concat(desc_comision, ' ', desc_materia, ' ', anio_especialidad)cur, " +
+                    "concat(nombre, ' ', apellido)nape from docentes_cursos " +
+                    "join cursos on cursos.id_curso = docentes_cursos.id_curso " +
+                    "join personas on personas.id_persona = docentes_cursos.id_docente " +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join materias on materias.id_materia = cursos.id_materia " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad "+
+                    "where id_dictado=@id"
+                , this.sqlConn);
+                // SqlCommand cmd = new SqlCommand("select * from docentes_cursos where id_dictado = @id", this.sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -104,33 +117,35 @@ namespace Data.Database
                     docur.IDCurso = (int)dr["id_curso"];
                     docur.IDDocente = (int)dr["id_docente"];
                     docur.Cargo = (DocenteCurso.TiposCargos)dr["cargo"];
-                    cur.Cupo = (int)dr["cupo"];
-                    cur.AnioCalendario = (int)dr["anio_calendario"];
-                    cur.IDComision = (int)dr["id_comision"];
-                    com.ID = (int)dr["id_comision"];
-                    com.Descripcion = (string)dr["desc_comision"];
-                    com.AnioEspecialidad = (int)dr["anio_especialdiad"];
-                    plan.ID = (int)dr["id_plan"];
-                    plan.Descripcion = (string)dr["descripcion"];
-                    esp.ID = (int)dr["id_especialidad"];
-                    esp.Descripcion = (string)dr["desc_especialidad"];
-                    plan.Especialidad = esp;
-                    cur.IDMateria = (int)dr["id_materia"];
-                    cur.ID = (int)dr["id_curso"];
-                    cur.Materia = mat;
-                    per.ID = (int)dr["id_persona"];
-                    per.Legajo = (int)dr["legajo"];
-                    per.Apellido = (string)dr["apellido"];
-                    per.Nombre = (string)dr["nombre"];
-                    per.Direccion = (string)dr["direccion"];
-                    per.EMail = (string)dr["email"];
-                    per.Telefono = (string)dr["telefono"];
-                    per.FechaNacimiento = Convert.ToDateTime(dr["fecha_nac"]);
-                    per.IDPlan = (int)dr["id_plan"];
-                    cur.Comision = com;
-                    mat.PLan = plan;
-                    docur.Curso = cur;
-                    docur.Docente = per;
+                    docur.Curso = (string)dr["cur"];
+                    docur.Docente = (string)dr["nape"];
+                    //cur.Cupo = (int)dr["cupo"];
+                    //cur.AnioCalendario = (int)dr["anio_calendario"];
+                    //cur.IDComision = (int)dr["id_comision"];
+                    //com.ID = (int)dr["id_comision"];
+                    //com.Descripcion = (string)dr["desc_comision"];
+                    //com.AnioEspecialidad = (int)dr["anio_especialidad"];
+                    //plan.ID = (int)dr["id_plan"];
+                    //plan.Descripcion = (string)dr["desc_plan"];
+                    //esp.ID = (int)dr["id_especialidad"];
+                    //esp.Descripcion = (string)dr["desc_especialidad"];
+                    //plan.Especialidad = esp;
+                    //cur.IDMateria = (int)dr["id_materia"];
+                    //cur.ID = (int)dr["id_curso"];
+                    //cur.Materia = mat;
+                    //per.ID = (int)dr["id_persona"];
+                    //per.Legajo = (int)dr["legajo"];
+                    //per.Apellido = (string)dr["apellido"];
+                    //per.Nombre = (string)dr["nombre"];
+                    //per.Direccion = (string)dr["direccion"];
+                    //per.EMail = (string)dr["email"];
+                    //per.Telefono = (string)dr["telefono"];
+                    //per.FechaNacimiento = Convert.ToDateTime(dr["fecha_nac"]);
+                    //per.IDPlan = (int)dr["id_plan"];
+                    //cur.Comision = com;
+                    //mat.PLan = plan;
+                    //docur.Curso = cur;
+                    //docur.Docente = per;
                     dr.Close();
                 }
             }
@@ -239,7 +254,11 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_curso, id_materia, id_comision from cursos c", sqlConn);
+                SqlCommand cmd = new SqlCommand("select cursos.id_curso, cursos.id_materia, cursos.id_comision, " +
+                    "concat(materias.desc_materia,' ', comisiones.desc_comision,' ', cursos.anio_calendario)cur from cursos " +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join materias on materias.id_materia = cursos.id_materia " 
+                    , sqlConn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(cursos);
             }
@@ -263,7 +282,12 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_curso, id_docente from docentes_cursos where id_docente=@id_doce ", sqlConn);
+                SqlCommand cmd = new SqlCommand("select docentes_cursos.id_curso, docentes_cursos.id_docente, " +
+                    "concat(materias.desc_materia,' ', comisiones.desc_comision,' ', cursos.anio_calendario)cur from docentes_cursos " +
+                    "join cursos on docentes_cursos.id_curso= cursos.id_curso " +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join materias on materias.id_materia = cursos.id_materia " +
+                    "where id_docente=@id_doce ", sqlConn);
                 cmd.Parameters.Add("@id_doce", SqlDbType.Int).Value = id_per;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(cursos);

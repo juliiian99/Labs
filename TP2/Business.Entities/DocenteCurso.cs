@@ -29,8 +29,8 @@ namespace Business.Entities
             set { _IDCurso = value; }
         }
 
-        private Curso _curso;
-        public Curso Curso
+        private string _curso;
+        public string Curso
         {
             get { return _curso; }
             set { _curso = value; }
@@ -43,11 +43,12 @@ namespace Business.Entities
             set { _IDDocente = value; }
         }
 
-        private Persona _docente;
-        public Persona Docente
+        private string _docente;
+        public string Docente
         {
             get { return _docente; }
             set { _docente = value; }
         }
+
     }
 }

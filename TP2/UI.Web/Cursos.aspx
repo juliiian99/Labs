@@ -40,7 +40,6 @@
         <asp:TextBox ID="anioCalendarioTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvAnioTxt" runat="server" ControlToValidate="anioCalendarioTextBox" ErrorMessage="El año no puede estar vacío" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
-        <br />
         <asp:Label ID="cupoLabel" runat="server" Text="Cupo : "></asp:Label>
         <asp:TextBox ID="cupoTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvCupoTxt" runat="server" ControlToValidate="cupoTextBox" ErrorMessage="El cupo no puede estar vacío" ForeColor="Red"></asp:RequiredFieldValidator>

@@ -19,47 +19,64 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones " +
-                    "join personas on personas.id_persona = alumnos_inscripciones.id_persona" +
-                    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso" +
-                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
-                    "join materias on materias.id_materia = cursos.id_materia " +
-                    "join planes on planes.id_plan = comisiones.id_plan " +
-                    "join especialidades on especialidades.id_plan = planes.id_plan " +
-                    "where id_alumno= @id"
-                , sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_inscripcion, id_alumno, alumnos_inscripciones.id_curso, concat(nombre, ' ', apellido)nape, " +
+                     "concat(desc_comision, ' ', desc_materia, ' ', anio_especialidad)cur, condicion, nota from alumnos_inscripciones " +
+                     "join personas on personas.id_persona = alumnos_inscripciones.id_alumno " +
+                     "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso " +
+                     "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                     "join materias on materias.id_materia = cursos.id_materia " +
+                     "join planes on planes.id_plan = comisiones.id_plan " +
+                     "join especialidades on especialidades.id_especialidad = planes.id_especialidad " +
+                     "where id_alumno = @id"
+                 , this.sqlConn);
+                //SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones " +
+                //    "join personas on personas.id_persona = alumnos_inscripciones.id_persona" +
+                //    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso" +
+                //    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                //    "join materias on materias.id_materia = cursos.id_materia " +
+                //    "join planes on planes.id_plan = comisiones.id_plan " +
+                //    "join especialidades on especialidades.id_plan = planes.id_plan " +
+                //    "where id_alumno= @id"
+                //, sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     AlumnoInscripcion alui = new AlumnoInscripcion();
-                    Persona per = new Persona();
-                    Curso cur = new Curso();
-                    Especialidad esp = new Especialidad();
-                    Comision com = new Comision();
-                    Plan plan = new Plan();
                     alui.ID = (int)dr["id_inscripcion"];
                     alui.IDAlumno = (int)dr["id_alumno"];
                     alui.IDCurso = (int)dr["id_curso"];
-                    cur.Cupo = (int)dr["cupo"];
-                    cur.AnioCalendario = (int)dr["anio_calendario"];
-                    cur.IDComision = (int)dr["id_comision"];
-                    com.ID = (int)dr["id_comision"];
-                    com.Descripcion = (string)dr["desc_comision"];
-                    com.AnioEspecialidad = (int)dr["anio_especialdiad"];
-                    cur.Comision = com;
-                    plan.ID = (int)dr["id_plan"];
-                    plan.Descripcion = (string)dr["descripcion"];
-                    esp.ID = (int)dr["id_especialidad"];
-                    esp.Descripcion = (string)dr["desc_especialidad"];
-                    plan.Especialidad = esp;
-                    com.Plan = plan;
-                    cur.IDMateria = (int)dr["id_materia"];
-                    cur.ID = (int)dr["id_curso"];
+                    alui.Alumno = (string)dr["nape"];
                     alui.Condicion = (string)dr["condicion"];
+                    alui.Curso = (string)dr["cur"];
                     alui.Nota = (int)dr["nota"];
-                    alui.Curso = cur;
-                    alui.Alumno = per;
+                    //Persona per = new Persona();
+                    //Curso cur = new Curso();
+                    //Especialidad esp = new Especialidad();
+                    //Comision com = new Comision();
+                    //Plan plan = new Plan();
+                    //alui.ID = (int)dr["id_inscripcion"];
+                    //alui.IDAlumno = (int)dr["id_alumno"];
+                    //alui.IDCurso = (int)dr["id_curso"];
+                    //cur.Cupo = (int)dr["cupo"];
+                    //cur.AnioCalendario = (int)dr["anio_calendario"];
+                    //cur.IDComision = (int)dr["id_comision"];
+                    //com.ID = (int)dr["id_comision"];
+                    //com.Descripcion = (string)dr["desc_comision"];
+                    //com.AnioEspecialidad = (int)dr["anio_especialidad"];
+                    //cur.Comision = com;
+                    //plan.ID = (int)dr["id_plan"];
+                    //plan.Descripcion = (string)dr["desc_plan"];
+                    //esp.ID = (int)dr["id_especialidad"];
+                    //esp.Descripcion = (string)dr["desc_especialidad"];
+                    //plan.Especialidad = esp;
+                    //com.Plan = plan;
+                    //cur.IDMateria = (int)dr["id_materia"];
+                    //cur.ID = (int)dr["id_curso"];
+                    //alui.Condicion = (string)dr["condicion"];
+                    //alui.Nota = (int)dr["nota"];
+                    //alui.Curso = cur;
+                    //alui.Alumno = per;
                     alumnosinsc.Add(alui);
                 }
 
@@ -79,22 +96,31 @@ namespace Data.Database
         public Business.Entities.AlumnoInscripcion GetOne(int ID)
         {
             AlumnoInscripcion alui = new AlumnoInscripcion();
-            Persona per = new Persona();
-            Curso cur = new Curso();
-            Especialidad esp = new Especialidad();
-            Comision com = new Comision();
-            Plan plan = new Plan();
+            //Persona per = new Persona();
+            //Curso cur = new Curso();
+            //Especialidad esp = new Especialidad();
+            //Comision com = new Comision();
+            //Plan plan = new Plan();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones " +
-                    "join personas on personas.id_persona = alumnos_inscripciones.id_persona" +
-                    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso" +
+                SqlCommand cmd = new SqlCommand("select id_inscripcion, id_alumno, cursos.id_curso, concat(nombre, ' ', apellido)nape, " +
+                    "concat(desc_comision, ' ', desc_materia, ' ', anio_especialidad)cur, condicion, nota from alumnos_inscripciones " +
+                    "join personas on personas.id_persona = alumnos_inscripciones.id_alumno " +
+                    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso " +
                     "join comisiones on comisiones.id_comision = cursos.id_comision " +
                     "join materias on materias.id_materia = cursos.id_materia " +
                     "join planes on planes.id_plan = comisiones.id_plan " +
-                    "join especialidades on especialidades.id_plan = planes.id_plan " + 
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " +
                     "where id_inscripcion = @id"
+                //SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones " +
+                //    "join personas on personas.id_persona = alumnos_inscripciones.id_alumno " +
+                //    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso " +
+                //    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                //    "join materias on materias.id_materia = cursos.id_materia " +
+                //    "join planes on planes.id_plan = comisiones.id_plan " +
+                //    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " + 
+                //    "where id_inscripcion = @id"
                 , this.sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader dr= cmd.ExecuteReader();
@@ -103,25 +129,32 @@ namespace Data.Database
                     alui.ID = (int)dr["id_inscripcion"];
                     alui.IDAlumno = (int)dr["id_alumno"];
                     alui.IDCurso = (int)dr["id_curso"];
-                    cur.Cupo = (int)dr["cupo"];
-                    cur.AnioCalendario = (int)dr["anio_calendario"];
-                    cur.IDComision = (int)dr["id_comision"];
-                    com.ID = (int)dr["id_comision"];
-                    com.Descripcion = (string)dr["desc_comision"];
-                    com.AnioEspecialidad = (int)dr["anio_especialdiad"];
-                    cur.Comision = com;
-                    plan.ID = (int)dr["id_plan"];
-                    plan.Descripcion = (string)dr["descripcion"];
-                    esp.ID = (int)dr["id_especialidad"];
-                    esp.Descripcion = (string)dr["desc_especialidad"];
-                    plan.Especialidad = esp;
-                    com.Plan = plan;
-                    cur.IDMateria = (int)dr["id_materia"];
-                    cur.ID = (int)dr["id_curso"];
+                    alui.Alumno = (string)dr["nape"];
                     alui.Condicion = (string)dr["condicion"];
+                    alui.Curso = (string)dr["cur"];
                     alui.Nota = (int)dr["nota"];
-                    alui.Curso = cur;
-                    alui.Alumno = per;
+                    //alui.ID = (int)dr["id_inscripcion"];
+                    //alui.IDAlumno = (int)dr["id_alumno"];
+                    //alui.IDCurso = (int)dr["id_curso"];
+                    //cur.Cupo = (int)dr["cupo"];
+                    //cur.AnioCalendario = (int)dr["anio_calendario"];
+                    //cur.IDComision = (int)dr["id_comision"];
+                    //com.ID = (int)dr["id_comision"];
+                    //com.Descripcion = (string)dr["desc_comision"];
+                    //com.AnioEspecialidad = (int)dr["anio_especialidad"];
+                    //cur.Comision = com;
+                    //plan.ID = (int)dr["id_plan"];
+                    //plan.Descripcion = (string)dr["desc_plan"];
+                    //esp.ID = (int)dr["id_especialidad"];
+                    //esp.Descripcion = (string)dr["desc_especialidad"];
+                    //plan.Especialidad = esp;
+                    //com.Plan = plan;
+                    //cur.IDMateria = (int)dr["id_materia"];
+                    //cur.ID = (int)dr["id_curso"];
+                    //alui.Condicion = (string)dr["condicion"];
+                    //alui.Nota = (int)dr["nota"];
+                    //alui.Curso = cur;
+                    //alui.Alumno = per;
                     dr.Close();
                 }
             }
@@ -235,7 +268,11 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_curso, id_materia, id_comision from cursos where id_curso not in(select id_curso from alumnos_inscripciones where id_alumno= @id )", sqlConn);
+                SqlCommand cmd = new SqlCommand("select cursos.id_curso, cursos.id_materia, cursos.id_comision, " +
+                    "concat(desc_materia,' ', desc_comision,' ',anio_especialidad)cur from cursos " +
+                    "join materias on cursos.id_materia=materias.id_materia " +
+                    "join comisiones on cursos.id_comision=comisiones.id_comision " +
+                    "where id_curso not in(select id_curso from alumnos_inscripciones where id_alumno= @id )", sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataAdapter ca = new SqlDataAdapter(cmd);
                 ca.Fill(cursos);
@@ -254,29 +291,29 @@ namespace Data.Database
             return cursos;
         }
 
-        public DataTable GetAlumnos()
-        {
-            DataTable alumnos = new DataTable();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_persona,legajo, concat( nombre,' ', apellido)nape from personas where tipo_persona=1", sqlConn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(alumnos);
-            }
+        //public DataTable GetAlumnos()
+        //{
+        //    DataTable alumnos = new DataTable();
+        //    try
+        //    {
+        //        this.OpenConnection();
+        //        SqlCommand cmd = new SqlCommand("select id_persona,legajo, concat( nombre,' ', apellido)nape from personas where tipo_persona=1", sqlConn);
+        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //        da.Fill(alumnos);
+        //    }
 
-            catch (Exception Ex)
-            {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar lista de docentes", Ex);
-                throw Ex;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-            return alumnos;
-        }
+        //    catch (Exception Ex)
+        //    {
+        //        Exception ExcepcionManejada =
+        //        new Exception("Error al recuperar lista de docentes", Ex);
+        //        throw Ex;
+        //    }
+        //    finally
+        //    {
+        //        this.CloseConnection();
+        //    }
+        //    return alumnos;
+        //}
 
         public List<AlumnoInscripcion> GetAlumnosCurso(int id_c)
         {
@@ -284,17 +321,53 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_curso=@id_curso", sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_inscripcion, id_alumno, cursos.id_curso, concat(nombre, ' ', apellido)nape, " +
+                    "concat(desc_comision, ' ', desc_materia, ' ', anio_especialidad)cur, condicion, nota from alumnos_inscripciones " +
+                    "join personas on personas.id_persona = alumnos_inscripciones.id_alumno " +
+                    "join cursos on cursos.id_curso = alumnos_inscripciones.id_curso " +
+                    "join comisiones on comisiones.id_comision = cursos.id_comision " +
+                    "join materias on materias.id_materia = cursos.id_materia " +
+                    "join planes on planes.id_plan = comisiones.id_plan " +
+                    "join especialidades on especialidades.id_especialidad = planes.id_especialidad " +
+                    "where alumnos_inscripciones.id_curso = @id_curso"
+                , this.sqlConn);
+                //SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_curso=@id_curso", sqlConn);
                 cmd.Parameters.Add("@id_curso", SqlDbType.Int).Value = id_c;
-                SqlDataReader da = cmd.ExecuteReader();
-                while (da.Read())
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
                     AlumnoInscripcion alui = new AlumnoInscripcion();
-                    alui.ID = (int)da["id_inscripcion"];
-                    alui.IDAlumno = (int)da["id_alumno"];
-                    alui.IDCurso = (int)da["id_curso"];
-                    alui.Condicion = (string)da["condicion"];
-                    alui.Nota = (int)da["nota"];
+                    //Persona per = new Persona();
+                    //Curso cur = new Curso();
+                    //Especialidad esp = new Especialidad();
+                    //Comision com = new Comision();
+                    //Plan plan = new Plan();
+                    alui.ID = (int)dr["id_inscripcion"];
+                    alui.IDAlumno = (int)dr["id_alumno"];
+                    alui.IDCurso = (int)dr["id_curso"];
+                    alui.Alumno = (string)dr["nape"];
+                    alui.Condicion = (string)dr["condicion"];
+                    alui.Curso = (string)dr["cur"];
+                    alui.Nota = (int)dr["nota"];
+                    //cur.Cupo = (int)dr["cupo"];
+                    //cur.AnioCalendario = (int)dr["anio_calendario"];
+                    //cur.IDComision = (int)dr["id_comision"];
+                    //com.ID = (int)dr["id_comision"];
+                    //com.Descripcion = (string)dr["desc_comision"];
+                    //com.AnioEspecialidad = (int)dr["anio_especialidad"];
+                    //cur.Comision = com;
+                    //plan.ID = (int)dr["id_plan"];
+                    //plan.Descripcion = (string)dr["desc_plan"];
+                    //esp.ID = (int)dr["id_especialidad"];
+                    //esp.Descripcion = (string)dr["desc_especialidad"];
+                    //plan.Especialidad = esp;
+                    //com.Plan = plan;
+                    //cur.IDMateria = (int)dr["id_materia"];
+                    //cur.ID = (int)dr["id_curso"];
+                    //alui.Condicion = (string)dr["condicion"];
+                    //alui.Nota = (int)dr["nota"];
+                    //alui.Curso = cur;
+                    //alui.Alumno = per;
                     alumnos.Add(alui);
                 }
             }

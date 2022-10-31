@@ -31,11 +31,12 @@ namespace UI.Web
                     this.gridView.DataBind();
                     gridView.Visible = true;
                 }
-            }
                 else
                 {
                     Response.Redirect("~/Login.aspx");
                 }
+            }
+                
                 
         }
 
@@ -66,24 +67,6 @@ namespace UI.Web
             }
         }
 
-        //private int SelectedIDAlumno
-        //{
-        //    get
-        //    {
-        //        if (this.ViewState["SelectedIDAlumno"] != null)
-        //        {
-        //            return (int)this.ViewState["SelectedIDAlumno"];
-        //        }
-        //        else
-        //        {
-        //            return 0;
-        //        }
-        //    }
-        //    set
-        //    {
-        //        this.ViewState["SelectedIDAlumno"] = value;
-        //    }
-        //}
 
         AlumnoInscripcionLogic _logic;
         private AlumnoInscripcionLogic Logic
@@ -120,7 +103,6 @@ namespace UI.Web
             Global.aluins = al.GetOne(SelectedID);
             PersonaLogic p = new PersonaLogic();
             Business.Entities.Persona alumno = p.GetOne(Global.aluins.IDAlumno);
-            //lblNombre.Text = alumno.Nombre + " " + alumno.Apellido;
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -143,14 +125,13 @@ namespace UI.Web
 
         private void EnableForm(bool Enable)
         {
-
             this.condicionDropDownList.Enabled = Enable;
             this.notaTextBox.Enabled = Enable;
             this.idCursoDropDownList.Enabled = Enable;
             DocenteCursoLogic dl = new DocenteCursoLogic();
             idCursoDropDownList.DataSource = dl.GetCursoss(Convert.ToInt32(Session["id_persona"]));
             idCursoDropDownList.DataValueField = "id_curso";
-            idCursoDropDownList.DataTextField = "id_curso";
+            idCursoDropDownList.DataTextField = "cur";
             idCursoDropDownList.DataBind();
         }
 

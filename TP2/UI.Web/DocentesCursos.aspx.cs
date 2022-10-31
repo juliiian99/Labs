@@ -129,7 +129,7 @@ namespace UI.Web
             this.CargoDropDownList.Enabled = Enable;
             IDCursoDropDownList.DataSource = Logic.GetCursos();
             IDCursoDropDownList.DataValueField = "id_curso";
-            IDCursoDropDownList.DataTextField = "id_curso";
+            IDCursoDropDownList.DataTextField = "cur";
             IDCursoDropDownList.DataBind();
             IDDocenteDropDownList.DataSource = Logic.GetDocentes();
             IDDocenteDropDownList.DataValueField = "id_persona";
@@ -137,21 +137,21 @@ namespace UI.Web
             IDDocenteDropDownList.DataBind();
             CargoDropDownList.DataSource = Enum.GetValues(typeof(DocenteCurso.TiposCargos));
             CargoDropDownList.DataBind();
-            UpdateDatosCurso();
+            //UpdateDatosCurso();
         }
 
-        public void UpdateDatosCurso()
-        {
-            CursoLogic cl = new CursoLogic();
-            Curso cur = cl.GetOne(Convert.ToInt32(this.IDCursoDropDownList.SelectedValue));
-            MateriaLogic ml = new MateriaLogic();
-            Materia mat = ml.GetOne(cur.IDMateria);
-            MateriaLabel.Text = mat.Descripcion;
-            ComisionLogic col = new ComisionLogic();
-            Comision com = col.GetOne(cur.IDComision);
-            ComisionLabel.Text = com.Descripcion;
-            ComisionLabel.DataBind(); MateriaLabel.DataBind();
-        }
+        //public void UpdateDatosCurso()
+        //{
+        //    CursoLogic cl = new CursoLogic();
+        //    Curso cur = cl.GetOne(Convert.ToInt32(this.IDCursoDropDownList.SelectedValue));
+        //    MateriaLogic ml = new MateriaLogic();
+        //    Materia mat = ml.GetOne(cur.IDMateria);
+        //    MateriaLabel.Text = mat.Descripcion;
+        //    ComisionLogic col = new ComisionLogic();
+        //    Comision com = col.GetOne(cur.IDComision);
+        //    ComisionLabel.Text = com.Descripcion;
+        //    ComisionLabel.DataBind(); MateriaLabel.DataBind();
+        //}
         private void SaveEntity(DocenteCurso docur)
         {
             this.Logic.Save(docur);
@@ -214,10 +214,10 @@ namespace UI.Web
             formPanel.Visible = false;
         }
 
-        protected void IDCursoDropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateDatosCurso();
-        }
+        //protected void IDCursoDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    UpdateDatosCurso();
+        //}
 
     }
 }

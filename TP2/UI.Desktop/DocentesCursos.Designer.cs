@@ -38,12 +38,14 @@ namespace UI.Desktop
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvDocentesCursos = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDocenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.docenteCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDocenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -157,7 +159,9 @@ namespace UI.Desktop
             this.dgvDocentesCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.iDCursoDataGridViewTextBoxColumn,
+            this.Curso,
             this.iDDocenteDataGridViewTextBoxColumn,
+            this.Docente,
             this.cargoDataGridViewTextBoxColumn});
             this.tlpDocentesCursos.SetColumnSpan(this.dgvDocentesCursos, 5);
             this.dgvDocentesCursos.DataSource = this.docenteCursoBindingSource;
@@ -168,6 +172,18 @@ namespace UI.Desktop
             this.dgvDocentesCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocentesCursos.Size = new System.Drawing.Size(568, 240);
             this.dgvDocentesCursos.TabIndex = 16;
+            // 
+            // docenteCursoBindingSource
+            // 
+            this.docenteCursoBindingSource.DataSource = typeof(Business.Entities.DocenteCurso);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(111, 25);
+            this.toolStrip1.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -183,6 +199,13 @@ namespace UI.Desktop
             this.iDCursoDataGridViewTextBoxColumn.Name = "iDCursoDataGridViewTextBoxColumn";
             this.iDCursoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Curso
+            // 
+            this.Curso.DataPropertyName = "Curso";
+            this.Curso.HeaderText = "Curso";
+            this.Curso.Name = "Curso";
+            this.Curso.ReadOnly = true;
+            // 
             // iDDocenteDataGridViewTextBoxColumn
             // 
             this.iDDocenteDataGridViewTextBoxColumn.DataPropertyName = "IDDocente";
@@ -190,24 +213,19 @@ namespace UI.Desktop
             this.iDDocenteDataGridViewTextBoxColumn.Name = "iDDocenteDataGridViewTextBoxColumn";
             this.iDDocenteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Docente
+            // 
+            this.Docente.DataPropertyName = "Docente";
+            this.Docente.HeaderText = "Docente";
+            this.Docente.Name = "Docente";
+            this.Docente.ReadOnly = true;
+            // 
             // cargoDataGridViewTextBoxColumn
             // 
             this.cargoDataGridViewTextBoxColumn.DataPropertyName = "Cargo";
             this.cargoDataGridViewTextBoxColumn.HeaderText = "Cargo";
             this.cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
             this.cargoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // docenteCursoBindingSource
-            // 
-            this.docenteCursoBindingSource.DataSource = typeof(Business.Entities.DocenteCurso);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(111, 25);
-            this.toolStrip1.TabIndex = 0;
             // 
             // DocentesCursos
             // 
@@ -241,10 +259,12 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvDocentesCursos;
+        private System.Windows.Forms.BindingSource docenteCursoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDCursoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDocenteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Docente;
         private System.Windows.Forms.DataGridViewTextBoxColumn cargoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource docenteCursoBindingSource;
     }
 }

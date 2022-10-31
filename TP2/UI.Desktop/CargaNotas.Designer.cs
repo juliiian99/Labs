@@ -32,23 +32,30 @@ namespace UI.Desktop
             this.components = new System.ComponentModel.Container();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.alumnoInscripcionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblNota = new System.Windows.Forms.Label();
-            this.lblCondicion = new System.Windows.Forms.Label();
             this.cbCondicion = new System.Windows.Forms.ComboBox();
+            this.lblCondicion = new System.Windows.Forms.Label();
+            this.lblNota = new System.Windows.Forms.Label();
             this.nNota = new System.Windows.Forms.NumericUpDown();
             this.dgvNotas = new System.Windows.Forms.DataGridView();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombreAlumno = new System.Windows.Forms.TextBox();
+            this.alumnoInscripcionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.alumnoInscripcionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.iDAlumnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alumnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nNota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -57,7 +64,7 @@ namespace UI.Desktop
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(650, 416);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(650, 391);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -88,43 +95,19 @@ namespace UI.Desktop
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.707865F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 416);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 391);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // alumnoInscripcionBindingSource
-            // 
-            this.alumnoInscripcionBindingSource.DataSource = typeof(Business.Entities.AlumnoInscripcion);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAceptar.Location = new System.Drawing.Point(504, 387);
+            this.btnAceptar.Location = new System.Drawing.Point(504, 362);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // lblNota
-            // 
-            this.lblNota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNota.AutoSize = true;
-            this.lblNota.Location = new System.Drawing.Point(56, 392);
-            this.lblNota.Name = "lblNota";
-            this.lblNota.Size = new System.Drawing.Size(30, 13);
-            this.lblNota.TabIndex = 4;
-            this.lblNota.Text = "Nota";
-            // 
-            // lblCondicion
-            // 
-            this.lblCondicion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCondicion.AutoSize = true;
-            this.lblCondicion.Location = new System.Drawing.Point(333, 359);
-            this.lblCondicion.Name = "lblCondicion";
-            this.lblCondicion.Size = new System.Drawing.Size(54, 13);
-            this.lblCondicion.TabIndex = 5;
-            this.lblCondicion.Text = "Condicion";
             // 
             // cbCondicion
             // 
@@ -135,16 +118,36 @@ namespace UI.Desktop
             "Libre",
             "Aprobado",
             "Cursando"});
-            this.cbCondicion.Location = new System.Drawing.Point(488, 355);
+            this.cbCondicion.Location = new System.Drawing.Point(488, 331);
             this.cbCondicion.Name = "cbCondicion";
             this.cbCondicion.Size = new System.Drawing.Size(107, 21);
             this.cbCondicion.TabIndex = 6;
             this.cbCondicion.Text = "Inscripto";
             // 
+            // lblCondicion
+            // 
+            this.lblCondicion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCondicion.AutoSize = true;
+            this.lblCondicion.Location = new System.Drawing.Point(333, 335);
+            this.lblCondicion.Name = "lblCondicion";
+            this.lblCondicion.Size = new System.Drawing.Size(54, 13);
+            this.lblCondicion.TabIndex = 5;
+            this.lblCondicion.Text = "Condicion";
+            // 
+            // lblNota
+            // 
+            this.lblNota.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNota.AutoSize = true;
+            this.lblNota.Location = new System.Drawing.Point(56, 367);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Size = new System.Drawing.Size(30, 13);
+            this.lblNota.TabIndex = 4;
+            this.lblNota.Text = "Nota";
+            // 
             // nNota
             // 
             this.nNota.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nNota.Location = new System.Drawing.Point(190, 389);
+            this.nNota.Location = new System.Drawing.Point(190, 364);
             this.nNota.Maximum = new decimal(new int[] {
             10,
             0,
@@ -156,13 +159,21 @@ namespace UI.Desktop
             // 
             // dgvNotas
             // 
+            this.dgvNotas.AutoGenerateColumns = false;
             this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDAlumnoDataGridViewTextBoxColumn,
+            this.alumnoDataGridViewTextBoxColumn,
+            this.condicionDataGridViewTextBoxColumn,
+            this.notaDataGridViewTextBoxColumn,
+            this.cursoDataGridViewTextBoxColumn});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvNotas, 4);
+            this.dgvNotas.DataSource = this.alumnoInscripcionBindingSource1;
             this.dgvNotas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNotas.Location = new System.Drawing.Point(3, 3);
             this.dgvNotas.Name = "dgvNotas";
             this.dgvNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotas.Size = new System.Drawing.Size(644, 343);
+            this.dgvNotas.Size = new System.Drawing.Size(644, 320);
             this.dgvNotas.TabIndex = 8;
             this.dgvNotas.Click += new System.EventHandler(this.dgvNotas_Click);
             // 
@@ -170,7 +181,7 @@ namespace UI.Desktop
             // 
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(25, 359);
+            this.lblNombre.Location = new System.Drawing.Point(25, 335);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(92, 13);
             this.lblNombre.TabIndex = 9;
@@ -179,11 +190,49 @@ namespace UI.Desktop
             // txtNombreAlumno
             // 
             this.txtNombreAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombreAlumno.Location = new System.Drawing.Point(164, 355);
+            this.txtNombreAlumno.Location = new System.Drawing.Point(164, 331);
             this.txtNombreAlumno.Name = "txtNombreAlumno";
             this.txtNombreAlumno.ReadOnly = true;
             this.txtNombreAlumno.Size = new System.Drawing.Size(100, 20);
             this.txtNombreAlumno.TabIndex = 10;
+            // 
+            // alumnoInscripcionBindingSource
+            // 
+            this.alumnoInscripcionBindingSource.DataSource = typeof(Business.Entities.AlumnoInscripcion);
+            // 
+            // alumnoInscripcionBindingSource1
+            // 
+            this.alumnoInscripcionBindingSource1.DataSource = typeof(Business.Entities.AlumnoInscripcion);
+            // 
+            // iDAlumnoDataGridViewTextBoxColumn
+            // 
+            this.iDAlumnoDataGridViewTextBoxColumn.DataPropertyName = "IDAlumno";
+            this.iDAlumnoDataGridViewTextBoxColumn.HeaderText = "IDAlumno";
+            this.iDAlumnoDataGridViewTextBoxColumn.Name = "iDAlumnoDataGridViewTextBoxColumn";
+            // 
+            // alumnoDataGridViewTextBoxColumn
+            // 
+            this.alumnoDataGridViewTextBoxColumn.DataPropertyName = "Alumno";
+            this.alumnoDataGridViewTextBoxColumn.HeaderText = "Alumno";
+            this.alumnoDataGridViewTextBoxColumn.Name = "alumnoDataGridViewTextBoxColumn";
+            // 
+            // condicionDataGridViewTextBoxColumn
+            // 
+            this.condicionDataGridViewTextBoxColumn.DataPropertyName = "Condicion";
+            this.condicionDataGridViewTextBoxColumn.HeaderText = "Condicion";
+            this.condicionDataGridViewTextBoxColumn.Name = "condicionDataGridViewTextBoxColumn";
+            // 
+            // notaDataGridViewTextBoxColumn
+            // 
+            this.notaDataGridViewTextBoxColumn.DataPropertyName = "Nota";
+            this.notaDataGridViewTextBoxColumn.HeaderText = "Nota";
+            this.notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
+            // 
+            // cursoDataGridViewTextBoxColumn
+            // 
+            this.cursoDataGridViewTextBoxColumn.DataPropertyName = "Curso";
+            this.cursoDataGridViewTextBoxColumn.HeaderText = "Curso";
+            this.cursoDataGridViewTextBoxColumn.Name = "cursoDataGridViewTextBoxColumn";
             // 
             // CargaNotas
             // 
@@ -199,10 +248,11 @@ namespace UI.Desktop
             this.toolStripContainer1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nNota)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +271,11 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridView dgvNotas;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombreAlumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDAlumnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alumnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condicionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cursoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource alumnoInscripcionBindingSource1;
     }
 }
